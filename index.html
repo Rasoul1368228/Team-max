@@ -8,9 +8,13 @@
       href="./images/favicon.png"
     />
     <meta charset="UTF-8" />
-    <meta name="keywords" content="HTML,CSS,JavaScript, وب,برنامه نویسی,طراحی سایت" />
+    <meta
+      name="keywords"
+      content="HTML,CSS,JavaScript, وب,برنامه نویسی,طراحی سایت"
+    />
     <meta name="author" content="رسول" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <meta
       name="description"
       content="طراحی سایت، HTML، CSS و جاوااسکریپت برای همه."
@@ -31,25 +35,60 @@
       <nav>
         <div class="logo">
           <a href="index.html">
-            <img src="./images/log.jpg" alt="لوگوی سایت مکـــس تیم" />
+            <img src="./images/log.jpg" alt="لوگوی مکس تیم" />
           </a>
         </div>
+
         <ul>
-          <li><a href="index.html"><i class="fas fa-home"></i> خانه</a></li>
-          <li><a href="about.html"><i class="fas fa-user"></i> درباره من</a></li>
-          <li><a href="services.html"><i class="fas fa-cogs"></i> خدمات</a></li>
-          <li><a href="blog.html"><i class="fas fa-blog"></i> بلاگ</a></li>
-          <li title="تماس با پشتیبانی">
-            <a href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم">
-              <i class="fas fa-headset"></i> پشتیبانی سایت
+          <li>
+            <a href="index.html"><i class="fas fa-home"></i> خانه</a>
+          </li>
+          <li>
+            <a href="about.html"><i class="fas fa-user"></i> درباره ما</a>
+          </li>
+          <li>
+            <a href="services.html"><i class="fas fa-cogs"></i> خدمات</a>
+          </li>
+          <li>
+            <a href="blog.html"><i class="fas fa-blog"></i> بلاگ</a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم"
+              title="تماس با پشتیبانی"
+            >
+              <i class="fas fa-headset"></i> پشتیبانی
             </a>
           </li>
-          <li><a href="login.html"><i class="fas fa-sign-in"></i> عضویت / ورود</a></li>
+          <li>
+            <a href="login.html"><i class="fas fa-sign-in"></i> ورود / عضویت</a>
+          </li>
         </ul>
+        <!-- این قسمت را اضافه کنید -->
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/nevisande2000"
+            target="_blank"
+            title="اینستاگرام"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.eitaa.com/nevisande2000"
+            target="_blank"
+            title="ایتا"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://telegram.com/nevisande2000"
+            target="_blank"
+            title="تلگرام"
+            ><i class="fab fa-telegram-plane"></i
+          ></a>
+        </div>
         <div
           class="hamburger"
           onclick="toggleMenu(this)"
-          aria-label="باز و بسته کردن منوی ناوبری"
+          aria-label="باز و بسته کردن منو"
           role="button"
           tabindex="0"
         >
@@ -61,11 +100,22 @@
     <!-- محتوای اصلی صفحه -->
     <main>
       <!-- بنر اصلی (Hero Banner) -->
-      <section class="hero-banner" role="banner" aria-label="بنر معرفی خدمات مکــس تیم">
+      <section
+        class="hero-banner"
+        role="banner"
+        aria-label="بنر معرفی خدمات مکــس تیم"
+      >
         <div class="hero-content">
           <h1>طراحی سایت حرفه‌ای، امن و سریع</h1>
-          <p>ما بهترین راهکارهای دیجیتال را برای رشد کسب‌وکار شما ارائه می‌دهیم.</p>
-          <a href="login.html" class="btn-cta" role="button" aria-label="ثبت سفارش یا مشاوره رایگان">
+          <p>
+            ما بهترین راهکارهای دیجیتال را برای رشد کسب‌وکار شما ارائه می‌دهیم.
+          </p>
+          <a
+            href="login.html"
+            class="btn-cta"
+            role="button"
+            aria-label="ثبت سفارش یا مشاوره رایگان"
+          >
             ثبت سفارش / مشاوره رایگان
           </a>
         </div>
@@ -103,9 +153,6 @@
     <!-- فوتر سایت -->
     <footer>
       <section id="contact">
-       
-      
-
         <form onsubmit="return validateEmail();">
           <input
             type="email"
@@ -128,10 +175,7 @@
       </section>
       <section id="rights">
         <p>
-          <a href="https://www.maxteam.ir" target="_blank" rel="noopener"
-            >M.A.x Team</a
-          >
-        </p>
+          تمامی حقوق این سایت متعلق به  M.A.x Team است </p>
       </section>
     </footer>
 

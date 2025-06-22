@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>درباره تیم ما</title>
+    <title>درباره مکس تیم</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png" />
 
     <!-- فونت و آیکون‌ها -->
@@ -11,99 +11,139 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <!-- فایل‌های CSS -->
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/about.css" />
   </head>
 
   <body class="about-page">
+
     <!-- هدر سایت -->
     <header>
       <nav>
+ 
         <div class="logo">
           <a href="index.html">
-            <img src="./images/log.jpg" alt="لوگوی سایت مکـــس تیم" />
+            <img src="./images/log.jpg" alt="لوگوی مکس تیم" />
           </a>
+          
         </div>
+        
         <ul>
           <li><a href="index.html"><i class="fas fa-home"></i> خانه</a></li>
-          <li><a href="about.html"><i class="fas fa-user"></i> درباره من</a></li>
+          <li><a href="about.html"><i class="fas fa-user"></i> درباره ما</a></li>
           <li><a href="services.html"><i class="fas fa-cogs"></i> خدمات</a></li>
           <li><a href="blog.html"><i class="fas fa-blog"></i> بلاگ</a></li>
-          <li title="تماس با پشتیبانی">
-            <a href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم">
-              <i class="fas fa-headset"></i> پشتیبانی سایت
+          <li>
+            <a href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم" title="تماس با پشتیبانی">
+              <i class="fas fa-headset"></i> پشتیبانی
             </a>
           </li>
-          <li><a href="login.html"><i class="fas fa-sign-in"></i> عضویت / ورود</a></li>
+          <li><a href="login.html"><i class="fas fa-sign-in"></i> ورود / عضویت</a></li>
         </ul>
-        <div
-          class="hamburger"
-          onclick="toggleMenu(this)"
-          aria-label="باز و بسته کردن منوی ناوبری"
-          role="button"
-          tabindex="0"
-        >
+                    <!-- این قسمت را اضافه کنید -->
+  <div class="social-links">
+    <a href="https://www.instagram.com/nevisande2000" target="_blank" title="اینستاگرام"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.eitaa.com/nevisande2000" target="_blank" title="ایتا"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://telegram.com/nevisande2000" target="_blank" title="تلگرام"><i class="fab  fa-telegram-plane"></i></a>
+  </div>
+        <div class="hamburger" onclick="toggleMenu(this)" aria-label="باز و بسته کردن منو" role="button" tabindex="0">
           ☰
         </div>
       </nav>
     </header>
 
-    <!-- بخش معرفی تیم -->
-    <div class="box">
-      <img src="./images/log.jpg" alt="عکس نمونه">
+    <!-- معرفی مکس تیم -->
+    <section class="box">
+      <img src="./images/AboutUs1.png" alt="لوگو مکس تیم" />
       <div class="text">
-        <h3>عنوان باکس</h3>
-        <p>
-          ما یک تیم جوان، خلاق و پرانرژی در زمینه طراحی وب و توسعه نرم‌افزار هستیم...
+        <h3>درباره مکس تیم</h3>
+        <p>مکس تیم مجموعه‌ای از طراحان، توسعه‌دهندگان و مدیران خلاق است که با هدف ارائه راهکارهای نوین و مدرن در دنیای دیجیتال شکل گرفته است. ما با تمرکز بر طراحی وب، تجربه کاربری (UI/UX)، برنامه‌نویسی و مشاوره دیجیتال، تلاش می‌کنیم بهترین خدمات را به مشتریان خود ارائه دهیم. باور ما بر این است که نوآوری، تخصص و پشتیبانی مستمر، کلید موفقیت هر پروژه‌ای است و مکس تیم با اتکا به این اصول، مسیر پیشرفت و رضایت مشتریان را هموار می‌کند.
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- اعضای تیم -->
-    <div class="box-container">
-      <div class="team-member">
-        <img class="img" src="./images/avatar.jpg" alt="رسول حیدروند" />
-        <h3>رسول حیدروند</h3>
-        <p class="role">طراح سایت و فرانت‌اند</p>
-        <details>
-          <summary>ادامــه مطلب ...</summary>
-          <p>با بیش از ۵ سال تجربه در طراحی وب‌سایت‌های حرفه‌ای...</p>
-        </details>
-      </div>
-
-      <div class="team-member">
-        <img src="./images/avatar.jpg" alt="رسول حیدروند" />
-        <h3>رسول حیدروند</h3>
-        <p class="role">طراح UI/UX</p>
-        <details>
-          <summary>ادامــه مطلب ...</summary>
-          <p>هدف من طراحی رابط‌های کاربری جذاب و کاربردی است...</p>
-        </details>
-      </div>
-
-      <div class="team-member">
-        <img src="./images/avatar.jpg" alt="مهسا محمدی" />
-        <h3>مهسا محمدی</h3>
-        <p class="role">مدیر پروژه</p>
-        <details>
-          <summary>ادامــه مطلب ...</summary>
-          <p>مسئول هماهنگی و نظارت بر تمام فرآیندهای تیم هستم...</p>
-        </details>
-      </div>
+    <section class="box-container">
+     <div class="team-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <img src="./images/avatar.jpg" alt="رسول حیدروند" />
+      <h3>رسول حیدروند</h3>
+      <p>طراح سایت و فرانت‌اند</p>
     </div>
+    <div class="card-back">
+       <p>طراح سایت و فرانت‌اند</p>
+      <p>متخصص HTML، CSS، JavaScript و React. طراحی رابط‌های ریسپانسیو و سرعت بالا، تمرکز بر تجربه کاربری.</p>
+      <a href="mailto:rasoul@example.com">تماس با طراح</a>
+    </div>
+  </div>
+</div>
 
-    <!-- متن درباره ما -->
-    <p class="about-text">
-      چرا با ما کار کنید؟<br />
-      خلاقیت و نوآوری...<br />
-      تجربه و تخصص...<br />
-      پشتیبانی و خدمات عالی...
-    </p>
+    <div class="team-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <img src="./images/avatar.jpg" alt="رسول حیدروند" />
+      <h3>رسول حیدروند</h3>
+      <p>طراح سایت و فرانت‌اند</p>
+    </div>
+    <div class="card-back">
+       <p>طراح سایت و فرانت‌اند</p>
+      <p>متخصص HTML، CSS، JavaScript و React. طراحی رابط‌های ریسپانسیو و سرعت بالا، تمرکز بر تجربه کاربری.</p>
+      <a href="mailto:rasoul@example.com">تماس با طراح</a>
+    </div>
+  </div>
+</div>
+
+    <div class="team-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <img src="./images/avatar.jpg" alt="رسول حیدروند" />
+      <h3>رسول حیدروند</h3>
+      <p>طراح سایت و فرانت‌اند</p>
+    </div>
+    <div class="card-back">
+       <p>طراح سایت و فرانت‌اند</p>
+      <p>متخصص HTML، CSS، JavaScript و React. طراحی رابط‌های ریسپانسیو و سرعت بالا، تمرکز بر تجربه کاربری.</p>
+      <a href="mailto:rasoul@example.com">تماس با طراح</a>
+    </div>
+  </div>
+</div>
+    </section>
+
+  <!-- مزایای همکاری با مکس تیم -->
+  <section class="about-text" style="max-width: 800px; margin: 40px auto;">
+    <h2 style="text-align: center; margin-bottom: 20px;">چرا مکس تیم؟</h2>
+    <ul class="why-us" style="list-style: none;
+        padding: 0;
+        max-width: 600px;
+        margin: auto;
+        font-size: 1.1rem;
+        line-height: 2;" 
+        >
+      <li style="display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-bolt" style="color: #f39c12;"></i> عملکرد سریع و حرفه‌ای
+      </li>
+      <li style="display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-lightbulb" style="color: #f1c40f;"></i> ایده‌های خلاقانه و نوآور
+      </li>
+      <li style="display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-users" style="color: #3498db;"></i> تیم متخصص و هماهنگ
+      </li>
+      <li style="display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-handshake" style="color: #27ae60;"></i> پشتیبانی دائم و تعهد کاری
+      </li>
+      <li style="display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-thumbs-up" style="color: #2ecc71;"></i> رضایت حداکثری مشتریان
+      </li>
+    </ul>
+  </section>
+
+
 
     <!-- فوتر سایت -->
     <footer>
       <section id="contact">
-        <p>با ما در ارتباط باشید</p>
+        <p>ارتباط با مکس تیم</p>
         <h3><i class="fas fa-envelope"></i> rasoul6856@gmail.com</h3>
         <form onsubmit="return validateEmail();">
           <input type="email" id="emailInput" placeholder="ایمیل خود را وارد کنید" required />
@@ -115,17 +155,18 @@
         <h4>لینک‌های مفید</h4>
         <ul>
           <li><a href="#">شرایط استفاده</a></li>
-          <li><a href="#">سیاست‌های حریم خصوصی</a></li>
+          <li><a href="#">سیاست حریم خصوصی</a></li>
           <li><a href="#">سوالات متداول</a></li>
         </ul>
       </section>
 
-      <section id="rights">
-        <p>تمامی حقوق مربوط به محتویات سایت محفوظ و تحت حقوق مالکیت معنوی است.</p>
+        <section id="rights">
+        <p>
+          تمامی حقوق این سایت متعلق به  M.A.x Team است </p>
       </section>
     </footer>
 
-    <!-- اسکریپت‌ها -->
+    <!-- اسکریپت -->
     <script src="./script.js"></script>
   </body>
 </html>

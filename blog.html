@@ -14,41 +14,41 @@
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/blog.css">
 </head>
-<body>
+<body class="blog-page">
   <!-- هدر شیشه‌ای -->
-  <header>
-     <header>
+   <header>
       <nav>
+ 
         <div class="logo">
           <a href="index.html">
-            <img src="./images/log.jpg" alt="لوگوی سایت مکـــس تیم" />
+            <img src="./images/log.jpg" alt="لوگوی مکس تیم" />
           </a>
+          
         </div>
+        
         <ul>
           <li><a href="index.html"><i class="fas fa-home"></i> خانه</a></li>
-          <li><a href="about.html"><i class="fas fa-user"></i> درباره من</a></li>
+          <li><a href="about.html"><i class="fas fa-user"></i> درباره ما</a></li>
           <li><a href="services.html"><i class="fas fa-cogs"></i> خدمات</a></li>
           <li><a href="blog.html"><i class="fas fa-blog"></i> بلاگ</a></li>
-          <li title="تماس با پشتیبانی">
-            <a href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم">
-              <i class="fas fa-headset"></i> پشتیبانی سایت
+          <li>
+            <a href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم" title="تماس با پشتیبانی">
+              <i class="fas fa-headset"></i> پشتیبانی
             </a>
           </li>
-          <li><a href="login.html"><i class="fas fa-sign-in"></i> عضویت / ورود</a></li>
+          <li><a href="login.html"><i class="fas fa-sign-in"></i> ورود / عضویت</a></li>
         </ul>
-        <div
-          class="hamburger"
-          onclick="toggleMenu(this)"
-          aria-label="باز و بسته کردن منوی ناوبری"
-          role="button"
-          tabindex="0"
-        >
+                    <!-- این قسمت را اضافه کنید -->
+  <div class="social-links">
+    <a href="https://www.instagram.com/nevisande2000" target="_blank" title="اینستاگرام"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.eitaa.com/nevisande2000" target="_blank" title="ایتا"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://telegram.com/nevisande2000" target="_blank" title="تلگرام"><i class="fab  fa-telegram-plane"></i></a>
+  </div>
+        <div class="hamburger" onclick="toggleMenu(this)" aria-label="باز و بسته کردن منو" role="button" tabindex="0">
           ☰
         </div>
       </nav>
-    </header>    
-    <div class="hamburger" onclick="toggleMenu(this)">☰</div>
-  </header>
+    </header>
   <!-- عنوان صفحه -->
   <section id="blog-header">
     <h1>مقالات و آموزش‌ها</h1>

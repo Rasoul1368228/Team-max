@@ -1,0 +1,183 @@
+/* فونت فارسی */
+@font-face {
+  font-family: "dana";
+  src: url("../font/dana/dana black.ttf") format("truetype");
+}
+.blog-page{
+  margin: 0;
+  padding: 0;
+  font-family: "dana", sans-serif;
+  font-size: 12px;
+  background: linear-gradient(to left, #f8f9fa, #ffffff);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+#blog-posts .post img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* کلاس پست بلاگ */
+.post {
+  font-family: 'Dana', sans-serif; /* اصلاح فونت به فونت صحیح */
+  font-size: 12px;
+  background-color: #a0e6e9;
+  height: 90%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 15px auto; /* مرکز چین کردن افقی */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* لوگو */
+.logo img {
+  height: 85px;
+  margin-top: -6px;
+  display: flex;
+  align-items: center;
+}
+
+/* افزودن متن بعد از لوگو */
+.logo::after {
+  content: "  مکس تیم !"; /* متن بعد از لوگو */
+  font-size: 25px;
+  color: #333;
+  margin-left: 10px; /* فاصله مناسب از لوگو */
+  vertical-align: middle;
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+  .post {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  #blog-posts .post img {
+    max-height: 120px;
+  }
+
+  .logo img {
+    height: 60px;
+    margin-top: 0;
+  }
+
+  .logo::after {
+    font-size: 18px;
+    margin-left: 6px;
+  }
+}
+.social-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  
+}
+
+.social-links a {
+  color: #333;
+  font-size: 1.5rem;
+  transition: color 0.8s ease, transform 0.8s ease;
+  display: inline-block;
+  /*برایاینکهtransformدرستکارکنه*/:;
+  -webkit-transition: color 0.8s ease, transform 0.8s ease;
+  -moz-transition: color 0.8s ease, transform 0.8s ease;
+  -ms-transition: color 0.8s ease, transform 0.8s ease;
+  -o-transition: color 0.8s ease, transform 0.8s ease;
+}
+
+.social-links a:hover {
+  color: #0073b1;
+  /*رنگدلخواهبرایهاور*/transform: scale(1.5);
+
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+
+}
+
+
+/* ریسپانسیو: موبایل و تبلت */
+@media (max-width: 768px) {
+  .post {
+    width: 90%;
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  #blog-posts .post img {
+    max-height: 120px;
+  }
+
+  .logo img {
+    height: 65px;
+    margin-top: 0;
+  }
+
+  .logo::after {
+    font-size: 20px;
+    margin-left: 6px;
+  }
+
+  .social-links a {
+    font-size: 1.3rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ریسپانسیو: موبایل کوچک‌تر */
+@media (max-width: 480px) {
+  .post {
+    width: 95%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  #blog-posts .post img {
+    max-height: 100px;
+  }
+
+  .logo img {
+    height: 55px;
+  }
+
+  .logo::after {
+    font-size: 18px;
+    margin-left: 4px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .social-links a {
+    font-size: 1.2rem;
+  }
+}
