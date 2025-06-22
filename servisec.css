@@ -1,4 +1,4 @@
-/* فونت فارسی */
+/* /* فونت فارسی */
 @font-face {
   font-family: "dana";
   src: url("../font/dana/dana\ black.ttf") format("truetype");
@@ -88,8 +88,9 @@
   margin-bottom: 1.5rem;
 }
 .faq details {
-  margin: 1rem auto;
-  max-width: 600px;
+  font-size: 14px;
+  margin: 1.5rem auto;
+  max-width: 650px;
   background: white;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -175,19 +176,66 @@
   padding: 4rem 2rem;
   background-color: #fff;
   text-align: center;
+  font-family: "dana", sans-serif;
 }
+
+.testimonials h2 {
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
 .testimonial {
   max-width: 600px;
-  margin: 1rem auto;
-  font-style: italic;
+  margin: 1.5rem auto;
+  position: relative;
+  background: #fefefe;
+  border-radius: 15px;
+  padding: 25px 30px 25px 60px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-style: normal;
   color: #333;
+  line-height: 1.6;
+  text-align: right;
+  direction: rtl;
+  transition: transform 0.3s ease;
 }
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+/* آیکون نقل قول سمت چپ */
+.testimonial::before {
+  content: "\f10d"; /* کد فونت آوسام برای quote-left */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 40px;
+  color: #007bff;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  opacity: 0.15;
+}
+
+/* متن نظر */
+.testimonial p {
+ 
+  margin: 0;
+  
+  color: #444;
+}
+
+/* نام مشتری */
 .testimonial span {
   display: block;
-  margin-top: 0.5rem;
-  color: #777;
-  font-size: 0.9rem;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #555;
+ 
 }
+
 
 /* فرم فوتر خبرنامه */
 footer input[type="email"] {
