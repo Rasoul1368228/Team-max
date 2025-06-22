@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ورود و ثبت نام</title>
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-toggle">
+      <button id="login-toggle" class="active">ورود</button>
+      <button id="signup-toggle">ثبت نام</button>
+    </div>
+
+    <form id="login-form" class="form active">
+      <h2>ورود</h2>
+      <input type="text" placeholder="نام کاربری یا ایمیل" required>
+   <input type="password" placeholder="رمز عبور" required  title="رمز شامل حروف فارسی  و لاتین می باشد (@ ,! ,# ,$ ,% ,^,&,*)">
+      <button type="submit">ورود</button>
+    </form>
+
+    <form id="signup-form" class="form">
+      <h2>ثبت نام </h2>
+      <input type="text" placeholder="نام کامل" required>
+      <input type="email" placeholder="ایمیل" required>
+      <input type="password" placeholder="رمز عبور" required>
+      <button type="submit"> عضویت</button>
+    </form>
+  </div>
+
+  <script>
+    const loginToggle = document.getElementById("login-toggle");
+    const signupToggle = document.getElementById("signup-toggle");
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
+
+    loginToggle.onclick = () => {
+      loginToggle.classList.add("active");
+      signupToggle.classList.remove("active");
+      loginForm.classList.add("active");
+      signupForm.classList.remove("active");
+    };
+
+    signupToggle.onclick = () => {
+      signupToggle.classList.add("active");
+      loginToggle.classList.remove("active");
+      signupForm.classList.add("active");
+      loginForm.classList.remove("active");
+    };
+  </script>
+</body>
+</html>

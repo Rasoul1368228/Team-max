@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>درباره تیم ما</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png" />
+
+    <!-- فونت و آیکون‌ها -->
+    <link href="https://fonts.cdnfonts.com/css/dana" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- فایل‌های CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/about.css">
+  </head>
+
+  <body class="about-page">
+    <!-- هدر سایت -->
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index.html">
+            <img src="./images/log.jpg" alt="لوگوی سایت مکـــس تیم" />
+          </a>
+        </div>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> خانه</a></li>
+          <li><a href="about.html"><i class="fas fa-user"></i> درباره من</a></li>
+          <li><a href="services.html"><i class="fas fa-cogs"></i> خدمات</a></li>
+          <li><a href="blog.html"><i class="fas fa-blog"></i> بلاگ</a></li>
+          <li title="تماس با پشتیبانی">
+            <a href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم">
+              <i class="fas fa-headset"></i> پشتیبانی سایت
+            </a>
+          </li>
+          <li><a href="login.html"><i class="fas fa-sign-in"></i> عضویت / ورود</a></li>
+        </ul>
+        <div
+          class="hamburger"
+          onclick="toggleMenu(this)"
+          aria-label="باز و بسته کردن منوی ناوبری"
+          role="button"
+          tabindex="0"
+        >
+          ☰
+        </div>
+      </nav>
+    </header>
+
+    <!-- بخش معرفی تیم -->
+    <div class="box">
+      <img src="./images/log.jpg" alt="عکس نمونه">
+      <div class="text">
+        <h3>عنوان باکس</h3>
+        <p>
+          ما یک تیم جوان، خلاق و پرانرژی در زمینه طراحی وب و توسعه نرم‌افزار هستیم...
+        </p>
+      </div>
+    </div>
+
+    <!-- اعضای تیم -->
+    <div class="box-container">
+      <div class="team-member">
+        <img class="img" src="./images/avatar.jpg" alt="رسول حیدروند" />
+        <h3>رسول حیدروند</h3>
+        <p class="role">طراح سایت و فرانت‌اند</p>
+        <details>
+          <summary>ادامــه مطلب ...</summary>
+          <p>با بیش از ۵ سال تجربه در طراحی وب‌سایت‌های حرفه‌ای...</p>
+        </details>
+      </div>
+
+      <div class="team-member">
+        <img src="./images/avatar.jpg" alt="رسول حیدروند" />
+        <h3>رسول حیدروند</h3>
+        <p class="role">طراح UI/UX</p>
+        <details>
+          <summary>ادامــه مطلب ...</summary>
+          <p>هدف من طراحی رابط‌های کاربری جذاب و کاربردی است...</p>
+        </details>
+      </div>
+
+      <div class="team-member">
+        <img src="./images/avatar.jpg" alt="مهسا محمدی" />
+        <h3>مهسا محمدی</h3>
+        <p class="role">مدیر پروژه</p>
+        <details>
+          <summary>ادامــه مطلب ...</summary>
+          <p>مسئول هماهنگی و نظارت بر تمام فرآیندهای تیم هستم...</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- متن درباره ما -->
+    <p class="about-text">
+      چرا با ما کار کنید؟<br />
+      خلاقیت و نوآوری...<br />
+      تجربه و تخصص...<br />
+      پشتیبانی و خدمات عالی...
+    </p>
+
+    <!-- فوتر سایت -->
+    <footer>
+      <section id="contact">
+        <p>با ما در ارتباط باشید</p>
+        <h3><i class="fas fa-envelope"></i> rasoul6856@gmail.com</h3>
+        <form onsubmit="return validateEmail();">
+          <input type="email" id="emailInput" placeholder="ایمیل خود را وارد کنید" required />
+          <button type="submit">عضویت در خبرنامه</button>
+        </form>
+      </section>
+
+      <section id="links">
+        <h4>لینک‌های مفید</h4>
+        <ul>
+          <li><a href="#">شرایط استفاده</a></li>
+          <li><a href="#">سیاست‌های حریم خصوصی</a></li>
+          <li><a href="#">سوالات متداول</a></li>
+        </ul>
+      </section>
+
+      <section id="rights">
+        <p>تمامی حقوق مربوط به محتویات سایت محفوظ و تحت حقوق مالکیت معنوی است.</p>
+      </section>
+    </footer>
+
+    <!-- اسکریپت‌ها -->
+    <script src="./script.js"></script>
+  </body>
+</html>

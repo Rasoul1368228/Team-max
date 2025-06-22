@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon.png"
+    />
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="HTML,CSS,JavaScript, وب,برنامه نویسی,طراحی سایت" />
+    <meta name="author" content="رسول" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="طراحی سایت، HTML، CSS و جاوااسکریپت برای همه."
+    />
+    <title>مکــــــس تیم</title>
+    <!-- فونت‌ها و آیکون‌ها -->
+    <link href="https://fonts.cdnfonts.com/css/dana" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- فایل استایل اختصاصی -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="home-page">
+    <!-- هدر سایت -->
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index.html">
+            <img src="./images/log.jpg" alt="لوگوی سایت مکـــس تیم" />
+          </a>
+        </div>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> خانه</a></li>
+          <li><a href="about.html"><i class="fas fa-user"></i> درباره من</a></li>
+          <li><a href="services.html"><i class="fas fa-cogs"></i> خدمات</a></li>
+          <li><a href="blog.html"><i class="fas fa-blog"></i> بلاگ</a></li>
+          <li title="تماس با پشتیبانی">
+            <a href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم">
+              <i class="fas fa-headset"></i> پشتیبانی سایت
+            </a>
+          </li>
+          <li><a href="login.html"><i class="fas fa-sign-in"></i> عضویت / ورود</a></li>
+        </ul>
+        <div
+          class="hamburger"
+          onclick="toggleMenu(this)"
+          aria-label="باز و بسته کردن منوی ناوبری"
+          role="button"
+          tabindex="0"
+        >
+          ☰
+        </div>
+      </nav>
+    </header>
+
+    <!-- محتوای اصلی صفحه -->
+    <main>
+      <!-- بنر اصلی (Hero Banner) -->
+      <section class="hero-banner" role="banner" aria-label="بنر معرفی خدمات مکــس تیم">
+        <div class="hero-content">
+          <h1>طراحی سایت حرفه‌ای، امن و سریع</h1>
+          <p>ما بهترین راهکارهای دیجیتال را برای رشد کسب‌وکار شما ارائه می‌دهیم.</p>
+          <a href="login.html" class="btn-cta" role="button" aria-label="ثبت سفارش یا مشاوره رایگان">
+            ثبت سفارش / مشاوره رایگان
+          </a>
+        </div>
+      </section>
+
+      <!-- معرفی خدمات کارت‌ها -->
+      <section class="services-cards" aria-label="خدمات ما">
+        <div class="card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>طراحی سایت شرکتی</h3>
+          <p>سایت‌های حرفه‌ای برای معرفی کسب‌وکار شما به بهترین شکل.</p>
+          <a href="services.html#corporate" class="learn-more">بیشتر بدانید</a>
+        </div>
+        <div class="card">
+          <i class="fas fa-store"></i>
+          <h3>فروشگاه اینترنتی</h3>
+          <p>راه‌اندازی فروشگاه آنلاین با امکانات پیشرفته برای فروش محصولات.</p>
+          <a href="services.html#shop" class="learn-more">بیشتر بدانید</a>
+        </div>
+        <div class="card">
+          <i class="fas fa-search-dollar"></i>
+          <h3>سئو و بهینه‌سازی</h3>
+          <p>افزایش رتبه گوگل با تکنیک‌های سئو کلاه سفید و اصولی.</p>
+          <a href="services.html#seo" class="learn-more">بیشتر بدانید</a>
+        </div>
+        <div class="card">
+          <i class="fas fa-bullhorn"></i>
+          <h3>دیجیتال مارکتینگ</h3>
+          <p>تبلیغات هدفمند در گوگل و شبکه‌های اجتماعی.</p>
+          <a href="services.html#marketing" class="learn-more">بیشتر بدانید</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- فوتر سایت -->
+    <footer>
+      <section id="contact">
+       
+      
+
+        <form onsubmit="return validateEmail();">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="ایمیل خود را وارد کنید"
+            required
+            aria-label="ایمیل برای عضویت در خبرنامه"
+          />
+          <button type="submit">عضویت در خبرنامه</button>
+        </form>
+      </section>
+
+      <section id="links">
+        <h4>لینک‌های مفید</h4>
+        <ul>
+          <li><a href="#">شرایط استفاده</a></li>
+          <li><a href="#">سیاست‌های حریم خصوصی</a></li>
+          <li><a href="#">سوالات متداول</a></li>
+        </ul>
+      </section>
+      <section id="rights">
+        <p>
+          <a href="https://www.maxteam.ir" target="_blank" rel="noopener"
+            >M.A.x Team</a
+          >
+        </p>
+      </section>
+    </footer>
+
+    <!-- اسکریپت‌های مورد نیاز -->
+    <script src="./script.js"></script>
+  </body>
+</html>
