@@ -22,7 +22,6 @@
   --color-text-secondary: #666;
   --color-btn-bg: var(--color-primary);
   --color-btn-hover: #0d6efd;
-
   --radius: 16px;
   --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.15);
@@ -33,7 +32,7 @@
 body.body-services {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 13px;
   font-family: "Dana", "Shabnam", "Vazirmatn", sans-serif;
   background: linear-gradient(to left, #f8f9fa, #ffffff);
   color: var(--color-text-main);
