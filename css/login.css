@@ -1,228 +1,157 @@
+/* فونت‌های فارسی */
 @font-face {
-  font-family: "dana";
-  src: url("../font/dana/dana bold.ttf") format("truetype");
+  font-family: "Dana";
+  src: url("../font/dana/Dana-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Shabnam-Medium-FD";
+  src: url("../font/Shabnam/Shabnam-Medium-FD.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Vazirmatn-Bold";
+  src: url("../font/Vazirmatn/Vazirmatn-Bold.ttf") format("truetype");
 }
 
-* {
-  box-sizing: border-box;
-  font-family: "dana", sans-serif;
+body {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  font-family: "Dana", "Shabnam-Medium-FD", "Vazirmatn-Bold", sans-serif;
+  font-size: 18px;
+  direction: rtl;
   margin: 0;
   padding: 0;
-}
-
-body,
-html {
-  height: 100%;
-  overflow-x: hidden;
-  background: #f0f2f5;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  direction: rtl;
 }
-
-/* کانتینر اصلی پورتال */
-.portal-container {
-  width: 900px;
-  max-width: 95vw;
-  height: 600px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  display: flex;
-  overflow: hidden;
-  position: relative;
+.h6 {
+  font-size: large;
 }
-
-/* پنل سمت چپ خوش‌آمدگویی */
-.left-panel {
-  width: 40%;
-  background: linear-gradient(135deg, #4a90e2, #357abd);
-  color: #fff;
-  padding: 60px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  transition: background 0.6s ease;
-}
-
-.left-panel h1 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  font-weight: 900;
-}
-
-.left-panel p {
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: 0.95;
-  margin-bottom: 40px;
-}
-
-.left-panel button {
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.left-panel button:hover {
-  background: #fff;
-  color: #357abd;
-}
-
-/* پنل سمت راست فرم‌ها */
-.right-panel {
-  width: 60%;
-  padding: 50px 40px;
-  background: #fafafa;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  transition: background 1s ease;
-}
-
-/* فرم‌ها */
-form {
-  position: absolute;
-  top: 25px;
-  right: 40px;
-  width: calc(100% - 80px);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(100%);
-  transition: all 0.7s ease;
-  background: #fff;
-  padding: 25px 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-form.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0);
-}
-
-form#signup-form {
-  transform: translateX(-100%);
-}
-
-form#signup-form.active {
-  transform: translateX(0);
-}
-
-form h2 {
-  margin-bottom: 20px;
-  font-weight: 900;
-  color: #222;
-  font-size: 1.6rem;
-  text-align: center;
-}
-
-/* فیلدها */
-input {
+.auth-modern {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 18px;
-  font-size: 1rem;
-  border: 1.5px solid #ccc;
-  border-radius: 10px;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  max-width: 420px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.auth-card {
+  background: linear-gradient(300deg, #f1f5f9, #e2e8f0);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   color: #333;
 }
 
-input:focus {
-  border-color: #357abd;
-  box-shadow: 0 0 6px #357abd88;
+.auth-header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* دکمه ثبت */
-button.submit-btn {
-  width: 100%;
-  padding: 14px 0;
-  font-size: 1.05rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 30px;
-  background: #357abd;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button.submit-btn:hover {
-  background: #285a8f;
-}
-
-/* پاسخ فرم */
-.form-response {
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   margin-top: 10px;
-  font-size: 0.95rem;
-  font-weight: bold;
-  text-align: center;
-  color: #d33;
 }
 
-/* دکمه لینک استایل‌دار */
-.button-link {
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
   cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: #555;
+  transition: all 0.3s ease;
 }
 
-.button-link:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+.tab-btn.active {
+  color: #111;
+  border-color: #0ea5e9;
+  font-weight: bold;
 }
 
-/* ریسپانسیو تبلت و موبایل */
-@media (max-width: 850px) {
-  .portal-container {
-    flex-direction: column;
-    height: auto;
-  }
-  .left-panel,
-  .right-panel {
-    width: 100%;
-    padding: 30px 20px;
-  }
-  form {
-    position: static !important;
-    transform: none !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    box-shadow: none;
-    margin-bottom: 30px;
-  }
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-/* ریسپانسیو موبایل کوچک */
-@media (max-width: 480px) {
-  .left-panel h1 {
-    font-size: 1.6rem;
-  }
-  .left-panel p {
-    font-size: 0.95rem;
-  }
-  input,
-  button.submit-btn {
-    font-size: 0.95rem;
-    padding: 12px;
-  }
+.auth-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.auth-form input:focus {
+  border-color: #0ea5e9;
+  outline: none;
+}
+
+.auth-form input::placeholder {
+  color: #999;
+}
+
+.submit-btn {
+  background: linear-gradient(120deg, #0284c7, #0ea5e9, #06b6d4);
+  border: none;
+  color: #fff;
+  padding: 16px 42px;
+  border-radius: 48px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  font-family: "Dana", "Shabnam-Medium-FD", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(8, 145, 178, 0.3);
+  transition: all 0.35s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.4);
+}
+
+.forgot-link {
+  text-align: left;
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+  color: #0ea5e9;
+}
+
+.hidden {
+  display: none;
 }

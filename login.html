@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>مکس تیم — تیم طراحی سایت مکس تیم</title>
-  <link rel="stylesheet" href="./css/login.css" />
-  
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>مکس تیم — تیم طراحی سایت مکس تیم</title>
+    <link rel="stylesheet" href="./css/login.css" />
+  </head>
 
-<body>
+  <body>
+    <section class="auth-modern">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h3 id="form-title">عضویت / ورود</h3>
+          <h6 class="h6">اگر حساب کاربری دارید، لطفا وارد شوید.</h6>
 
-  <div class="portal-container" role="main" aria-label="پورتال ورود و ثبت نام">
-    
-    <div class="left-panel" aria-live="polite">
-      
-      <h1 id="panel-title">خوش آمدید! </h1>
-      <p id="panel-text">اگر حساب کاربری دارید، لطفا وارد شوید.</p>
-      <a href="./index.html" class="button-link">بازگشت به خانه</a>
+          <div class="auth-tabs">
+            <button class="tab-btn active" onclick="switchForm('signup')">
+              عضویت
+            </button>
+            <button class="tab-btn" onclick="switchForm('login')">ورود</button>
+          </div>
+        </div>
 
-      <button id="panel-btn" aria-haspopup="true" aria-controls="signup-form">ثبت نام</button>
-      <div id="signup-response" class="form-response"></div>
-    </div>
+        <form id="signup-form" class="auth-form">
+          <input type="text" placeholder="نام کامل" required />
+          <input type="email" placeholder="ایمیل" required />
+          <input type="tel" placeholder="شماره موبایل" />
+          <input type="password" placeholder="رمز عبور" required />
+          <button type="submit" class="submit-btn">ثبت‌نام</button>
+        </form>
 
-    <div class="right-panel">
- <form id="login-form" class="active" role="form" aria-labelledby="login-heading" aria-hidden="false" novalidate>
-  <h2 id="login-heading">ورود</h2>
-  <input type="text" name="username" placeholder="نام کاربری یا ایمیل" autocomplete="username" />
-  <input type="password" name="password" placeholder="رمز عبور" autocomplete="current-password" />
-  <button type="submit" class="submit-btn">ورود</button>
-  <div id="login-response" class="form-response"></div>
+        <form id="login-form" class="auth-form hidden">
+          <input type="email" placeholder="ایمیل یا نام کاربری" required />
+          <input type="password" placeholder="رمز عبور" required />
+          <button type="submit" class="submit-btn">ورود</button>
+          <a href="#" class="forgot-link">رمز عبور را فراموش کرده‌اید؟</a>
+        </form>
+      </div>
+    </section>
 
-</form>
-
-<form id="signup-form" role="form" aria-labelledby="signup-heading" aria-hidden="true" novalidate>
-  <h2 id="signup-heading">ثبت نام</h2>
-  <input type="text" name="fullname" placeholder="نام کامل" autocomplete="name" />
-  <input type="email" name="email" placeholder="ایمیل" autocomplete="email" />
-  <input type="password" name="new-password" placeholder="رمز عبور" autocomplete="new-password" />
-  <button type="submit" class="submit-btn">عضویت</button>
-  <div id="signup-response" class="form-response"></div>
-</form>
-    </div>
-  </div>
-<!-- اسکریپت‌های مورد نیاز -->
+    <!-- اسکریپت‌های مورد نیاز -->
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
