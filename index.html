@@ -1,68 +1,68 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>درباره مکس تیم</title>
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon.png"
     />
-    <meta charset="UTF-8" />
-    <meta
-      name="keywords"
-      content="HTML,CSS,JavaScript, وب,برنامه نویسی,طراحی سایت"
-    />
-    <meta name="author" content="رسول" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta
-      name="description"
-      content="طراحی سایت، HTML، CSS و جاوااسکریپت برای همه."
-    />
-    <title>مکــــــس تیم</title>
-    <!-- فونت‌ها و آیکون‌ها -->
+    <!-- فونت و آیکون‌ها -->
     <link href="https://fonts.cdnfonts.com/css/dana" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <!-- فایل استایل اختصاصی -->
+
+    <!-- فایل‌های CSS -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body class="home-page">
-    <!-- هدر سایت -->
+  <body class="home-page" id="top">
+    <div id="splash-screen">
+      <img src="./images/log.jpg" alt="تیم مدیریت طراحی مکس  " />
+      <h2>درحال آماده سازی سایت</h2>
+      <p>مکس تیم</p>
+    </div>
+  <!-- هدر سایت -->
     <header>
+
       <nav>
         <div class="logo">
           <a href="index.html">
             <img src="./images/log.jpg" alt="لوگوی مکس تیم" />
           </a>
         </div>
-
+ <div class="hamburger">☰</div> <!-- این آیکون منو همبرگریه -->
         <ul>
-          <li>
-            <a href="index.html"><i class="fas fa-home"></i> خانه</a>
-          </li>
-          <li>
-            <a href="about.html"><i class="fas fa-user"></i> درباره ما</a>
-          </li>
+         
+         
           <li>
             <a href="services.html"><i class="fas fa-cogs"></i> خدمات</a>
           </li>
-          <li>
-            <a href="blog.html"><i class="fas fa-blog"></i> بلاگ</a>
+          
+           <li>
+            <a href="about.html"><i class="fas fa-user"></i> درباره ما</a>
+          </li>
+           <li>
+            <a href="gimatha.html"><i class="fas fa-home"></i>تعرفه طراحی </a>
           </li>
           <li>
+            
             <a
               href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم"
-              title="تماس با پشتیبانی"
-            >
+              title="تماس با پشتیبانی">
               <i class="fas fa-headset"></i> پشتیبانی
             </a>
           </li>
           <li>
-            <a href="login.html"><i class="fas fa-sign-in"></i> ورود / عضویت</a>
+            <a href="login.html"><i class="fas fa-sign-in"></i>  پورتال مشتریان </a>
           </li>
+</div>
+
         </ul>
         <!-- این قسمت را اضافه کنید -->
         <div class="social-links">
@@ -79,7 +79,7 @@
             ><i class="fab fa-linkedin-in"></i
           ></a>
           <a
-            href="https://telegram.com/nevisande2000"
+            href="https://telegram.org/nevisande2000"
             target="_blank"
             title="تلگرام"
             ><i class="fab fa-telegram-plane"></i
@@ -92,9 +92,9 @@
           role="button"
           tabindex="0"
         >
-          ☰
         </div>
       </nav>
+          </nav>
     </header>
 
     <!-- محتوای اصلی صفحه -->
@@ -107,9 +107,7 @@
       >
         <div class="hero-content">
           <h1>طراحی سایت حرفه‌ای، امن و سریع</h1>
-          <p>
-            ما بهترین راهکارهای دیجیتال را برای رشد کسب‌وکار شما ارائه می‌دهیم.
-          </p>
+          <p>مهم نیست کجای مسیر هستید کافی است با مکس تیم همراه شوید <br /></p>
           <a
             href="login.html"
             class="btn-cta"
@@ -152,30 +150,39 @@
 
     <!-- فوتر سایت -->
     <footer>
-      <section id="contact">
+      <section id="newsletter">
+        <h4>عضویت در خبرنامه</h4>
         <form onsubmit="return validateEmail();">
           <input
             type="email"
             id="emailInput"
             placeholder="ایمیل خود را وارد کنید"
             required
-            aria-label="ایمیل برای عضویت در خبرنامه"
+            aria-label="عضویت در خبرنامه"
           />
-          <button type="submit">عضویت در خبرنامه</button>
+          <button type="submit">ثبت‌نام</button>
         </form>
       </section>
 
+      <section id="contact">
+        <h4>تماس با ما</h4>
+        <p>آدرس: تهران، خیابان آزادی، پلاک ۱۲۳</p>
+        <p>تلفن: ۰۲۱-۱۲۳۴۵۶۷۸</p>
+        <p>ایمیل: info@example.com</p>
+      </section>
+
       <section id="links">
-        <h4>لینک‌های مفید</h4>
+        <h4>لینک‌های کلیدی</h4>
         <ul>
-          <li><a href="#">شرایط استفاده</a></li>
-          <li><a href="#">سیاست‌های حریم خصوصی</a></li>
+          <li><a href="#">درباره ما</a></li>
           <li><a href="#">سوالات متداول</a></li>
+          <li><a href="#">شرایط استفاده</a></li>
+          <li><a href="#">حریم خصوصی</a></li>
         </ul>
       </section>
+
       <section id="rights">
-        <p>
-          تمامی حقوق این سایت متعلق به  M.A.x Team است </p>
+        <p>تمامی حقوق محفوظ است - M.A.x Team <span id="year"></span></p>
       </section>
     </footer>
 

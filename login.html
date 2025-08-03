@@ -1,53 +1,48 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> ورود و ثبت نام</title>
-  <link rel="stylesheet" href="./css/login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مکس تیم — تیم طراحی سایت مکس تیم</title>
+  <link rel="stylesheet" href="./css/login.css" />
+  
 </head>
+
 <body>
-  <div class="container">
-    <div class="form-toggle">
-      <button id="login-toggle" class="active">ورود</button>
-      <button id="signup-toggle">ثبت نام</button>
+
+  <div class="portal-container" role="main" aria-label="پورتال ورود و ثبت نام">
+    
+    <div class="left-panel" aria-live="polite">
+      
+      <h1 id="panel-title">خوش آمدید! </h1>
+      <p id="panel-text">اگر حساب کاربری دارید، لطفا وارد شوید.</p>
+      <a href="./index.html" class="button-link">بازگشت به خانه</a>
+
+      <button id="panel-btn" aria-haspopup="true" aria-controls="signup-form">ثبت نام</button>
+      <div id="signup-response" class="form-response"></div>
     </div>
 
-    <form id="login-form" class="form active">
-      <h2>ورود</h2>
-      <input type="text" placeholder="نام کاربری یا ایمیل" required>
-   <input type="password" placeholder="رمز عبور" required  title="رمز شامل حروف فارسی  و لاتین می باشد (@ ,! ,# ,$ ,% ,^,&,*)">
-      <button type="submit">ورود</button>
-    </form>
+    <div class="right-panel">
+ <form id="login-form" class="active" role="form" aria-labelledby="login-heading" aria-hidden="false" novalidate>
+  <h2 id="login-heading">ورود</h2>
+  <input type="text" name="username" placeholder="نام کاربری یا ایمیل" autocomplete="username" />
+  <input type="password" name="password" placeholder="رمز عبور" autocomplete="current-password" />
+  <button type="submit" class="submit-btn">ورود</button>
+  <div id="login-response" class="form-response"></div>
 
-    <form id="signup-form" class="form">
-      <h2>ثبت نام </h2>
-      <input type="text" placeholder="نام کامل" required>
-      <input type="email" placeholder="ایمیل" required>
-      <input type="password" placeholder="رمز عبور" required>
-      <button type="submit"> عضویت</button>
-    </form>
+</form>
+
+<form id="signup-form" role="form" aria-labelledby="signup-heading" aria-hidden="true" novalidate>
+  <h2 id="signup-heading">ثبت نام</h2>
+  <input type="text" name="fullname" placeholder="نام کامل" autocomplete="name" />
+  <input type="email" name="email" placeholder="ایمیل" autocomplete="email" />
+  <input type="password" name="new-password" placeholder="رمز عبور" autocomplete="new-password" />
+  <button type="submit" class="submit-btn">عضویت</button>
+  <div id="signup-response" class="form-response"></div>
+</form>
+    </div>
   </div>
-
-  <script>
-    const loginToggle = document.getElementById("login-toggle");
-    const signupToggle = document.getElementById("signup-toggle");
-    const loginForm = document.getElementById("login-form");
-    const signupForm = document.getElementById("signup-form");
-
-    loginToggle.onclick = () => {
-      loginToggle.classList.add("active");
-      signupToggle.classList.remove("active");
-      loginForm.classList.add("active");
-      signupForm.classList.remove("active");
-    };
-
-    signupToggle.onclick = () => {
-      signupToggle.classList.add("active");
-      loginToggle.classList.remove("active");
-      signupForm.classList.add("active");
-      loginForm.classList.remove("active");
-    };
-  </script>
+<!-- اسکریپت‌های مورد نیاز -->
+    <script src="./script.js"></script>
 </body>
 </html>

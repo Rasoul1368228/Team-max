@@ -1,80 +1,166 @@
-// تابع اعتبارسنجی ایمیل با استفاده از الگوی دقیق‌تر
-function validateEmail() {
-  const emailInput = document.getElementById("emailInput");
-  const email = emailInput.value.trim(); // حذف فاصله‌های اضافی
-
-  // الگوی پیشرفته‌تر برای بررسی ساختار ایمیل
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-  // بررسی تطابق ایمیل با الگو
-  const isValid = emailPattern.test(email);
-
-  if (!isValid) {
-    alert("لطفاً یک ایمیل معتبر وارد کنید.");
-    emailInput.focus(); // تمرکز دوباره روی فیلد ایمیل
-    return false;
+document.addEventListener("DOMContentLoaded", () => {
+  // 🌙 دارک مود
+  const toggle = document.getElementById("darkToggle");
+  if (toggle) {
+    const isDark = localStorage.getItem("darkMode") === "true";
+    if (isDark) {
+      document.body.classList.add("dark");
+      toggle.checked = true;
+    }
+    toggle.addEventListener("change", () => {
+      const enabled = toggle.checked;
+      document.body.classList.toggle("dark", enabled);
+      localStorage.setItem("darkMode", enabled);
+    });
   }
 
-  alert("با تشکر از عضویت شما بزودی هفته نامه های تیم به ایمیلتان ارسال می گردد");
+  // ⬆️ دکمه بازگشت به بالا
+  const scrollBtn = document.getElementById("scrollUp");
+  window.addEventListener("scroll", () => {
+    scrollBtn.style.display = window.scrollY > 100 ? "block" : "none";
+  });
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
+  // 🔁 سوییچ فرم‌ها
+  const leftPanel = document.querySelector(".left-panel");
+  const panelTitle = document.getElementById("panel-title");
+  const panelText = document.getElementById("panel-text");
+  const panelBtn = document.getElementById("panel-btn");
+  const loginForm = document.getElementById("login-form");
+  const signupForm = document.getElementById("signup-form");
+  let isLogin = true;
+
+  function togglePortal() {
+    loginForm.classList.toggle("active", !isLogin);
+    signupForm.classList.toggle("active", isLogin);
+    loginForm.setAttribute("aria-hidden", isLogin);
+    signupForm.setAttribute("aria-hidden", !isLogin);
+    if (isLogin) {
+      panelTitle.textContent = "عضویت در سایت";
+      panelText.textContent = "حساب ندارید؟ لطفاً ثبت‌نام کنید.";
+      panelBtn.textContent = "ورود";
+      panelBtn.setAttribute("aria-controls", "login-form");
+      leftPanel.style.background = "linear-gradient(135deg, #2a9d8f, #21867a)";
+    } else {
+      panelTitle.textContent = "خوش آمدید!";
+      panelText.textContent = "اگر حساب کاربری دارید، لطفاً وارد شوید.";
+      panelBtn.textContent = "ثبت نام";
+      panelBtn.setAttribute("aria-controls", "signup-form");
+      leftPanel.style.background = "linear-gradient(135deg, #4a90e2, #357ABD)";
+    }
+    isLogin = !isLogin;
+  }
+  panelBtn.addEventListener("click", togglePortal);
+
+  // ✅ فرم ورود
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const btn = loginForm.querySelector(".submit-btn");
+    btn.textContent = "🔄 در حال ورود...";
+    btn.disabled = true;
+    if (validateLoginForm()) {
+      setTimeout(() => {
+        btn.textContent = "ورود";
+        btn.disabled = false;
+      }, 1500);
+    } else {
+      btn.textContent = "ورود";
+      btn.disabled = false;
+    }
+  });
+
+  // ✅ فرم ثبت‌نام
+  signupForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const btn = signupForm.querySelector(".submit-btn");
+    btn.textContent = "🔄 ثبت اطلاعات...";
+    btn.disabled = true;
+    if (validateSignupForm()) {
+      setTimeout(() => {
+        btn.textContent = "عضویت";
+        btn.disabled = false;
+      }, 1500);
+    } else {
+      btn.textContent = "عضویت";
+      btn.disabled = false;
+    }
+  });
+});
+
+// ✅ تابع اعتبارسنجی ورود
+function validateLoginForm() {
+  const loginForm = document.getElementById("login-form");
+  const usernameInput = loginForm.querySelector('input[name="username"]');
+  const passwordInput = loginForm.querySelector('input[name="password"]');
+  const responseBox = document.getElementById("login-response");
+
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value.trim();
+  responseBox.textContent = "";
+
+  if (username === "") {
+    responseBox.textContent = "❌ لطفاً نام کاربری یا ایمیل را وارد کنید.";
+    responseBox.style.color = "red";
+    usernameInput.focus();
+    return false;
+  }
+  if (password === "") {
+    responseBox.textContent = "❌ لطفاً رمز عبور را وارد کنید.";
+    responseBox.style.color = "red";
+    passwordInput.focus();
+    return false;
+  }
+  responseBox.textContent = "✅ ورود با موفقیت انجام شد!";
+  responseBox.style.color = "green";
   return true;
 }
 
-// تابع برای باز و بسته کردن منو
-function toggleMenu(menuIcon) {
-  const menu = document.querySelector("header nav ul"); // پیدا کردن منو
-  menu.classList.toggle("show-menu"); // اضافه یا حذف کردن کلاس 'show-menu'
-  menuIcon.classList.toggle("active"); // تغییر ظاهر آیکون همبرگر
+// ✅ تابع اعتبارسنجی ثبت‌نام
+function validateSignupForm() {
+  const signupForm = document.getElementById("signup-form");
+  const nameInput = signupForm.querySelector('input[name="fullname"]');
+  const emailInput = signupForm.querySelector('input[name="email"]');
+  const passwordInput = signupForm.querySelector('input[name="new-password"]');
+  const responseBox = document.getElementById("signup-response");
+
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  responseBox.textContent = "";
+
+  if (name === "") {
+    responseBox.textContent = "❌ لطفاً نام کامل خود را وارد کنید.";
+    responseBox.style.color = "red";
+    nameInput.focus();
+    return false;
+  }
+  if (!emailPattern.test(email)) {
+    responseBox.textContent = "❌ ایمیل واردشده معتبر نیست.";
+    responseBox.style.color = "red";
+    emailInput.focus();
+    return false;
+  }
+  if (password.length < 6) {
+    responseBox.textContent = "❌ رمز عبور باید حداقل ۶ حرف باشد.";
+    responseBox.style.color = "red";
+    passwordInput.focus();
+    return false;
+  }
+  responseBox.textContent = "✅ ثبت‌نام با موفقیت انجام شد!";
+  responseBox.style.color = "green";
+  return true;
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector("header nav ul");
 
-let slideIndex = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove("active");
-    if (i === index) slide.classList.add("active");
-  });
-}
-
-function moveSlide(step) {
-  slideIndex += step;
-  if (slideIndex < 0) slideIndex = slides.length - 1;
-  if (slideIndex >= slides.length) slideIndex = 0;
-  showSlide(slideIndex);
-}
-
-// نمایش اسلاید اول
-showSlide(slideIndex);
-
-// تغییر خودکار اسلاید هر 5 ثانیه
-setInterval(() => moveSlide(1), 8000);
-
-const titles = document.querySelectorAll('.accordion-title');
-
-titles.forEach(title => {
-  title.addEventListener('click', () => {
-    const content = title.nextElementSibling;
-
-    title.classList.toggle('active');
-
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      content.classList.remove("open");
-    } else {
-      // بستن همه‌ی بخش‌ها
-      document.querySelectorAll('.accordion-content').forEach(c => {
-        c.style.maxHeight = null;
-        c.classList.remove("open");
-      });
-      document.querySelectorAll('.accordion-title').forEach(t => {
-        t.classList.remove('active');
-      });
-
-      // باز کردن بخش کلیک‌شده
-      content.style.maxHeight = content.scrollHeight + "px";
-      content.classList.add("open");
-      title.classList.add('active');
-    }
-  });
+  if (hamburger && navMenu) {
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show-menu");
+      hamburger.classList.toggle("active");
+    });
+  }
 });
