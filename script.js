@@ -80,3 +80,10 @@ function initSignupValidation() {
     }
   });
 }
+function toPersianDigits(num) {
+  return num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+}
+
+// مثال استفاده:
+const phone = toPersianDigits("09920552567");
+console.log(phone); // نمایش: ۰۹۹۲۰۵۵۲۵۶۷

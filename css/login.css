@@ -1,4 +1,6 @@
-/* فونت‌های فارسی */
+/*==========================
+  فونت‌های فارسی
+==========================*/
 @font-face {
   font-family: "Dana";
   src: url("../font/dana/Dana-Black.ttf") format("truetype");
@@ -12,10 +14,13 @@
   src: url("../font/Vazirmatn/Vazirmatn-Bold.ttf") format("truetype");
 }
 
-body {
+/*==========================
+  ریست و بدنه اصلی
+==========================*/
+.body-login {
   background: linear-gradient(135deg, #4a90e2, #357abd);
   font-family: "Dana", "Shabnam-Medium-FD", "Vazirmatn-Bold", sans-serif;
-  font-size: 18px;
+  font-size: 1.1rem;
   direction: rtl;
   margin: 0;
   padding: 0;
@@ -24,13 +29,14 @@ body {
   justify-content: center;
   align-items: center;
 }
-.h6 {
-  font-size: large;
-}
+
+/*==========================
+  کارت ورود
+==========================*/
 .auth-modern {
   width: 100%;
   max-width: 420px;
-  padding: 20px;
+  padding: 1.5rem;
   box-sizing: border-box;
 }
 
@@ -38,28 +44,31 @@ body {
   background: linear-gradient(300deg, #f1f5f9, #e2e8f0);
   backdrop-filter: blur(18px);
   border-radius: 16px;
-  padding: 30px;
+  padding: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   color: #333;
 }
 
 .auth-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
+/*==========================
+  تب‌ها
+==========================*/
 .auth-tabs {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
 }
 
 .tab-btn {
   background: none;
   border: none;
-  padding: 10px 20px;
-  font-size: 15px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   color: #555;
@@ -72,38 +81,46 @@ body {
   font-weight: bold;
 }
 
+/*==========================
+  فرم لاگین
+==========================*/
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-form input {
-  padding: 12px;
+  padding: 0.75rem 1rem;
   border: 1px solid #ccc;
   border-radius: 10px;
   background: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   transition: border 0.3s ease;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-form input:focus {
-  border-color: #0ea5e9;
   outline: none;
+  border: 1.5px solid #1a73e8;
 }
 
 .auth-form input::placeholder {
   color: #999;
 }
 
+/*==========================
+  دکمه ارسال
+==========================*/
 .submit-btn {
   background: linear-gradient(120deg, #0284c7, #0ea5e9, #06b6d4);
   border: none;
   color: #fff;
-  padding: 16px 42px;
+  padding: 1rem 2.5rem;
   border-radius: 48px;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 800;
   font-family: "Dana", "Shabnam-Medium-FD", sans-serif;
   cursor: pointer;
@@ -140,9 +157,12 @@ body {
   box-shadow: 0 12px 32px rgba(6, 182, 212, 0.4);
 }
 
+/*==========================
+  لینک فراموشی رمز
+==========================*/
 .forgot-link {
   text-align: left;
-  font-size: 13px;
+  font-size: 0.85rem;
   color: #555;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -152,6 +172,44 @@ body {
   color: #0ea5e9;
 }
 
+/*==========================
+  دکمه بازگشت
+==========================*/
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text, #2c2c2c);
+  background-color: transparent;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: color 0.25s ease, background-color 0.25s ease,
+    box-shadow 0.25s ease;
+  outline: none;
+}
+
+.back:hover,
+.back:focus-visible {
+  color: var(--color-primary, #1e90ff);
+  background-color: var(--color-hover-bg, #f0f4ff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.back:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/*==========================
+  کلاس کمکی
+==========================*/
 .hidden {
   display: none;
+}
+
+.h6 {
+  font-size: large;
 }

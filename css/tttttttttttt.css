@@ -1,0 +1,222 @@
+.animated-footer {
+  position: relative;
+  background: linear-gradient(135deg, #0a2a43, #2a9d8f);
+  color: #e0e7f1;
+  padding: 50px 40px 30px;
+  font-family: "Dana", sans-serif;
+  border-radius: 20px;
+  overflow: hidden;
+  direction: rtl;
+  box-shadow: 0 8px 30px rgba(10, 42, 67, 0.5);
+  transition: background 0.5s ease;
+}
+
+.animated-footer .container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 240px;
+}
+
+.footer-brand img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(79, 216, 204, 0.6);
+  object-fit: cover;
+  transition: box-shadow 0.3s ease;
+}
+
+.footer-brand img:hover {
+  box-shadow: 0 0 30px rgba(79, 216, 204, 0.9);
+}
+
+.footer-brand p {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  color: #a9cbdc;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.footer-links .col {
+  min-width: 170px;
+}
+
+.footer-links .col h4 {
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #4fd8cc;
+  padding-bottom: 7px;
+  color: #87d9d1;
+  letter-spacing: 0.05em;
+}
+
+.footer-links .col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links .col ul li {
+  margin-bottom: 14px;
+}
+
+.footer-links .col ul li a {
+  color: #c0dbe4;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.4s ease, transform 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.footer-links .col ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #4fd8cc;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.footer-links .col ul li a:hover {
+  color: #4fd8cc;
+  transform: translateX(5px);
+}
+
+.footer-links .col ul li a:hover::after {
+  width: 100%;
+}
+
+.footer-links .social a {
+  margin-left: 18px;
+  color: #b4d7d1;
+  font-size: 1.6rem;
+  transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.footer-links .social a:hover {
+  color: #4fd8cc;
+  transform: scale(1.15);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1rem;
+  color: #8caebf;
+  border-top: 1px solid rgba(79, 216, 204, 0.3);
+  padding-top: 20px;
+  letter-spacing: 0.05em;
+}
+
+/* انیمیشن گوشه‌ها با چندلایه و افکت نور و blur */
+
+.corner {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, rgba(79, 216, 204, 0.7), transparent 70%);
+  filter: drop-shadow(0 0 8px #4fd8cc) blur(2px);
+  border-radius: 50% 0 50% 50%;
+  animation: glowMove 4.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 15;
+  mix-blend-mode: screen;
+}
+
+.top-left {
+  top: -15px;
+  left: -15px;
+  transform: rotate(10deg);
+  animation-delay: 0s;
+}
+
+.top-right {
+  top: -15px;
+  right: -15px;
+  transform: rotate(100deg);
+  animation-delay: 1.5s;
+}
+
+.bottom-left {
+  bottom: -15px;
+  left: -15px;
+  transform: rotate(270deg);
+  animation-delay: 3s;
+}
+
+.bottom-right {
+  bottom: -15px;
+  right: -15px;
+  transform: rotate(180deg);
+  animation-delay: 4.5s;
+}
+
+@keyframes glowMove {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px #4fd8cc) blur(1px);
+    opacity: 0.65;
+    transform: translate(0, 0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px #4fd8cc) blur(3px);
+    opacity: 1;
+    transform: translate(12px, 12px) rotate(var(--rot, 0deg));
+  }
+}
+
+/* تنظیم متغیر rotate برای هر گوشه */
+.top-left {
+  --rot: 10deg;
+}
+
+.top-right {
+  --rot: 100deg;
+}
+
+.bottom-right {
+  --rot: 180deg;
+}
+
+.bottom-left {
+  --rot: 270deg;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 35px;
+  }
+  .footer-links {
+    justify-content: center;
+  }
+  .footer-brand {
+    justify-content: center;
+  }
+}
