@@ -495,7 +495,31 @@ header nav ul li a:active {
   transform: scale(1.05);
 }
 
+/* 📱 حالت مینیمال برای موبایل */
+@media (max-width: 480px) {
+  .floating-phone {
+    bottom: 20px;
+    top: auto;
+    right: 15px;
+    padding: 12px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    font-size: 0; /* مخفی کردن متن */
+  }
 
+  .floating-phone a {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .floating-phone i {
+    font-size: 22px;
+    margin-left: 0;
+  }
+}
 
 /* باکس پشتیبانی */
 .support-box {
@@ -660,6 +684,7 @@ header nav ul li a:active {
   .footer-social .social-icons {
     justify-content: center;
   }
+  
 }
 
 
@@ -800,27 +825,49 @@ header nav ul li a:active {
   }
 }
 @media (max-width: 768px) {
+  /* 🔤 تنظیم فونت پایه برای صفحه اصلی */
   .home-page {
     font-size: 12px;
   }
-  .hero-content h1 {
-    font-size: 2.5rem;
+
+  /* 🏞️ بنر اصلی */
+  .hero-banner {
+    height: 50vh;
+    border-radius: 60px;
+    animation: none; /* حذف انیمیشن گرادیان برای عملکرد بهتر */
+    background-size: cover;
   }
+
+  /* 📝 محتوای بنر */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
   .hero-content p {
     font-size: 1.1rem;
-    max-width: 90%;
+    line-height: 1.6;
   }
+
+  /* 🎯 دکمه فراخوان */
   .btn-cta {
     padding: 12px 25px;
     font-size: 1rem;
+    display: inline-block;
+    margin: 0 auto;
   }
+
+  /* 🧩 کارت‌های خدمات */
   .services-cards {
     grid-template-columns: 1fr;
     padding: 20px 15px;
+    row-gap: 20px;
   }
+
   .card {
     padding: 20px 15px;
   }
+
+  /* 🖼️ تصاویر اسلاید */
   .slide img {
     width: 100%;
     height: auto;
