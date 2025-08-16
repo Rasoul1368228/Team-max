@@ -1,3 +1,6 @@
+// =======================================
+// 📌 اجرای اولیه بعد از لود کامل صفحه
+// =======================================
 document.addEventListener("DOMContentLoaded", () => {
   initScrollButton();
   initHamburgerMenu();
@@ -5,21 +8,27 @@ document.addEventListener("DOMContentLoaded", () => {
   initSignupValidation();
 });
 
+// =======================================
 // ⬆️ دکمه بازگشت به بالا
+// =======================================
 function initScrollButton() {
   const scrollBtn = document.getElementById("scrollUp");
   if (!scrollBtn) return;
 
+  // نمایش/مخفی کردن دکمه هنگام اسکرول
   window.addEventListener("scroll", () => {
     scrollBtn.style.display = window.scrollY > 100 ? "block" : "none";
   });
 
+  // اسکرول نرم به بالا هنگام کلیک
   scrollBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
+// =======================================
 // 🍔 منوی همبرگری
+// =======================================
 function initHamburgerMenu() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector("header nav ul");
@@ -31,7 +40,9 @@ function initHamburgerMenu() {
   });
 }
 
+// =======================================
 // 🔄 تب‌های ورود و عضویت
+// =======================================
 function initAuthTabs() {
   const signupForm = document.getElementById("signup-form");
   const loginForm = document.getElementById("login-form");
@@ -54,7 +65,9 @@ function initAuthTabs() {
   });
 }
 
+// =======================================
 // ✅ اعتبارسنجی فرم عضویت
+// =======================================
 function initSignupValidation() {
   const signupForm = document.getElementById("signup-form");
   if (!signupForm) return;
@@ -80,10 +93,37 @@ function initSignupValidation() {
     }
   });
 }
+
+// =======================================
+// 🔢 تبدیل اعداد به فارسی
+// =======================================
 function toPersianDigits(num) {
   return num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
 }
 
-// مثال استفاده:
+// مثال استفاده
 const phone = toPersianDigits("09920552567");
 console.log(phone); // نمایش: ۰۹۹۲۰۵۵۲۵۶۷
+
+// =======================================
+// ✨ انیمیشن نمایش باکس‌ها هنگام اسکرول
+// =======================================
+const elements = document.querySelectorAll(".hidden");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => {
+          entry.target.classList.add("show");
+        }, delay);
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+elements.forEach((el) => observer.observe(el));

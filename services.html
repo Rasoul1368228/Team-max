@@ -34,7 +34,15 @@
           </a>
         </div>
 
-        <div class="hamburger">☰</div>
+        <div
+          class="hamburger"
+          onclick="toggleMenu(this)"
+          aria-label="باز و بسته کردن منو"
+          role="button"
+          tabindex="0"
+        >
+          ☰
+        </div>
 
         <ul>
           <li>
@@ -75,22 +83,10 @@
             title="ایتا"
             ><i class="fab fa-linkedin-in"></i
           ></a>
-          <a
-            href="https://telegram.org/nevisande2000"
-            target="_blank"
-            title="تلگرام"
+          <a href="https://t.me/nevisande2000" target="_blank" title="تلگرام"
             ><i class="fab fa-telegram-plane"></i
           ></a>
         </div>
-
-        <!-- دکمه همبرگری -->
-        <div
-          class="hamburger"
-          onclick="toggleMenu(this)"
-          aria-label="باز و بسته کردن منو"
-          role="button"
-          tabindex="0"
-        ></div>
       </nav>
     </header>
 
@@ -103,6 +99,7 @@
       </p>
 
       <section class="services-grid" aria-label="لیست خدمات طراحی سایت">
+        <!-- کارت‌ها با id یکتا -->
         <article
           class="service-card"
           tabindex="0"
@@ -118,6 +115,7 @@
             </p>
           </div>
         </article>
+
         <article
           class="service-card"
           tabindex="0"
@@ -128,66 +126,8 @@
               <i class="fas fa-building"></i> سایت شرکتی
             </h3>
             <p>
-              این نوع از سایت ها مناسب برای کسب و کارهایی که می خواهند برند خود
-              را معرفی کنند، مانند وب سایت های سایپا، اپل و … میباشند.
-            </p>
-          </div>
-        </article>
-        <article
-          class="service-card"
-          tabindex="0"
-          aria-labelledby="service2-title"
-        >
-          <div class="service-content">
-            <h3 id="service3-title">
-              <i class="fas fa-dumbbell"></i> سایت ورزشی
-            </h3>
-            <p>
-              این نوع از سایت برای تمامی دارندگان فروشگاه ها و کمپانی های فروش
-              لوازم ورزشی که قصد گسترش کسب و کار خود را دارند مناسب است.
-            </p>
-          </div>
-        </article>
-        <article
-          class="service-card"
-          tabindex="0"
-          aria-labelledby="service2-title"
-        >
-          <div class="service-content">
-            <h3 id="service4-title">
-              <i class="fas fa-car"></i> سایت لوازم یدکی
-            </h3>
-            <p>
-              این نوع از سایت برای تمامی فروشگاه ها و نمایندگی های بزرگ که به
-              فروش انواع محصولات لوازم یدکی مختلف می پردازند، می باشد.
-            </p>
-          </div>
-        </article>
-        <article
-          class="service-card"
-          tabindex="0"
-          aria-labelledby="service2-title"
-        >
-          <div class="service-content">
-            <h3 id="service5-title"><i class="fas fa-tv"></i> سایت نمایشی</h3>
-            <p>
-              این نوع از سایت برای رسانه های پخش فیلم یا رسانه هایی مانند سایت
-              های نمایش خانگی که اشتراک خود را به فروش میرسانند، مناسب است.
-            </p>
-          </div>
-        </article>
-        <article
-          class="service-card"
-          tabindex="0"
-          aria-labelledby="service2-title"
-        >
-          <div class="service-content">
-            <h3 id="service6-title">
-              <i class="fas fa-shopping-cart"></i> سایت فروشگاهی
-            </h3>
-            <p>
-              طراحی فروشگاه اینترنتی کامل با سبد خرید، درگاه پرداخت، پنل
-              سفارشات، فیلتر محصولات و گزارش‌گیری.
+              مناسب برای کسب‌وکارهایی که می‌خواهند برند خود را معرفی کنند، مانند
+              وب‌سایت‌های سایپا، اپل و …
             </p>
           </div>
         </article>
@@ -198,12 +138,12 @@
           aria-labelledby="service3-title"
         >
           <div class="service-content">
-            <h3 id="service7-title">
-              <i class="fas fa-graduation-cap"></i> سایت آموزشی
+            <h3 id="service3-title">
+              <i class="fas fa-dumbbell"></i> سایت ورزشی
             </h3>
             <p>
-              این نوع از وبسایت برای کسب و کارهای فعال در زمینه آموزش مانند
-              مدرسه های آنلاین، دانشگاه ها و سیستم های چت روم مناسب است.
+              مناسب فروشگاه‌ها و کمپانی‌های فروش لوازم ورزشی برای گسترش کسب‌وکار
+              آنلاین.
             </p>
           </div>
         </article>
@@ -214,24 +154,64 @@
           aria-labelledby="service4-title"
         >
           <div class="service-content">
-            <h3 id="service8-title"><i class="fas fa-home"></i> سایت املاک</h3>
-            <p>
-              این نوع از سایت ها مناسب کسب کارهایی که در حوزه فروش و اجاره ملک
-              هم در سطح محله و هم در سطح کشوری فعالیت می کنند، می باشد.
-            </p>
+            <h3 id="service4-title">
+              <i class="fas fa-car"></i> سایت لوازم یدکی
+            </h3>
+            <p>مناسب فروشگاه‌ها و نمایندگی‌های بزرگ فروش محصولات یدکی خودرو.</p>
           </div>
         </article>
+
         <article
           class="service-card"
           tabindex="0"
-          aria-labelledby="service4-title"
+          aria-labelledby="service5-title"
+        >
+          <div class="service-content">
+            <h3 id="service5-title"><i class="fas fa-tv"></i> سایت نمایشی</h3>
+            <p>مناسب رسانه‌های پخش فیلم یا سایت‌های اشتراکی نمایش خانگی.</p>
+          </div>
+        </article>
+
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service6-title"
+        >
+          <div class="service-content">
+            <h3 id="service6-title">
+              <i class="fas fa-shopping-cart"></i> سایت فروشگاهی
+            </h3>
+            <p>
+              فروشگاه اینترنتی کامل با سبد خرید، درگاه پرداخت، پنل سفارشات و
+              فیلتر محصولات.
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service7-title"
+        >
+          <div class="service-content">
+            <h3 id="service7-title">
+              <i class="fas fa-graduation-cap"></i> سایت آموزشی
+            </h3>
+            <p>
+              مناسب مدرسه‌های آنلاین، دانشگاه‌ها و پلتفرم‌های آموزشی با سیستم چت
+              و آزمون.
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service8-title"
         >
           <div class="service-content">
             <h3 id="service8-title"><i class="fas fa-home"></i> سایت املاک</h3>
-            <p>
-              این نوع از سایت ها مناسب کسب کارهایی که در حوزه فروش و اجاره ملک
-              هم در سطح محله و هم در سطح کشوری فعالیت می کنند، می باشد.
-            </p>
+            <p>مناسب کسب‌وکارهای فروش و اجاره ملک در سطح محله یا کشوری.</p>
           </div>
         </article>
       </section>

@@ -1,7 +1,7 @@
 /* فونت‌ها */
 @font-face {
   font-family: "Dana";
-  src: url("../font/dana/dana black.ttf") format("truetype");
+  src: url("../font/dana/dana-black.ttf") format("truetype");
 }
 @font-face {
   font-family: "Shabnam";
@@ -32,7 +32,7 @@
 body.body-services {
   margin: 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-family: "Dana", "Shabnam", "Vazirmatn", sans-serif;
   background: linear-gradient(to left, #f8f9fa, #ffffff);
   color: var(--color-text-main);
@@ -86,7 +86,7 @@ nav li a {
 nav li a:hover {
   background: var(--color-secondary);
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* صفحه اصلی */
@@ -123,8 +123,17 @@ nav li a:hover {
 /* گرید خدمات */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  margin-bottom: 60px;
+}
+
+/* افکت نات هاور */
+.services-grid:hover .service-card:not(:hover) {
+  filter: blur(2px);
+  transform: scale(0.95);
+  opacity: 0.7;
+  transition: all var(--transition);
 }
 
 /* کارت خدمات */
@@ -137,11 +146,12 @@ nav li a:hover {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  transform: scale(1);
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  transform: scale(1.05);
+  z-index: 2;
 }
 
 .service-card img {
@@ -196,8 +206,18 @@ nav li a:hover {
   box-shadow: 0 8px 20px rgba(13, 110, 253, 0.6);
 }
 
-/* ریسپانسیو بیشتر */
+/* ریسپانسیو */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
   .page-desc {
     font-size: 1rem;
   }

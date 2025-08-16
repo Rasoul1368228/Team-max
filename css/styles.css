@@ -402,6 +402,12 @@ header nav ul li a:active {
   user-select: none;
 }
 
+
+
+
+
+
+
 /* ریسپانسیو */
 @media (max-width: 900px) {
   .footer-main {
@@ -435,6 +441,7 @@ header nav ul li a:active {
     font-size: 11px;
   }
 }
+
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.6); }
   70% { box-shadow: 0 0 0 10px rgba(13, 110, 253, 0); }
@@ -495,31 +502,7 @@ header nav ul li a:active {
   transform: scale(1.05);
 }
 
-/* 📱 حالت مینیمال برای موبایل */
-@media (max-width: 480px) {
-  .floating-phone {
-    bottom: 20px;
-    top: auto;
-    right: 15px;
-    padding: 12px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    justify-content: center;
-    font-size: 0; /* مخفی کردن متن */
-  }
 
-  .floating-phone a {
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .floating-phone i {
-    font-size: 22px;
-    margin-left: 0;
-  }
-}
 
 /* باکس پشتیبانی */
 .support-box {
@@ -566,21 +549,29 @@ header nav ul li a:active {
   font-size: 16px;
 }
 
+/*------------------ منوی همبرگری ------------------*/
 .hamburger {
   display: none;
-  font-size: 20px;
-  color: #040301;
+  font-size: 36px;
   cursor: pointer;
-  position: absolute;
-  right: 10px;
-  top: 15px;
-  z-index: 999;
-  transition: transform 0.3s ease;
+  z-index: 1100;
+  color: #333;
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.hamburger.active::before {
-  content: "✕";
+.hamburger:hover {
+ transform: scale(1.3) rotate(15deg);
+  color: #f1c40f;
 }
+.hamburger i {
+  transition: all 0.4s ease;
+}
+.hamburger i.fa-xmark {
+  color: #e74c3c;
+  transform: rotate(180deg) scale(1.2);
+}
+
 .modern-footer {
   background: linear-gradient(to top, #0a4968, #0d6efd);
   color: white;
@@ -675,20 +666,9 @@ header nav ul li a:active {
   opacity: 0.85;
 }
 
-@media (max-width: 768px) {
-  .footer-top {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-social .social-icons {
-    justify-content: center;
-  }
-  
-}
-
 
 @media (max-width: 550px) {
+
   .hamburger {
     display: block;
     font-size: 40px;
@@ -728,6 +708,7 @@ header nav ul li a:active {
     background-color: rgba(255, 255, 255, 0.15);
     color: #333;
     border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   }
 
   header nav ul li a:hover {
@@ -741,46 +722,6 @@ header nav ul li a:active {
   }
 }
 
-@media (max-width: 480px) {
-  .home-page {
-    font-size: 11px;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .btn-cta {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  .services-cards {
-    padding: 10px;
-  }
-
-  .card {
-    padding: 15px 10px;
-  }
-
-  footer {
-    padding: 15px 10px;
-  }
-
-  footer input[type="text"] {
-    width: 80%;
-  }
-
-  .slide img {
-    width: 100%;
-    height: auto;
-  }
-}
-/* موبایل‌های خیلی کوچیک‌تر (مثلا زیر 480 پیکسل) */
 @media (max-width: 480px) {
   .home-page {
     font-size: 11px;
@@ -823,22 +764,77 @@ header nav ul li a:active {
   footer input[type="text"] {
     width: 80%;
   }
+
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+
+  .social-links a {
+    font-size: 1.2rem;
+  }
+
+  .floating-phone {
+    bottom: 20px;
+    top: auto;
+    right: 15px;
+    padding: 12px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    font-size: 0; /* مخفی کردن متن */
+  }
+
+  .floating-phone a {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .floating-phone i {
+    font-size: 22px;
+    margin-left: 0;
+  }
+    .hamburger {
+    font-size: 42px;
+    top: 12px;
+    right: 8px;
+  }
+  .menu {
+    width: 220px;
+    padding-top: 60px;
+  }
 }
+/* استایل‌های ریسپانسیو برای عرض کمتر از 768px */
 @media (max-width: 768px) {
-  /* 🔤 تنظیم فونت پایه برای صفحه اصلی */
+  .footer-content {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .footer-links,
+  .footer-brand,
+  .footer-social .social-icons {
+    justify-content: center;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
   .home-page {
     font-size: 12px;
   }
 
-  /* 🏞️ بنر اصلی */
   .hero-banner {
     height: 50vh;
     border-radius: 60px;
-    animation: none; /* حذف انیمیشن گرادیان برای عملکرد بهتر */
+    animation: none;
     background-size: cover;
   }
 
-  /* 📝 محتوای بنر */
   .hero-content h1 {
     font-size: 2rem;
   }
@@ -848,7 +844,6 @@ header nav ul li a:active {
     line-height: 1.6;
   }
 
-  /* 🎯 دکمه فراخوان */
   .btn-cta {
     padding: 12px 25px;
     font-size: 1rem;
@@ -856,7 +851,6 @@ header nav ul li a:active {
     margin: 0 auto;
   }
 
-  /* 🧩 کارت‌های خدمات */
   .services-cards {
     grid-template-columns: 1fr;
     padding: 20px 15px;
@@ -867,55 +861,12 @@ header nav ul li a:active {
     padding: 20px 15px;
   }
 
-  /* 🖼️ تصاویر اسلاید */
   .slide img {
     width: 100%;
     height: auto;
   }
 }
 
-@media (max-width: 480px) {
-  .home-page {
-    font-size: 11px;
-  }
-  .hero-content h1 {
-    font-size: 1rem;
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
-  .btn-cta {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-  .services-cards {
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
-  .card {
-    padding: 15px 10px;
-  }
-  footer {
-    padding: 15px 10px;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-  }
-  footer section {
-    width: 100%;
-    margin: 10px 0;
-  }
-  footer input[type="text"] {
-    width: 100%;
-  }
-  .slide img {
-    width: 100%;
-    height: auto;
-  }
-  .social-links a {
-    font-size: 1.2rem;
-  }
-}
 
 
   .box-container {
@@ -1554,19 +1505,5 @@ height: 85px;
 
 .bottom-left {
   --rot: 270deg;
-}
-
-/* ریسپانسیو */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    gap: 35px;
-  }
-  .footer-links {
-    justify-content: center;
-  }
-  .footer-brand {
-    justify-content: center;
-  }
 }
 
