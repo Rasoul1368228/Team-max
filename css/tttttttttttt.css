@@ -1,108 +1,138 @@
-/* همبرگری و منوی اسلایدی حرفه‌ای */
-.hamburger {
-  display: none;
-  font-size: 32px;
+/* ==========================
+   دارک‌مود کلی سایت
+========================== */
+body.dark-mode {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f3f4f6;
+}
+
+/* هدر و ناوبری */
+header.dark-mode {
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid #334155;
+  backdrop-filter: blur(12px);
+}
+
+nav.dark-mode a {
+  color: #e2e8f0;
+}
+
+nav.dark-mode a:hover {
+  color: #38bdf8;
+}
+
+/* کارت‌های خدمات */
+.services-cards.dark-mode .card {
+  background: #1e293b;
+  color: #e2e8f0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.services-cards.dark-mode .card:hover {
+  background: #334155;
+  transform: translateY(-4px);
+}
+
+/* دکمه‌ها */
+.btn-cta.dark-mode,
+.submit-btn.dark-mode {
+  background: linear-gradient(120deg, #0ea5e9, #0284c7);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+}
+
+.btn-cta.dark-mode:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
+
+/* فوتر */
+footer.dark-mode {
+  background: #0f172a;
+  color: #cbd5e1;
+  border-top: 1px solid #334155;
+}
+
+footer.dark-mode a {
+  color: #94a3b8;
+}
+
+footer.dark-mode a:hover {
+  color: #38bdf8;
+}
+
+/* فرم‌ها */
+.auth-card.dark-mode {
+  background: #1e293b;
+  color: #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.auth-form input.dark-mode {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #f3f4f6;
+}
+
+.auth-form input.dark-mode::placeholder {
+  color: #94a3b8;
+}
+
+/* لینک‌ها */
+a.dark-mode {
+  color: #e2e8f0;
+}
+
+a.dark-mode:hover {
+  color: #38bdf8;
+}
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #333;
+  font-size: 1.2rem;
   cursor: pointer;
-  z-index: 1100;
-  color: #333;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-
-.hamburger:hover {
-  transform: scale(1.2) rotate(10deg);
-  color: #f1c40f;
-}
-
-.menu {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  transition: all 0.5s ease;
-}
-
-.menu li a {
-  padding: 12px 20px;
-  border-radius: 10px;
-  color: #333;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  transition: background 0.3s ease;
+  overflow: hidden;
 }
 
-.menu li a:hover {
-  color: #fff;
-  background: #3498db;
-  transform: translateX(5px) scale(1.05);
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.5);
+body.dark-mode #theme-toggle {
+  background: #1e293b;
+  color: #f3f4f6;
 }
 
-/* موبایل */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .menu {
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 250px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    padding-top: 70px;
-    gap: 20px;
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
-    transition: right 0.5s ease;
-    z-index: 1090;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-  }
-
-  .menu.show-menu {
-    right: 0;
-  }
-
-  .menu li {
-    opacity: 0;
-    transform: translateX(30px) scale(0.95);
-    animation: slideIn 0.5s forwards;
-  }
-
-  .menu.show-menu li:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-  .menu.show-menu li:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  .menu.show-menu li:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-  .menu.show-menu li:nth-child(4) {
-    animation-delay: 0.4s;
-  }
-  .menu.show-menu li:nth-child(5) {
-    animation-delay: 0.5s;
-  }
-}
-
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-/* انیمیشن آیکون همبرگری به ضربدر */
-.hamburger i {
+.icon {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.5);
   transition: all 0.4s ease;
 }
-.hamburger i.fa-xmark {
-  color: #e74c3c;
-  transform: rotate(180deg) scale(1.2);
+
+.sun {
+  color: #facc15;
+}
+
+.moon {
+  color: #38bdf8;
+}
+
+body:not(.dark-mode) .sun {
+  opacity: 1;
+  transform: scale(1);
+}
+
+body.dark-mode .moon {
+  opacity: 1;
+  transform: scale(1);
 }

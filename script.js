@@ -127,3 +127,17 @@ const observer = new IntersectionObserver(
 );
 
 elements.forEach((el) => observer.observe(el));
+
+const toggleBtn = document.getElementById("theme-toggle");
+const body = document.body;
+
+// بارگذاری حالت ذخیره‌شده
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark-mode");
+}
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  const mode = body.classList.contains("dark-mode") ? "dark" : "light";
+  localStorage.setItem("theme", mode);
+});
