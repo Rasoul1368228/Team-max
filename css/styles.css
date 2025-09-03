@@ -150,6 +150,10 @@
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
 }
 
 .card:hover,
@@ -344,6 +348,10 @@ header nav ul li a:active {
   text-align: right;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .support-box:hover {
@@ -921,6 +929,10 @@ height: 85px;
   height: 2.2em;
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
 }
 
 /* Hide default HTML checkbox */
@@ -1117,4 +1129,61 @@ height: 85px;
     opacity: 1;
     transform: translateY(0);
   }
+}
+.footer {
+  font-size: 19px;
+  width: 100%;
+  font-family: "Shabnam-Medium-FD", sans-serif;
+  direction: rtl;
+  line-height: 2.2;
+
+}
+
+.footer-bg {
+  background: url("../images/Untitled.jpg") no-repeat center;
+  background-size: cover;
+  height: 510px; /* دقیقا هم اندازه تصویر */
+  position: relative;
+  margin: 0 auto;     /* وسط چین بشه */
+ }
+
+
+/* ستون خدمات */
+.footer-col.services {
+  position: absolute;
+  top: 170px;   /* پایین‌تر بیفته */
+  right: 40px;  /* دقیق زیر عنوان خدمات */
+}
+
+/* ستون دسترسی سریع */
+.footer-col.quick-links {
+  position: absolute;
+     top: 160px;
+    right: 450px; /* جابجا میشه زیر عنوان دسترسی سریع */
+}
+
+/* ستون ارتباط با ما */
+.footer-col.contact {
+  position: absolute;
+top: 175px;
+    right: 860px; /* جابجا میشه زیر عنوان ارتباط با ما */
+}
+
+/* لینک‌ها */
+.footer-col a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s;
+}
+.footer-col a:hover {
+  color: #007bff;
+}
+
+/* کپی‌رایت */
+.footer-copy {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
 }
