@@ -1141,8 +1141,7 @@ height: 85px;
 
 .footer-bg {
   background: url("../images/Untitled.jpg") no-repeat center;
-  background-size: cover;
-  height: 510px; /* دقیقا هم اندازه تصویر */
+   height: 510px; /* دقیقا هم اندازه تصویر */
   position: relative;
   margin: 0 auto;     /* وسط چین بشه */
  }
@@ -1151,22 +1150,22 @@ height: 85px;
 /* ستون خدمات */
 .footer-col.services {
   position: absolute;
-  top: 170px;   /* پایین‌تر بیفته */
-  right: 40px;  /* دقیق زیر عنوان خدمات */
+  top: 180px;   /* پایین‌تر بیفته */
+  right: 170px;  /* دقیق زیر عنوان خدمات */
 }
 
 /* ستون دسترسی سریع */
 .footer-col.quick-links {
   position: absolute;
-     top: 160px;
-    right: 450px; /* جابجا میشه زیر عنوان دسترسی سریع */
+     top: 180px;
+    right: 500px; /* جابجا میشه زیر عنوان دسترسی سریع */
 }
 
 /* ستون ارتباط با ما */
 .footer-col.contact {
   position: absolute;
-top: 175px;
-    right: 860px; /* جابجا میشه زیر عنوان ارتباط با ما */
+top: 185px;
+    right: 880px; /* جابجا میشه زیر عنوان ارتباط با ما */
 }
 
 /* لینک‌ها */
