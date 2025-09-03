@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
- <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords" content="طراحی سایت, خدمات وب, سئو, دیجیتال مارکتینگ, آموزش HTML, CSS, جاوااسکریپت" />
-  <meta name="author" content="بروز و مدرن - تیم طراحی مکس" />
-  <meta name="description" content="سایت تیم مکس، ارائه‌دهنده خدمات طراحی سایت، برنامه‌نویسی و آموزش‌های کاربردی." />
-  <meta name="language" content="fa" />
-<meta name="theme-color" content="#1a1a1a" />
-<!-- Open Graph -->
-<meta property="og:title" content="تیم مکس | طراحی سایت و فروش قالب" />
-<meta property="og:description" content="خدمات طراحی سایت، فروش قالب‌های حرفه‌ای و آموزش‌های تخصصی." />
-<meta property="og:image" content="https://example.com/images/preview.jpg" />
-<meta property="og:url" content="https://example.com" />
-<meta property="og:type" content="website" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="تیم مکس | طراحی سایت و فروش قالب" />
-<meta name="twitter:description" content="خرید قالب‌های حرفه‌ای و خدمات طراحی سایت با مکس تیم." />
-<meta name="twitter:image" content="https://example.com/images/preview.jpg" />
+    <meta
+      name="keywords"
+      content="طراحی سایت, خدمات وب, سئو, دیجیتال مارکتینگ, آموزش HTML, CSS, جاوااسکریپت"
+    />
+    <meta name="author" content="بروز و مدرن - تیم طراحی مکس" />
+    <meta
+      name="description"
+      content="سایت تیم مکس، ارائه‌دهنده خدمات طراحی سایت، برنامه‌نویسی و آموزش‌های کاربردی."
+    />
+    <meta name="language" content="fa" />
+    <meta name="theme-color" content="#1a1a1a" />
 
-<!-- Canonical -->
-<link rel="canonical" href="https://example.com/" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="تیم مکس | طراحی سایت و فروش قالب" />
+    <meta
+      property="og:description"
+      content="خدمات طراحی سایت، فروش قالب‌های حرفه‌ای و آموزش‌های تخصصی."
+    />
+    <meta
+      property="og:image"
+      content="https://example.com/images/preview.jpg"
+    />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:type" content="website" />
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="تیم مکس | طراحی سایت و فروش قالب" />
+    <meta
+      name="twitter:description"
+      content="خرید قالب‌های حرفه‌ای و خدمات طراحی سایت با مکس تیم."
+    />
+    <meta
+      name="twitter:image"
+      content="https://example.com/images/preview.jpg"
+    />
 
-  <title>تیم مکس | طراحی سایت حرفه‌ای</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://example.com/" />
 
-  <!-- فونت و آیکون‌ها -->
-  <link href="https://fonts.cdnfonts.com/css/dana" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <title>تیم مکس | طراحی سایت حرفه‌ای</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon.png"
+    />
 
-  <!-- استایل اصلی -->
-  <link rel="stylesheet" href="./css/styles.css" />
-  <link rel="stylesheet" href="./css/dark-mode.css" />
-</head>
+    <!-- فونت و آیکون‌ها -->
+    <link href="https://fonts.cdnfonts.com/css/dana" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/dark-mode.css" />
+  </head>
+
   <body class="home-page" id="top">
+    <div class="toast-container"></div>
+
     <!-- اسپلش اسکرین -->
     <div id="splash-screen">
       <img src="./images/logo.jpg" alt="تیم مدیریت مکس تیم" />
       <h2>درحال آماده‌سازی سایت...</h2>
-      <p>مکس تیم</p>
     </div>
 
     <!-- دکمه تماس شناور -->
@@ -54,7 +83,6 @@
 
     <!-- هدر سایت -->
     <header>
- 
       <nav>
         <div class="logo">
           <a href="index.html">
@@ -86,13 +114,14 @@
             <a
               href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم"
               title="تماس با پشتیبانی"
-              ><i class="fas fa-headset"></i> پشتیبانی</a
             >
+              <i class="fas fa-headset"></i> پشتیبانی
+            </a>
           </li>
           <li>
-            <a href="login.html"
-              ><i class="fas fa-sign-in"></i> پورتال مشتریان</a
-            >
+            <a href="login.html">
+              <i class="fas fa-sign-in"></i> پورتال مشتریان
+            </a>
           </li>
         </ul>
 
@@ -102,31 +131,33 @@
             href="https://www.instagram.com/nevisande2000"
             target="_blank"
             title="اینستاگرام"
-            ><i class="fab fa-instagram"></i
-          ></a>
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
           <a
             href="https://www.eitaa.com/nevisande2000"
             target="_blank"
             title="ایتا"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
           <a
             href="https://telegram.org/nevisande2000"
             target="_blank"
             title="تلگرام"
-            ><i class="fab fa-telegram-plane"></i
-          ></a>
+          >
+            <i class="fab fa-telegram-plane"></i>
+          </a>
         </div>
       </nav>
     </header>
-
     <!-- محتوای اصلی -->
     <main>
-  <!-- دکمه دارک‌مود -->
-  <button id="theme-toggle" aria-label="تغییر حالت روشن/تاریک">
-    <span class="icon sun">☀️</span>
-    <span class="icon moon">🌙</span>
-  </button>
+      <!-- دکمه دارک مود -->
+      <button id="theme-toggle" aria-label="تغییر حالت روشن/تاریک">
+        <i class="fas fa-sun"></i>
+        <span class="label">روشن</span>
+      </button>
       <!-- بنر معرفی -->
       <section
         class="hero-banner"
@@ -134,7 +165,7 @@
         aria-label="بنر معرفی خدمات مکس تیم"
       >
         <div class="hero-content">
-          <img src="./images/opi2.svg" />
+          <img src="./images/opi2.svg" alt="بنر خدمات" />
           <h1>طراحی سایت حرفه‌ای، امن و سریع</h1>
           <p>مهم نیست کجای مسیر هستید، کافی است با مکس تیم همراه شوید.</p>
           <a
@@ -143,11 +174,10 @@
             role="button"
             aria-label="ثبت سفارش یا مشاوره رایگان"
           >
-            ثبت سفارش 
+            ثبت سفارش
           </a>
         </div>
       </section>
-
       <!-- کارت‌های خدمات -->
       <section class="services-cards" aria-label="خدمات ما">
         <div class="card">
@@ -175,76 +205,14 @@
           <a href="services.html#marketing" class="learn-more">بیشتر بدانید</a>
         </div>
       </section>
-<footer class="animated-footer">
-  <div class="footer-content">
-    <!-- برند و معرفی -->
-    <div class="footer-brand">
-      <img src="./images/logo.jpg" alt="لوگوی مکس تیم" />
-      <p>راهکارهای نوین طراحی سایت و بازاریابی دیجیتال</p>
-    </div>
-
-    <!-- لینک‌ها -->
-    <div class="footer-links">
-      <!-- ستون خدمات -->
-      <div class="col">
-        <h4>خدمات</h4>
-        <ul>
-          <li><a href="services.html#web">طراحی سایت</a></li>
-          <li><a href="services.html#seo">سئو</a></li>
-          <li><a href="services.html#marketing">دیجیتال مارکتینگ</a></li>
-        </ul>
+    </main>
+    <!-- فوتر -->
+    <footer class="footer">
+      <div>
+        <img src="./images/Untitled.jpg" alt="تصویر فوتر" />
       </div>
-
-      <!-- ستون دسترسی سریع -->
-      <div class="col">
-        <h4>دسترسی سریع</h4>
-        <ul>
-          <li><a href="about.html">درباره ما</a></li>
-          <li><a href="pricing.html">تعرفه‌ها</a></li>
-        </ul>
-      </div>
-
-      <!-- ستون ارتباط با ما -->
-      <div class="col">
-        <h4>ارتباط با ما</h4>
-        <p>ارومیه و امام</p>
-        <p>۰۹۹۲۰۵۵۲۵۶۷</p>
-        <p><a href="mailto:info@example.com">rasoul6856@gmail.com</a></p>
-
-        <!-- شبکه‌های اجتماعی -->
-        <div class="social">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-telegram-plane"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <div class="trust-badge">
-  <a href="#">
-    <img src="./images/enamad-placeholder.png" alt="نماد اعتماد الکترونیکی" />
-  </a>
-</div>
-        </div>
-
-        <!-- نماد اعتماد -->
-      
-      </div>
-    </div>
-  </div>
-
-  <!-- کپی‌رایت -->
-  <div class="footer-bottom">
-    <p>© کلیه حقوق محفوظ است | مکس تیم</p>
-  </div>
-
-  <!-- گوشه‌های انیمیشنی -->
-  <span class="corner top-left"></span>
-  <span class="corner top-right"></span>
-  <span class="corner bottom-left"></span>
-  <span class="corner bottom-right"></span>
-</footer>
-
-
-
-      <!-- اسکریپت -->
- 
+    </footer>
+    <!-- اسکریپت -->
     <script src="./script.js"></script>
   </body>
 </html>
