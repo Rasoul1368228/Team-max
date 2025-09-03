@@ -9,24 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // =======================================
-// ⬆️ دکمه بازگشت به بالا
-// =======================================
-function initScrollButton() {
-  const scrollBtn = document.getElementById("scrollUp");
-  if (!scrollBtn) return;
-
-  // نمایش/مخفی کردن دکمه هنگام اسکرول
-  window.addEventListener("scroll", () => {
-    scrollBtn.style.display = window.scrollY > 100 ? "block" : "none";
-  });
-
-  // اسکرول نرم به بالا هنگام کلیک
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
-
-// =======================================
 // 🍔 منوی همبرگری
 // =======================================
 function initHamburgerMenu() {
@@ -128,16 +110,94 @@ const observer = new IntersectionObserver(
 
 elements.forEach((el) => observer.observe(el));
 
+// =======================================
+// 🌗 مدیریت حالت روشن/تاریک
+// =======================================
 const toggleBtn = document.getElementById("theme-toggle");
+const label = toggleBtn.querySelector(".label");
+const icon = toggleBtn.querySelector("i");
 const body = document.body;
 
 // بارگذاری حالت ذخیره‌شده
-if (localStorage.getItem("theme") === "dark") {
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
   body.classList.add("dark-mode");
+  label.textContent = "تاریک";
+  icon.classList.replace("fa-sun", "fa-moon");
 }
 
+// تغییر حالت با کلیک
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
-  const mode = body.classList.contains("dark-mode") ? "dark" : "light";
-  localStorage.setItem("theme", mode);
+  const isDark = body.classList.contains("dark-mode");
+
+  label.textContent = isDark ? "تاریک" : "روشن";
+  icon.classList.replace(
+    isDark ? "fa-sun" : "fa-moon",
+    isDark ? "fa-moon" : "fa-sun"
+  );
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+
+// =======================================
+// 💬 پیام خوش‌آمدگویی بر اساس ساعت
+// =======================================
+function getGreetingMessage() {
+  const hour = new Date().getHours();
+  let message = "";
+  let icon = "🌐";
+
+  if (hour >= 5 && hour < 12) {
+    message =
+      "☀️ صبح بخیر! وقتشه سایتت رو بسازی. از خدمات شروع کن یا مشاوره رایگان بگیر.";
+    icon = "☕️";
+  } else if (hour >= 12 && hour < 18) {
+    message =
+      "👋 خوش اومدی به مکس تیم! طراحی سایت حرفه‌ای منتظرته. همین حالا شروع کن.";
+    icon = "💻";
+  } else if (hour >= 18 && hour < 22) {
+    message =
+      "🌇 عصر بخیر! آماده‌ای سایتت رو خاص کنی؟ از منوی بالا شروع کن یا با ما تماس بگیر.";
+    icon = "🎯";
+  } else {
+    message =
+      "🌙 شب خوش! مکس تیم همیشه بیداره. طراحی سایتت رو همین حالا شروع کن یا فردا با انرژی برگرد!";
+    icon = "🛠";
+  }
+
+  showToast(message, icon);
+}
+
+window.addEventListener("load", () => {
+  setTimeout(getGreetingMessage, 5000);
+});
+
+// =======================================
+// 🔔 نمایش Toast با حذف خودکار
+// =======================================
+function showToast(msg, icon = "🚀") {
+  const container = document.querySelector(".toast-container");
+  if (!container) return;
+
+  const toast = document.createElement("div");
+  toast.classList.add("toast");
+
+  toast.innerHTML = `
+    <button class="toast-close">×</button>
+    <div class="icon">${icon}</div>
+    <div class="message">${msg}</div>
+  `;
+
+  container.appendChild(toast);
+
+  toast.querySelector(".toast-close").addEventListener("click", () => {
+    toast.classList.add("fade-out");
+    setTimeout(() => toast.remove(), 1500);
+  });
+
+  setTimeout(() => toast.classList.add("fade-out"), 10000);
+  setTimeout(() => toast.remove(), 12000);
+}
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  document.querySelector(".animated-footer").classList.toggle("dark");
 });
