@@ -44,11 +44,11 @@ body.dark-mode::after {
 /* ==================== دکمه تغییر تم ==================== */
 #theme-toggle {
   position: fixed;
-  top: 62px;
+  top: 85px;
   right: 24px;
   z-index: 1000;
   padding: 8px 14px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: "Dana", sans-serif;
   color: #0f172a;
   background: radial-gradient(circle at 30% 30%, #ffffff, #e2e8f0);
@@ -117,7 +117,6 @@ header.dark-mode,
 nav.dark-mode {
   background: rgba(15, 23, 42, 0.8);
   border-bottom: 1px solid #334155;
-  backdrop-filter: blur(12px);
 }
 
 nav.dark-mode a {
@@ -146,4 +145,65 @@ nav.dark-mode a:hover {
   background: linear-gradient(120deg, #0ea5e9, #0284c7);
   color: #fff;
   box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+}
+header.dark-mode * {
+  position: relative;
+  z-index: 2; /* متن و لینک روی overlay */
+  color: #f3f4f6; /* رنگ متن دارک مود */
+}
+.footer.dark-mode::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.8); /* overlay تاریک */
+  z-index: 1;
+}
+
+.footer.dark-mode * {
+  position: relative;
+  z-index: 2; /* متن و لینک روی overlay */
+  color: #f3f4f6;
+}
+/* حالت دارک مود */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header,
+body.dark-mode nav,
+body.dark-mode .box,
+body.dark-mode .chera-maxteam,
+body.dark-mode .team-section,
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark-mode a {
+  color: #f0932b;
+}
+
+body.dark-mode .box img,
+body.dark-mode .team-card img {
+  border: 2px solid #f0932b;
+}
+
+body.dark-mode .card-back a {
+  background-color: #f0932b;
+  color: #000;
+}
+
+body.dark-mode .footer-newsletter input {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark-mode .footer-newsletter button {
+  background-color: #f0932b;
+  color: #000;
 }

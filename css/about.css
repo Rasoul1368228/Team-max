@@ -9,12 +9,12 @@
   margin: 0;
   padding: 0;
   font-family: "dana", sans-serif;
-  font-size: 13px;
-  background: linear-gradient(to left, #f8f9fa, #ffffff);
+  font-size: clamp(13px, 2vw, 16px);
+  background: #1289a7;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.7;
   justify-content: center;
 }
 
@@ -23,81 +23,83 @@
   padding: 2rem 1rem;
   max-width: 800px;
   margin: auto;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   text-align: right;
   line-height: 2;
 }
-
-/*------------------ چرا ما ------------------*/
-.why-us {
-  background: #f9f9f9;
-  padding: 4rem 2rem;
-  max-width: 700px;
-  margin: auto;
-  border-radius: 12px;
+.p-moarefi {
+  font-family: "dana", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #2f3640;
+  background-color: #f1f2f6;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  line-height: 2;
+  text-align: justify;
+  max-width: 900px;
+  margin: 2rem auto;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.why-us h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.why-us ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.why-us li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 1rem 0;
-  font-size: 1rem;
-}
-
-.why-us li i {
-  color: #28a745;
-}
-
-/*------------------ باکس‌ها ------------------*/
 .box-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 2rem 1rem;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 58px;
+  padding: 3rem 1.5rem;
+  max-width: 1294px;
   margin: auto;
 }
 
 .box-container > div {
-  background: #dff9fb;
-  padding: 1rem;
-  width: 300px;
-  min-height: 100px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(17, 9, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: linear-gradient(135deg, #dff9fb, #c7ecee);
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 0 25px rgba(78, 205, 196, 0.4), 0 0 35px rgba(52, 144, 144, 0.3);
+  animation: glow-border 2s infinite alternate;
   text-align: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 40px #4ecdc4, 0 0 40px #349090;
-  animation: glow-border 1.5s infinite alternate;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 @keyframes glow-border {
   0% {
-    box-shadow: 0 0 20px #4ecdc4, 0 0 40px #349090;
+    box-shadow: 0 0 25px rgba(78, 205, 196, 0.4),
+      0 0 35px rgba(52, 144, 144, 0.3);
   }
   100% {
-    box-shadow: 0 0 35px #4ecdc4, 0 0 60px #349090;
+    box-shadow: 0 0 40px rgba(78, 205, 196, 0.6),
+      0 0 60px rgba(52, 144, 144, 0.5);
   }
 }
+
 .box-container > div:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(31, 30, 30, 0.7);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(31, 30, 30, 0.4);
+}
+
+/* افکت موجی در هاور */
+.box-container > div::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.box-container > div:hover::before {
+  opacity: 1;
 }
 
 /*------------------ باکس معرفی ------------------*/
@@ -105,37 +107,36 @@
   display: flex;
   align-items: center;
   background: #f9f9f9;
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  max-width: 90%;
-  margin: 2rem auto;
+  max-width: 88%;
+  margin: 3rem auto;
   gap: 1rem;
 }
 
 .box img {
-  width: 220px;
-  height: 240px;
+  width: clamp(160px, 30%, 220px);
+  height: auto;
   border-radius: 18px;
   object-fit: cover;
 }
 
 .box .text {
   flex: 1;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   line-height: 2;
   color: #333;
 }
 
 /*------------------ اعضای تیم ------------------*/
 .team-member {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 1rem;
   margin: 1rem;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -145,10 +146,11 @@
 
 /* کارت تیم دو طرفه */
 .team-card {
-  width: 280px;
-  height: 350px;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 4/5;
   perspective: 1000px;
-  margin: 20px;
+  margin: 20px auto;
 }
 
 .card-inner {
@@ -194,6 +196,7 @@
 
 .card-front h3 {
   margin: 0;
+  font-size: 1.1rem;
 }
 
 .card-back {
@@ -227,52 +230,27 @@
   background: #1c5980;
 }
 
-/*------------------ لوگو ------------------*/
-.logo img {
-  height: 85px;
-  margin-top: -6px;
-  display: flex;
-  align-items: center;
-}
-
-.logo::after {
-  content: "  مکس تیم !";
-  font-size: 25px;
-  color: #333;
-  margin-left: 10px;
-  font-weight: bold;
-}
-
 /*------------------ شبکه‌های اجتماعی ------------------*/
 .social-links {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
   margin-top: 10px;
-  margin-left: 70px;
+  flex-wrap: wrap;
 }
 
 .social-links a {
   color: #333;
-  font-size: 2rem;
-  transition: color 0.5s ease, transform 0.5s ease;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  transition: color 0.4s ease, transform 0.5s ease;
 }
 
 .social-links a:hover {
   color: #0073b1;
-  transform: scale(1.5) rotate(360deg);
-  transition: color 0.3s ease, transform 2.5s ease;
+  transform: scale(1.2) rotate(360deg);
 }
 
 /*------------------ ناوبری ------------------*/
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  flex-wrap: wrap;
-}
-
 /*------------------ ریسپانسیو ------------------*/
 @media (max-width: 768px) {
   .box {
@@ -280,186 +258,65 @@ nav {
     text-align: center;
   }
 
-  .box img {
-    width: 70%;
-    height: auto;
-    margin-bottom: 3px;
-  }
-
   .team-card {
-    width: 100px;
-    height: 300px;
-  }
-
-  .card-front img {
-    width: 100px;
-    height: 100px;
+    max-width: 220px;
   }
 
   .about-text {
     font-size: 1rem;
   }
 
-  nav {
-    gap: 10px;
-  }
-
-  .logo::after {
-    font-size: 18px;
-  }
-  .social-links a {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .box {
-    max-width: 95%;
-  }
-
-  .team-card {
-    width: 180px;
-    height: 250px;
-  }
-
-  .card-front img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .card-back p {
-    font-size: 12px;
-  }
-
   .logo img {
     height: 60px;
   }
-
-  .logo::after {
-    font-size: 16px;
-    margin-left: 5px;
-  }
-  .social-links a {
-    font-size: 2.2rem;
-  }
-}
-@media (max-width: 550px) {
-  .hamburger {
-    display: block;
-    font-size: 40px;
-    right: 10px;
-    top: 15px;
-    color: #000;
-    z-index: 1100;
-    position: absolute;
-  }
-
-  header nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    width: 85%;
-    max-width: 350px;
-    padding: 15px;
-    background: rgba(213, 211, 245, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
-    z-index: 1090;
-  }
-
-  header nav ul.show-menu {
-    display: flex;
-  }
-
-  header nav ul li {
-    margin: 10px 0;
-  }
-
-  header nav ul li a {
-    padding: 10px;
-    font-size: 15px;
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #333;
-    border-radius: 8px;
-  }
-
-  header nav ul li a:hover {
-    background-color: #f1c40f;
-    color: #000;
-    transform: scale(1.5);
-  }
-
-  .social-links a {
-    font-size: 2.2rem;
-  }
-}
-.chera-maxteam {
-  padding: 40px 20px;
-  background-color: #fff;
-  color: #333;
-  font-family: "Shabnam", sans-serif;
-  text-align: center;
 }
 
-.chera-maxteam h2 {
-  font-size: 26px;
-  margin-bottom: 40px;
-  line-height: 1.6;
-  text-align: right;
-}
+/*------------------ چرا مکس تیم ------------------*/
 .boxx-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.box-item {
-  background-color: #f9f9f9;
-  padding: 24px 20px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  text-align: right;
-  line-height: 1.8;
-  font-size: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-.box-item:hover {
-  background-color: #efefef;
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-  -webkit-transform: translateY(-4px);
-  -moz-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  -o-transform: translateY(-4px);
-}
-.title-with-logo {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap; /* برای واکنش‌گرایی */
-  margin-bottom: 30px;
+  padding: 2rem;
 }
 
-.logo-cheramax {
-  width: 110px;
-  height: 150px;
-  object-fit: contain;
-  border-radius: 50%;
-}
-.hidden {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
+.box-item.unified {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 800px;
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); */
+  animation: fadeInUp 1s ease;
 }
 
-.show {
-  opacity: 1;
-  transform: translateY(0);
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #2f3640;
+  line-height: 1.8;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.benefits-list li::before {
+  content: "✔";
+  position: absolute;
+  right: 0;
+  color: #00a8ff;
+  font-weight: bold;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

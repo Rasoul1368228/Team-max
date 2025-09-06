@@ -18,7 +18,6 @@
   ریست و بدنه اصلی
 ==========================*/
 .body-login {
-  background: linear-gradient(135deg, #4a90e2, #357abd);
   font-family: "Dana", "Shabnam-Medium-FD", "Vazirmatn-Bold", sans-serif;
   font-size: 1.1rem;
   direction: rtl;
@@ -28,6 +27,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url("../images/login-back.webp") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /*==========================
@@ -36,22 +38,71 @@
 .auth-modern {
   width: 100%;
   max-width: 420px;
-  padding: 1.5rem;
   box-sizing: border-box;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+/* افکت تزئینی موجی در پس‌زمینه */
+.auth-modern::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.2),
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* کارت داخلی */
 .auth-card {
-  background: linear-gradient(300deg, #f1f5f9, #e2e8f0);
-  backdrop-filter: blur(18px);
+  background-color: #ffffff;
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   color: #333;
+  transition: box-shadow 0.3s ease;
 }
 
+.auth-card:hover {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* سربرگ فرم */
 .auth-header {
   text-align: center;
   margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0a4968;
+  letter-spacing: 0.5px;
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 480px) {
+  .auth-modern {
+    padding: 1.2rem;
+  }
+
+  .auth-card {
+    padding: 1.5rem;
+  }
+
+  .auth-header {
+    font-size: 1.4rem;
+  }
 }
 
 /*==========================

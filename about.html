@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>درباره مکس تیم</title>
+    <title>درباره تیم طراحی مدیریتی مکس تیم</title>
     <link
       rel="icon"
       type="image/png"
@@ -21,76 +21,62 @@
     <!-- فایل‌های CSS -->
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/dark-mode.css" />
   </head>
 
   <body class="about-page">
+      <!-- دکمه دارک مود -->
+      <button id="theme-toggle" aria-label="تغییر حالت روشن/تاریک">
+        <i class="fas fa-sun"></i>
+        <span class="label">روشن</span>
+      </button>
     <!-- هدر و ناوبری -->
-    <header>
-      <nav>
+      <header>
+      <div class="header-container">
         <div class="logo">
-          <a href="index.html">
-            <img src="./images/logo.jpg" alt="لوگوی مکس تیم" />
-          </a>
+          <a href="index.html"> </a>
         </div>
+        <nav>
+          <div
+            class="hamburger"
+            onclick="toggleMenu(this)"
+            aria-label="باز و بسته کردن منو"
+            role="button"
+            tabindex="0"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
-        <!-- آیکون منو همبرگری -->
-        <div
-          class="hamburger"
-          onclick="toggleMenu(this)"
-          aria-label="باز و بسته کردن منو"
-          role="button"
-          tabindex="0"
-        >
-          ☰
-        </div>
-
-        <ul>
-          <li>
-            <a href="services.html"><i class="fas fa-cogs"></i> خدمات</a>
-          </li>
-          <li>
-            <a href="about.html"><i class="fas fa-user"></i> درباره ما</a>
-          </li>
-          <li>
-            <a href="pricing.html"><i class="fas fa-home"></i> تعرفه طراحی</a>
-          </li>
-          <li>
-            <a
-              href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم"
-              title="تماس با پشتیبانی"
-            >
-              <i class="fas fa-headset"></i> پشتیبانی
-            </a>
-          </li>
-          <li>
-            <a href="login.html"
-              ><i class="fas fa-sign-in"></i> پورتال مشتریان</a
-            >
-          </li>
-        </ul>
-
-        <!-- شبکه‌های اجتماعی -->
-        <div class="social-links">
-          <a
-            href="https://www.instagram.com/nevisande2000"
-            target="_blank"
-            title="اینستاگرام"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a
-            href="https://www.eitaa.com/nevisande2000"
-            target="_blank"
-            title="ایتا"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <a
-            href="https://telegram.org/nevisande2000"
-            target="_blank"
-            title="تلگرام"
-            ><i class="fab fa-telegram-plane"></i
-          ></a>
-        </div>
-      </nav>
+          <ul class="nav-links">
+            <a href="./index.html"><p class="p-up">"مکس تیم | قدرت در جزئیات"</p></a>
+            
+            <li>
+              <a href="services.html"><i class="fas fa-cogs"></i> خدمات</a>
+            </li>
+            <li>
+              <a href="about.html"><i class="fas fa-user"></i> درباره ما</a>
+            </li>
+            <li>
+              <a href="pricing.html"><i class="fas fa-home"></i> تعرفه طراحی</a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/09021157234?text=سلام! نیاز به پشتیبانی دارم"
+                title="تماس با پشتیبانی"
+              >
+                <i class="fas fa-headset"></i> پشتیبانی
+              </a>
+            </li>
+            <li>
+              <a href="login.html">
+                <i class="fas fa-sign-in"></i> پورتال مشتریان
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- معرفی مکس تیم -->
@@ -113,160 +99,147 @@
     <!-- چرا مکس تیم -->
     <section class="chera-maxteam hidden">
       <div class="title-with-logo hidden">
-        <h2>چرا "مکس تیم" را برای طراحی سایت انتخاب کنیم؟</h2>
+        <h2 style="margin-right: 50px">
+          چرا "مکس تیم" انتخابی هوشمندانه برای طراحی سایت است؟
+        </h2>
       </div>
-
       <div class="boxx-container">
-        <div class="box-item hidden">
-          <b>1. تخصص و تجربه در طراحی سایت</b><br />
-          ما در "مکس تیم" با سال‌ها تجربه در زمینه طراحی وب‌سایت، پروژه‌های
-          مختلفی را برای کسب‌وکارها در ارومیه و دیگر شهرها به سرانجام
-          رسانده‌ایم. با داشتن تیمی از متخصصان طراحی، توسعه و بهینه‌سازی سایت،
-          می‌توانیم نیازهای شما را به بهترین شکل برآورده کنیم.
-        </div>
-
-        <div class="box-item hidden">
-          <b>2. طراحی وبسایت اختصاصی و سفارشی</b><br />
-          هر کسب‌وکار نیازهای خاص خود را دارد، بنابراین ما به جای استفاده از
-          قالب‌های آماده، طراحی سایت اختصاصی بر اساس نیازها و خواسته‌های شما
-          ارائه می‌دهیم. این کار باعث می‌شود سایت شما منحصر به‌ فرد شود و از
-          دیگر رقبا متمایز شوید.
-        </div>
-
-        <div class="box-item hidden">
-          <b>3. بهینه‌سازی برای موتورهای جستجو (SEO)</b><br />
-          ما با استفاده از استراتژی‌های پیشرفته و کلمات کلیدی مانند "طراحی سایت
-          ارومیه" و "طراحی وب سایت"، به شما کمک می‌کنیم تا در صفحه اول نتایج
-          گوگل قرار بگیرید.
-        </div>
-
-        <div class="box-item hidden">
-          <b>4. طراحی ریسپانسیو و سازگار با موبایل</b><br />
-          تمامی سایت‌های طراحی‌شده توسط ما کاملاً ریسپانسیو هستند تا در موبایل،
-          تبلت و دسکتاپ بهترین نمایش و تجربه کاربری را داشته باشند.
-        </div>
-
-        <div class="box-item hidden">
-          <b>5. نمونه‌کارهای موفق و مشتریان راضی</b><br />
-          نمونه‌کارهای ما و نظرات مثبت مشتریان بهترین گواه کیفیت کار ما هستند.
-          شما می‌توانید پروژه‌های قبلی را مشاهده کنید و مطمئن شوید.
-        </div>
-
-        <div class="box-item hidden">
-          <b>6. تعرفه‌های رقابتی و مناسب</b><br />
-          ما بهترین کیفیت را با قیمت‌های منصفانه ارائه می‌دهیم. بسته‌های طراحی
-          ما متناسب با بودجه‌های مختلف طراحی شده‌اند.
+        <div class="box-item unified hidden">
+          <ul class="benefits-list">
+            <li>
+              <strong>۱. تجربه عملی و تخصص فنی:</strong> تیم مکس با سال‌ها
+              فعالیت حرفه‌ای در زمینه طراحی و توسعه وب، پروژه‌های موفقی را برای
+              برندهای مختلف در سراسر کشور اجرا کرده است.
+            </li>
+            <li>
+              <strong>۲. طراحی اختصاصی بر اساس هویت برند:</strong> ما وب‌سایتی
+              منحصربه‌فرد و سفارشی برای شما طراحی می‌کنیم که بازتابی از ارزش‌ها
+              و شخصیت برندتان باشد.
+            </li>
+            <li>
+              <strong>۳. بهینه‌سازی حرفه‌ای برای موتورهای جستجو (SEO):</strong>
+              با بهره‌گیری از تکنیک‌های روز سئو، سایت شما در نتایج گوگل بهتر
+              دیده می‌شود و مخاطبان هدف را جذب می‌کند.
+            </li>
+            <li>
+              <strong>۴. طراحی واکنش‌گرا برای تمام دستگاه‌ها:</strong>
+              وب‌سایت‌های ما در موبایل، تبلت و دسکتاپ با کیفیت بالا و تجربه
+              کاربری بی‌نقص نمایش داده می‌شوند.
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- اعضای تیم -->
-    <section class="box-container">
-      <div class="team-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="./images/forosh.jpg" alt="مهسا محمدی" />
-            <h3>مهسا محمدی</h3>
-            <p>مدیر فروش</p>
-          </div>
-          <div class="card-back">
-            <p>مدیریت فروش تیم</p>
-            <p>با سابقه چندین ساله در فروش و مشاوره سایت</p>
-            <a href="mailto:rasoulmahsa7@gmail.com">تماس با مدیریت فروش</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="./images/avatar.jpg" alt="رسول حیدروند" />
-            <h3>رسول حیدروند</h3>
-            <p>طراح سایت و فرانت‌اند</p>
-          </div>
-          <div class="card-back">
-            <p>طراح سایت و فرانت‌اند</p>
-            <p>
-              متخصص HTML، CSS، JavaScript و React. طراحی ریسپانسیو و سرعت بالا
-              با تمرکز بر تجربه کاربری.
-            </p>
-            <a href="mailto:rasoul@example.com">تماس با طراح</a>
+    <section class="team-section">
+      <div class="box-container">
+        <!-- کارت مهسا محمدی -->
+        <div class="team-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./images/forosh.jpg" alt="مهسا محمدی" />
+              <h3>مهسا محمدی</h3>
+              <p>مدیر فروش</p>
+            </div>
+            <div class="card-back">
+              <p>مدیریت فروش تیم</p>
+              <p>با سابقه چندین ساله در فروش و مشاوره سایت</p>
+              <a href="mailto:rasoulmahsa7@gmail.com">تماس با مدیریت فروش</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="team-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="./images/poshtibani-site.webp" alt="مهدی حیدروند" />
-            <h3>مهدی حیدروند</h3>
-            <p>طراح و پشتیبانی تیم</p>
+        <!-- کارت رسول حیدروند -->
+        <div class="team-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./images/avatar.jpg" alt="رسول حیدروند" />
+              <h3>رسول حیدروند</h3>
+              <p>طراح سایت و فرانت‌اند</p>
+            </div>
+            <div class="card-back">
+              <p>طراح سایت و فرانت‌اند</p>
+              <p>
+                متخصص HTML، CSS، JavaScript و React. طراحی ریسپانسیو و سرعت بالا
+                با تمرکز بر تجربه کاربری.
+              </p>
+              <a href="mailto:rasoul@example.com">تماس با طراح</a>
+            </div>
           </div>
-          <div class="card-back">
-            <p>پشتیبانی 24 ساعته</p>
-            <p>تجربه طولانی با انواع تیم‌های طراحی</p>
-            <a href="mailto:rasoul6856@gmail.com">تماس با پشتیبانی</a>
+        </div>
+
+        <!-- کارت مهدی حیدروند -->
+        <div class="team-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./images/poshtibani-site.webp" alt="مهدی حیدروند" />
+              <h3>مهدی حیدروند</h3>
+              <p>طراح و پشتیبانی تیم</p>
+            </div>
+            <div class="card-back">
+              <p>پشتیبانی ۲۴ ساعته</p>
+              <p>تجربه طولانی با انواع تیم‌های طراحی</p>
+              <a href="mailto:rasoul6856@gmail.com">تماس با پشتیبانی</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- فوتر -->
-    <footer class="animated-footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <img src="./images/logo.jpg" alt="لوگوی مکس تیم" />
-            <p>راهکارهای نوین طراحی سایت و بازاریابی دیجیتال</p>
-          </div>
-
-          <div class="footer-links">
-            <div class="col">
-              <h4>خدمات</h4>
-              <ul>
-                <li><a href="services.html#web">طراحی سایت</a></li>
-                <li><a href="services.html#seo">سئو</a></li>
-                <li><a href="services.html#marketing">دیجیتال مارکتینگ</a></li>
-              </ul>
-            </div>
-
-            <div class="col">
-              <h4>دسترسی سریع</h4>
-              <ul>
-                <li><a href="about.html">درباره ما</a></li>
-                <li><a href="pricing.html">تعرفه‌ها</a></li>
-              </ul>
-            </div>
-
-            <div class="col">
-              <h4>ارتباط با ما</h4>
-              <p>ارومیه - امام</p>
-              <p>۰۹۹۲۰۵۵۲۵۶۷</p>
-              <p>
-                <a href="mailto:rasoul6856@gmail.com">rasoul6856@gmail.com</a>
-              </p>
-              <div class="social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-          </div>
+  <!-- فوتر -->
+      <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img src="./images/pic-dovvom-nazarat.png" alt="لوگوی مکس تیم" />
+          <h2>مکس تیم</h2>
+          <p>خلاقیت، طراحی و بازاریابی دیجیتال با قلب و ذهن</p>
         </div>
 
-        <div class="footer-bottom">
-          <p>© کلیه حقوق محفوظ است | مکس تیم</p>
+        <div class="footer-links">
+          <h3>لینک‌های سریع</h3>
+          <ul>
+            <li><a href="#about">درباره ما</a></li>
+            <li><a href="#services">خدمات</a></li>
+            <li><a href="#contact">تماس با ما</a></li>
+          </ul>
         </div>
 
-        <!-- انیمیشن گوشه‌ها -->
-        <span class="corner top-left"></span>
-        <span class="corner top-right"></span>
-        <span class="corner bottom-left"></span>
-        <span class="corner bottom-right"></span>
+        <div class="footer-newsletter">
+          <h3>عضویت در خبرنامه</h3>
+          <form>
+            <input type="email" placeholder="ایمیل شما" />
+            <button type="submit">عضویت</button>
+          </form>
+        </div>
+
+        <div class="footer-social">
+          <h3>ما را دنبال کنید</h3>
+          <div class="icons">
+            <a href="#"><img    style="height: 68px" src="./images/اینستا-1.png.webp" alt="پیام رسان اینستاگرام"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><img    style="height: 68px" src="./images/تلگرام-1.png.webp" alt=" تلگــــــرام"></i></a>
+            <a href="#"
+              ><img
+                style="height: 68px"
+                src="./images/ایتا-3.png.webp"
+                alt="پیام رسان ایتا"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© کلیه حقوق محفوظ است | مکس تیم 2025</p>
+      </div>
+      <div class="footer-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M0,0V46.29c47.59,22,103.78,29.05,158,17.26C255.59,45.52,312,5.48,376,1.69c60.15-3.61,113.44,26.94,172,35.6,59.83,8.83,117.44-12.64,176-24.26,59.61-11.82,117.44-11.82,176,0,58.56,12.64,116.17,33.09,176,24.26,58.56-8.66,111.85-39.21,172-35.6,64,3.79,120.41,43.83,218,61.86V0Z"
+            fill="#f0932b"
+          ></path>
+        </svg>
       </div>
     </footer>
-
-    <!-- اسکریپت -->
     <script src="./script.js"></script>
   </body>
 </html>

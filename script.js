@@ -2,10 +2,9 @@
 // 📌 اجرای اولیه بعد از لود کامل صفحه
 // =======================================
 document.addEventListener("DOMContentLoaded", () => {
-  initScrollButton();
-  initHamburgerMenu();
-  initAuthTabs();
-  initSignupValidation();
+  initHamburgerMenu(); // 🍔 منوی همبرگری
+  initAuthTabs(); // 🔄 تب‌های ورود و عضویت
+  initSignupValidation(); // ✅ اعتبارسنجی فرم عضویت
 });
 
 // =======================================
@@ -14,12 +13,22 @@ document.addEventListener("DOMContentLoaded", () => {
 function initHamburgerMenu() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector("header nav ul");
+
   if (!hamburger || !navMenu) return;
 
+  // باز و بسته کردن منو
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("show-menu");
     hamburger.classList.toggle("active");
   });
+
+  // بستن منو بعد از کلیک روی هر لینک
+  navMenu.querySelectorAll("a").forEach((link) =>
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show-menu");
+      hamburger.classList.remove("active");
+    })
+  );
 }
 
 // =======================================
@@ -56,7 +65,6 @@ function initSignupValidation() {
 
   signupForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
     const inputs = signupForm.querySelectorAll("input");
     let isValid = true;
 
@@ -82,24 +90,18 @@ function initSignupValidation() {
 function toPersianDigits(num) {
   return num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
 }
-
-// مثال استفاده
-const phone = toPersianDigits("09920552567");
-console.log(phone); // نمایش: ۰۹۹۲۰۵۵۲۵۶۷
+console.log(toPersianDigits("09920552567")); // خروجی: ۰۹۹۲۰۵۵۲۵۶۷
 
 // =======================================
 // ✨ انیمیشن نمایش باکس‌ها هنگام اسکرول
 // =======================================
 const elements = document.querySelectorAll(".hidden");
-
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const delay = entry.target.dataset.delay || 0;
-        setTimeout(() => {
-          entry.target.classList.add("show");
-        }, delay);
+        setTimeout(() => entry.target.classList.add("show"), delay);
       } else {
         entry.target.classList.remove("show");
       }
@@ -107,7 +109,6 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.2 }
 );
-
 elements.forEach((el) => observer.observe(el));
 
 // =======================================
@@ -117,11 +118,13 @@ const toggleBtn = document.getElementById("theme-toggle");
 const label = toggleBtn.querySelector(".label");
 const icon = toggleBtn.querySelector("i");
 const body = document.body;
+const footer = document.querySelector(".animated-footer");
 
 // بارگذاری حالت ذخیره‌شده
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
   body.classList.add("dark-mode");
+  footer?.classList.add("dark");
   label.textContent = "تاریک";
   icon.classList.replace("fa-sun", "fa-moon");
 }
@@ -129,6 +132,7 @@ if (savedTheme === "dark") {
 // تغییر حالت با کلیک
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
+  footer?.classList.toggle("dark");
   const isDark = body.classList.contains("dark-mode");
 
   label.textContent = isDark ? "تاریک" : "روشن";
@@ -167,10 +171,7 @@ function getGreetingMessage() {
 
   showToast(message, icon);
 }
-
-window.addEventListener("load", () => {
-  setTimeout(getGreetingMessage, 5000);
-});
+window.addEventListener("load", () => setTimeout(getGreetingMessage, 5000));
 
 // =======================================
 // 🔔 نمایش Toast با حذف خودکار
@@ -181,13 +182,11 @@ function showToast(msg, icon = "🚀") {
 
   const toast = document.createElement("div");
   toast.classList.add("toast");
-
   toast.innerHTML = `
     <button class="toast-close">×</button>
     <div class="icon">${icon}</div>
     <div class="message">${msg}</div>
   `;
-
   container.appendChild(toast);
 
   toast.querySelector(".toast-close").addEventListener("click", () => {
@@ -198,6 +197,11 @@ function showToast(msg, icon = "🚀") {
   setTimeout(() => toast.classList.add("fade-out"), 10000);
   setTimeout(() => toast.remove(), 12000);
 }
-document.getElementById("theme-toggle").addEventListener("click", () => {
-  document.querySelector(".animated-footer").classList.toggle("dark");
+
+// =======================================
+// 📌 تغییر استایل هدر موقع اسکرول
+// =======================================
+const header = document.getElementById("main-header");
+window.addEventListener("scroll", () => {
+  header.classList.toggle("scrolled", window.scrollY > 50);
 });
