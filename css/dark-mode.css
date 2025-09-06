@@ -207,3 +207,29 @@ body.dark-mode .footer-newsletter button {
   background-color: #f0932b;
   color: #000;
 }
+body.dark-mode .faq-section {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #ecf0f1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .faq-title {
+  color: #f1c40f;
+}
+
+body.dark-mode .faq-item {
+  background: #3b3b3b;
+  border: 1px solid #555;
+}
+
+body.dark-mode .faq-question {
+  color: #f39c12;
+}
+
+body.dark-mode .faq-question i {
+  color: #f1c40f;
+}
+
+body.dark-mode .faq-answer {
+  color: #bdc3c7;
+}
