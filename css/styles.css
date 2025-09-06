@@ -187,7 +187,7 @@ header {
      display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height:50vh;
     background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
     background-size: 600% 600%;
     animation: gradientShift 5s ease infinite;
@@ -203,9 +203,14 @@ header {
   50% {background-position: 100% 50%;}
   100% {background-position: 0% 50%;}
 }
+.hero-img{
+  height:150px;
+  margin-top: 30px;
+
+}
 
 .hero-content h1 {
-  font-size: 3.2rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   font-weight: 700;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
@@ -224,7 +229,7 @@ header {
   background-color: #ff5722;
   color: white;
   padding: 15px 35px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   border-radius: 40px;
   text-decoration: none;
@@ -445,7 +450,10 @@ header {
   }
 
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1rem;
+  }
+  .hero-img{
+    height: 30px;
   }
 
   .hero-content p {
@@ -454,7 +462,7 @@ header {
 
   .btn-cta {
     padding: 10px 20px;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
   .services-cards {
@@ -512,25 +520,27 @@ header {
   .home-page {
     font-size: 12px;
   }
-
+  .hero-img{
+    height: 100px;
+  }
   .hero-banner {
-    height: 50vh;
-    border-radius: 60px;
+    height: 25vh;
+    border-radius: 40px;
     animation: none;
     background-size: cover;
-    -webkit-border-radius: 60px;
-    -moz-border-radius: 60px;
-    -ms-border-radius: 60px;
-    -o-border-radius: 60px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
 }
 
   .hero-content h1 {
-    font-size: 2rem;
+    font-size:1rem;
   }
 
   .hero-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.2;
   }
 
   .btn-cta {
