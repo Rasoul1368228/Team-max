@@ -1,0 +1,366 @@
+/*------------------ فونت ------------------*/
+@font-face {
+  font-family: "dana";
+  src: url("../font/dana/dana black.ttf") format("truetype");
+}
+
+/*------------------ استایل کلی ------------------*/
+.about-page {
+  margin: 0;
+  padding: 0;
+  font-family: "dana", sans-serif;
+  font-size: clamp(13px, 2vw, 16px);
+  background: #1289a7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.7;
+  justify-content: center;
+}
+
+/*------------------ متن اصلی ------------------*/
+.about-text {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: auto;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-align: right;
+  line-height: 2;
+}
+.p-moarefi {
+  font-family: "dana", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #2f3640;
+  background-color: #f1f2f6;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  line-height: 2;
+  text-align: justify;
+  max-width: 900px;
+  margin: 2rem auto;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 58px;
+  padding: 3rem 1.5rem;
+  max-width: 1294px;
+  margin: auto;
+}
+
+.box-container > div {
+  background: linear-gradient(135deg, #dff9fb, #c7ecee);
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 0 25px rgba(78, 205, 196, 0.4), 0 0 35px rgba(52, 144, 144, 0.3);
+  animation: glow-border 2s infinite alternate;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes glow-border {
+  0% {
+    box-shadow: 0 0 25px rgba(78, 205, 196, 0.4),
+      0 0 35px rgba(52, 144, 144, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(78, 205, 196, 0.6),
+      0 0 60px rgba(52, 144, 144, 0.5);
+  }
+}
+
+.box-container > div:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(31, 30, 30, 0.4);
+}
+
+/* افکت موجی در هاور */
+.box-container > div::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.box-container > div:hover::before {
+  opacity: 1;
+}
+
+/*------------------ باکس معرفی ------------------*/
+.box {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 88%;
+  margin: 3rem auto;
+  gap: 1rem;
+}
+
+.box img {
+  width: clamp(160px, 30%, 220px);
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.box .text {
+  flex: 1;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 2;
+  color: #333;
+}
+
+/*------------------ اعضای تیم ------------------*/
+.team-member {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+/* کارت تیم دو طرفه */
+.team-card {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 4/5;
+  perspective: 1000px;
+  margin: 20px auto;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.team-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.card-front {
+  background: #f0f8ff;
+}
+
+.card-front img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #3498db;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.card-front h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card-back {
+  background: #3498db;
+  transform: rotateY(180deg);
+  color: white;
+  text-align: center;
+}
+
+.card-back h3 {
+  margin-bottom: 10px;
+}
+
+.card-back p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.card-back a {
+  background: #2980b9;
+  color: #fff;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card-back a:hover {
+  background: #1c5980;
+}
+
+/*------------------ شبکه‌های اجتماعی ------------------*/
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #333;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  transition: color 0.4s ease, transform 0.5s ease;
+}
+
+.social-links a:hover {
+  color: #0073b1;
+  transform: scale(1.2) rotate(360deg);
+}
+
+/*------------------ ناوبری ------------------*/
+/*------------------ ریسپانسیو ------------------*/
+@media (max-width: 768px) {
+  .box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-card {
+    max-width: 220px;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+}
+
+/*------------------ چرا مکس تیم ------------------*/
+.boxx-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.box-item.unified {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 800px;
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); */
+  animation: fadeInUp 1s ease;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #2f3640;
+  line-height: 1.8;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.benefits-list li::before {
+  content: "✔";
+  position: absolute;
+  right: 0;
+  color: #00a8ff;
+  font-weight: bold;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.testimonials {
+  background: linear-gradient(135deg, #f9f9f9, #ffffff);
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.testimonial-card {
+  margin: 30px auto;
+  max-width: 700px;
+  padding: 30px 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border-left: 6px solid #f0932b;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.08),
+    -4px -4px 12px rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.testimonial-card span {
+  display: block;
+  font-weight: bold;
+  color: #f0932b;
+  font-size: 0.95rem;
+}
