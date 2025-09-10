@@ -65,9 +65,9 @@ a {
 
 .page-title-h {
   font-size: clamp(1.3rem, 4vw, 1.8rem);
-  color: #f5f6fa;
+  color: #3e476a;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .page-desc {

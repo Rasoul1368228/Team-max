@@ -1,0 +1,22 @@
+/*------------------ افکت تایپ ------------------*/
+#typed-text {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 2;
+  white-space: pre-wrap;
+  border-right: 2px solid #3498db;
+  animation: blink 0.7s infinite;
+}
+
+/* چشمک‌زن تایپ */
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #3498db;
+  }
+  100% {
+    border-color: transparent;
+  }
+}

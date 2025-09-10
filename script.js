@@ -1,5 +1,5 @@
 // =======================================
-//بخش سوالات متداول
+// بخش سوالات متداول
 // =======================================
 const faqItems = document.querySelectorAll(".faq-item");
 
@@ -34,12 +34,12 @@ function initHamburgerMenu() {
   });
 
   // بستن منو بعد از کلیک روی هر لینک
-  navMenu.querySelectorAll("a").forEach((link) =>
+  navMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("show-menu");
       hamburger.classList.remove("active");
-    })
-  );
+    });
+  });
 }
 
 // =======================================
@@ -144,8 +144,8 @@ if (savedTheme === "dark") {
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
   footer?.classList.toggle("dark");
-  const isDark = body.classList.contains("dark-mode");
 
+  const isDark = body.classList.contains("dark-mode");
   label.textContent = isDark ? "تاریک" : "روشن";
   icon.classList.replace(
     isDark ? "fa-sun" : "fa-moon",
@@ -216,3 +216,21 @@ const header = document.getElementById("main-header");
 window.addEventListener("scroll", () => {
   header.classList.toggle("scrolled", window.scrollY > 50);
 });
+
+// =======================================
+// ⌨️ افکت تایپ شدن متن معرفی
+// =======================================
+const text =
+  "با مکس تیم، طراحی سایت فقط یک پروژه نیست؛ یک تجربه دیجیتال تمام‌عیار است. ما با ترکیب خلاقیت، امنیت، سرعت و پشتیبانی واقعی، حضورتان را در فضای آنلاین متمایز می‌کنیم.";
+
+const target = document.getElementById("typed-text");
+let index = 0;
+
+function typeWriter() {
+  if (index < text.length) {
+    target.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, 50); // سرعت تایپ (میلی‌ثانیه)
+  }
+}
+window.addEventListener("load", typeWriter);
