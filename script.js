@@ -1,39 +1,29 @@
-// =======================================
 // بخش سوالات متداول
-// =======================================
 const faqItems = document.querySelectorAll(".faq-item");
-
 faqItems.forEach((item) => {
   item.querySelector(".faq-question").addEventListener("click", () => {
     item.classList.toggle("active");
   });
 });
 
-// =======================================
-// 📌 اجرای اولیه بعد از لود کامل صفحه
-// =======================================
+// اجرای اولیه بعد از لود کامل صفحه
 document.addEventListener("DOMContentLoaded", () => {
-  initHamburgerMenu(); // 🍔 منوی همبرگری
-  initAuthTabs(); // 🔄 تب‌های ورود و عضویت
-  initSignupValidation(); // ✅ اعتبارسنجی فرم عضویت
+  initHamburgerMenu();
+  initAuthTabs();
+  initSignupValidation();
 });
 
-// =======================================
-// 🍔 منوی همبرگری
-// =======================================
+// منوی همبرگری
 function initHamburgerMenu() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector("header nav ul");
-
   if (!hamburger || !navMenu) return;
 
-  // باز و بسته کردن منو
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("show-menu");
     hamburger.classList.toggle("active");
   });
 
-  // بستن منو بعد از کلیک روی هر لینک
   navMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("show-menu");
@@ -42,21 +32,17 @@ function initHamburgerMenu() {
   });
 }
 
-// =======================================
-// 🔄 تب‌های ورود و عضویت
-// =======================================
+// تب‌های ورود و عضویت
 function initAuthTabs() {
   const signupForm = document.getElementById("signup-form");
   const loginForm = document.getElementById("login-form");
   const formTitle = document.getElementById("form-title");
   const tabButtons = document.querySelectorAll(".tab-btn");
-
   if (!signupForm || !loginForm || !formTitle || tabButtons.length < 2) return;
 
   tabButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const type = btn.textContent.trim() === "عضویت" ? "signup" : "login";
-
       signupForm.classList.toggle("hidden", type !== "signup");
       loginForm.classList.toggle("hidden", type !== "login");
       formTitle.textContent = type === "signup" ? "عضویت" : "ورود";
@@ -67,9 +53,7 @@ function initAuthTabs() {
   });
 }
 
-// =======================================
-// ✅ اعتبارسنجی فرم عضویت
-// =======================================
+// اعتبارسنجی فرم عضویت
 function initSignupValidation() {
   const signupForm = document.getElementById("signup-form");
   if (!signupForm) return;
@@ -89,23 +73,19 @@ function initSignupValidation() {
     });
 
     if (isValid) {
-      alert("✅ ثبت‌نام با موفقیت انجام شد");
+      alert("ثبت‌نام با موفقیت انجام شد");
       signupForm.reset();
     }
   });
 }
 
-// =======================================
-// 🔢 تبدیل اعداد به فارسی
-// =======================================
+// تبدیل اعداد به فارسی
 function toPersianDigits(num) {
   return num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
 }
-console.log(toPersianDigits("09920552567")); // خروجی: ۰۹۹۲۰۵۵۲۵۶۷
+console.log(toPersianDigits("09920552567"));
 
-// =======================================
-// ✨ انیمیشن نمایش باکس‌ها هنگام اسکرول
-// =======================================
+// انیمیشن نمایش باکس‌ها هنگام اسکرول
 const elements = document.querySelectorAll(".hidden");
 const observer = new IntersectionObserver(
   (entries) => {
@@ -122,16 +102,13 @@ const observer = new IntersectionObserver(
 );
 elements.forEach((el) => observer.observe(el));
 
-// =======================================
-// 🌗 مدیریت حالت روشن/تاریک
-// =======================================
+// مدیریت حالت روشن/تاریک
 const toggleBtn = document.getElementById("theme-toggle");
 const label = toggleBtn.querySelector(".label");
 const icon = toggleBtn.querySelector("i");
 const body = document.body;
 const footer = document.querySelector(".animated-footer");
 
-// بارگذاری حالت ذخیره‌شده
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
   body.classList.add("dark-mode");
@@ -140,7 +117,6 @@ if (savedTheme === "dark") {
   icon.classList.replace("fa-sun", "fa-moon");
 }
 
-// تغییر حالت با کلیک
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
   footer?.classList.toggle("dark");
@@ -154,29 +130,23 @@ toggleBtn.addEventListener("click", () => {
   localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
-// =======================================
-// 💬 پیام خوش‌آمدگویی بر اساس ساعت
-// =======================================
+// پیام خوش‌آمدگویی بر اساس ساعت
 function getGreetingMessage() {
   const hour = new Date().getHours();
   let message = "";
   let icon = "🌐";
 
   if (hour >= 5 && hour < 12) {
-    message =
-      "☀️ صبح بخیر! وقتشه سایتت رو بسازی. از خدمات شروع کن یا مشاوره رایگان بگیر.";
+    message = "صبح بخیر! وقتشه سایتت رو بسازی.";
     icon = "☕️";
   } else if (hour >= 12 && hour < 18) {
-    message =
-      "👋 خوش اومدی به مکس تیم! طراحی سایت حرفه‌ای منتظرته. همین حالا شروع کن.";
+    message = "خوش اومدی به مکس تیم! طراحی سایت حرفه‌ای منتظرته.";
     icon = "💻";
   } else if (hour >= 18 && hour < 22) {
-    message =
-      "🌇 عصر بخیر! آماده‌ای سایتت رو خاص کنی؟ از منوی بالا شروع کن یا با ما تماس بگیر.";
+    message = "عصر بخیر! آماده‌ای سایتت رو خاص کنی؟";
     icon = "🎯";
   } else {
-    message =
-      "🌙 شب خوش! مکس تیم همیشه بیداره. طراحی سایتت رو همین حالا شروع کن یا فردا با انرژی برگرد!";
+    message = "شب خوش! مکس تیم همیشه بیداره.";
     icon = "🛠";
   }
 
@@ -184,9 +154,7 @@ function getGreetingMessage() {
 }
 window.addEventListener("load", () => setTimeout(getGreetingMessage, 5000));
 
-// =======================================
-// 🔔 نمایش Toast با حذف خودکار
-// =======================================
+// نمایش Toast
 function showToast(msg, icon = "🚀") {
   const container = document.querySelector(".toast-container");
   if (!container) return;
@@ -209,20 +177,15 @@ function showToast(msg, icon = "🚀") {
   setTimeout(() => toast.remove(), 12000);
 }
 
-// =======================================
-// 📌 تغییر استایل هدر موقع اسکرول
-// =======================================
+// تغییر استایل هدر موقع اسکرول
 const header = document.getElementById("main-header");
 window.addEventListener("scroll", () => {
   header.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-// =======================================
-// ⌨️ افکت تایپ شدن متن معرفی
-// =======================================
+// افکت تایپ متن معرفی
 const text =
-  "با مکس تیم، طراحی سایت فقط یک پروژه نیست؛ یک تجربه دیجیتال تمام‌عیار است. ما با ترکیب خلاقیت، امنیت، سرعت و پشتیبانی واقعی، حضورتان را در فضای آنلاین متمایز می‌کنیم.";
-
+  "با مکس تیم، طراحی سایت فقط یک پروژه نیست؛ یک تجربه دیجیتال تمام‌عیار است.";
 const target = document.getElementById("typed-text");
 let index = 0;
 
@@ -230,7 +193,16 @@ function typeWriter() {
   if (index < text.length) {
     target.innerHTML += text.charAt(index);
     index++;
-    setTimeout(typeWriter, 50); // سرعت تایپ (میلی‌ثانیه)
+    setTimeout(typeWriter, 50);
   }
 }
 window.addEventListener("load", typeWriter);
+
+// دکمه برگشت به بالا
+const backToTopBtn = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+  backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
