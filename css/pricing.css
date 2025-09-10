@@ -165,14 +165,14 @@
 .list-gimat-up {
   margin-right: 180px;
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 /* برای تبلت‌ها و صفحات متوسط */
 @media (max-width: 1024px) {
   .list-gimat-up {
-    margin-right: 100px;
-    font-size: 1.6rem;
+    margin-right: 90px;
+    font-size: 1rem;
   }
 }
 
@@ -180,15 +180,15 @@
 @media (max-width: 768px) {
   .list-gimat-up {
     margin-right: 40px;
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 
 /* برای صفحات خیلی کوچک */
 @media (max-width: 480px) {
   .list-gimat-up {
-    margin-top: 120px;
+    margin-top: 100px;
     margin-right: 20px;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 }

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- SEO Meta Tags -->
     <meta
       name="keywords"
       content="طراحی سایت, خدمات وب, سئو, دیجیتال مارکتینگ, آموزش HTML, CSS, جاوااسکریپت"
@@ -15,6 +16,9 @@
       content="سایت تیم مکس، ارائه‌دهنده خدمات طراحی سایت، برنامه‌نویسی و آموزش‌های کاربردی."
     />
     <meta name="language" content="fa" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="revisit-after" content="7 days" />
     <meta name="theme-color" content="#1a1a1a" />
 
     <!-- Open Graph -->
@@ -25,9 +29,12 @@
     />
     <meta
       property="og:image"
-      content="https://example.com/images/preview.jpg"
+      content="https://rasoul1368228.github.io/Team-max/images/preview.jpg"
     />
-    <meta property="og:url" content="https://example.com" />
+    <meta
+      property="og:url"
+      content="https://rasoul1368228.github.io/Team-max/"
+    />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card -->
@@ -39,12 +46,25 @@
     />
     <meta
       name="twitter:image"
-      content="https://example.com/images/preview.jpg"
+      content="https://rasoul1368228.github.io/Team-max/images/preview.jpg"
     />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://example.com/" />
+    <link rel="canonical" href="https://rasoul1368228.github.io/Team-max/" />
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "تیم مکس",
+        "url": "https://rasoul1368228.github.io/Team-max/",
+        "description": "خدمات طراحی سایت، فروش قالب‌های حرفه‌ای و آموزش‌های تخصصی توسط تیم مکس.",
+        "inLanguage": "fa"
+      }
+    </script>
+
+    <!-- Title & Favicon -->
     <title>تیم مکس | طراحی سایت حرفه‌ای</title>
     <link
       rel="icon"
@@ -62,6 +82,8 @@
 
     <!-- استایل‌ها -->
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/pricing.css" />
+    <link rel="stylesheet" href="./css/servisec.css" />
     <link rel="stylesheet" href="./css/dark-mode.css" />
   </head>
 
@@ -163,36 +185,322 @@
           </a>
         </div>
       </section>
-      <!-- کارت‌های خدمات -->
-      <section class="services-cards" aria-label="خدمات ما">
-        <div class="card">
-          <i class="fas fa-laptop-code"></i>
-          <h3>طراحی سایت شرکتی</h3>
-          <p>سایت‌های حرفه‌ای برای معرفی کسب‌وکار شما به بهترین شکل.</p>
-          <a href="services.html#corporate" class="learn-more"> </a>
-        </div>
-        <div class="card">
-          <i class="fas fa-store"></i>
-          <h3>فروشگاه اینترنتی</h3>
-          <p>راه‌اندازی فروشگاه آنلاین با امکانات پیشرفته برای فروش محصولات.</p>
-          <a href="services.html#shop" class="learn-more"> </a>
-        </div>
-        <div class="card">
-          <i class="fas fa-search-dollar"></i>
-          <h3>سئو و بهینه‌سازی</h3>
-          <p>افزایش رتبه گوگل با تکنیک‌های سئو کلاه سفید و اصولی.</p>
-          <a href="services.html#seo" class="learn-more"> </a>
-        </div>
-        <div class="card">
-          <i class="fas fa-bullhorn"></i>
-          <h3>سایت آموزشی</h3>
-          <p>
-            تبلیغات هدفمند در گوگل و شبکه‌های اجتماعی. مناسب مدرسه‌های آنلاین،
-          </p>
-          <a href="services.html#marketing" class="learn-more"> </a>
-        </div>
+      <!-- 2️⃣ معرفی کوتاه -->
+      <section class="intro-text">
+        <h2>چرا مکس تیم؟</h2>
+        <p>
+          مکس تیم با تجربه طراحی وب‌سایت‌های مدرن، امن و سریع، همراه شماست تا
+          حضوری حرفه‌ای در فضای آنلاین داشته باشید.
+        </p>
+      </section>
+      <!--خدمات ما -->
+      <h1 class="page-title">خدمات مکس تیم</h1>
+      <h3 class="page-title-h">طراحی سایت</h3>
+      <p class="page-desc">
+        طراحی انواع وب‌سایت خدماتی، فروشگاهی، شرکتی، آموزشی و پزشکی همراه با
+        تدوین پروپوزال اختصاصی و پشتیبانی حرفه‌ای.
+      </p>
+
+      <section class="services-grid" aria-label="لیست خدمات طراحی سایت">
+        <!-- کارت‌ها با id یکتا -->
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service1-title"
+        >
+          <div class="service-content">
+            <h3 id="service1-title">
+              <i class="fas fa-tools"></i> سایت خدماتی
+            </h3>
+            <p>
+              مناسب شرکت‌های خدماتی با امکان ثبت سفارش، دسته‌بندی خدمات، پرداخت
+              آنلاین و پنل مدیریت مشتریان.
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service2-title"
+        >
+          <div class="service-content">
+            <h3 id="service2-title">
+              <i class="fas fa-building"></i> سایت شرکتی
+            </h3>
+            <p>
+              مناسب برای کسب‌وکارهایی که می‌خواهند برند خود را معرفی کنند، مانند
+              وب‌سایت‌های سایپا، اپل و …
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service3-title"
+        >
+          <div class="service-content">
+            <h3 id="service3-title">
+              <i class="fas fa-dumbbell"></i> سایت ورزشی
+            </h3>
+            <p>
+              مناسب فروشگاه‌ها و کمپانی‌های فروش لوازم ورزشی برای گسترش کسب‌وکار
+              آنلاین.
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service4-title"
+        >
+          <div class="service-content">
+            <h3 id="service4-title">
+              <i class="fas fa-car"></i> سایت لوازم یدکی
+            </h3>
+            <p>مناسب فروشگاه‌ها و نمایندگی‌های بزرگ فروش محصولات یدکی خودرو.</p>
+          </div>
+        </article>
+
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service5-title"
+        >
+          <div class="service-content">
+            <h3 id="service5-title"><i class="fas fa-tv"></i> سایت نمایشی</h3>
+            <p>مناسب رسانه‌های پخش فیلم یا سایت‌های اشتراکی نمایش خانگی.</p>
+          </div>
+        </article>
+
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service6-title"
+        >
+          <div class="service-content">
+            <h3 id="service6-title">
+              <i class="fas fa-shopping-cart"></i> سایت فروشگاهی
+            </h3>
+            <p>
+              فروشگاه اینترنتی کامل با سبد خرید، درگاه پرداخت، پنل سفارشات و
+              فیلتر محصولات.
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service7-title"
+        >
+          <div class="service-content">
+            <h3 id="service7-title">
+              <i class="fas fa-graduation-cap"></i> سایت آموزشی
+            </h3>
+            <p>
+              مناسب مدرسه‌های آنلاین، دانشگاه‌ها و پلتفرم‌های آموزشی با سیستم چت
+              و آزمون.
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="service-card"
+          tabindex="0"
+          aria-labelledby="service8-title"
+        >
+          <div class="service-content">
+            <h3 id="service8-title"><i class="fas fa-home"></i> سایت املاک</h3>
+            <p>مناسب کسب‌وکارهای فروش و اجاره ملک در سطح محله یا کشوری.</p>
+          </div>
+        </article>
       </section>
 
+      <section class="workflow-section" aria-label="مراحل همکاری با مکس تیم">
+        <h2 class="workflow-title">🚀 مراحل همکاری با ما</h2>
+        <div class="workflow-steps">
+          <div class="step">
+            <i class="fas fa-comment-dots"></i>
+            <h3>۱. مشاوره اولیه رایگان</h3>
+            <p>
+              در اولین قدم، شما نیازها و اهداف خود را با ما مطرح می‌کنید. تیم ما
+              با بررسی دقیق، بهترین راهکار را پیشنهاد می‌دهد.
+            </p>
+          </div>
+
+          <div class="step">
+            <i class="fas fa-file-signature"></i>
+            <h3>۲. ثبت سفارش و عقد قرارداد</h3>
+            <p>
+              پس از توافق نهایی، قرارداد رسمی تنظیم می‌شود تا همه چیز شفاف و
+              قابل پیگیری باشد.
+            </p>
+          </div>
+
+          <div class="step">
+            <i class="fas fa-palette"></i>
+            <h3>۳. طراحی رابط کاربری (UI)</h3>
+            <p>
+              طراحان ما با توجه به برند شما، ظاهر سایت را طراحی می‌کنند تا هم
+              زیبا باشد و هم کاربردی.
+            </p>
+          </div>
+
+          <div class="step">
+            <i class="fas fa-code"></i>
+            <h3>۴. برنامه‌نویسی و توسعه فنی</h3>
+            <p>
+              توسعه‌دهندگان ما سایت را با کدنویسی اصولی و امن پیاده‌سازی
+              می‌کنند، با رعایت استانداردهای سئو و سرعت.
+            </p>
+          </div>
+
+          <div class="step">
+            <i class="fas fa-vial"></i>
+            <h3>۵. تست و بررسی نهایی</h3>
+            <p>
+              قبل از تحویل، سایت روی دستگاه‌های مختلف تست می‌شود تا از عملکرد
+              صحیح و بدون نقص آن مطمئن شویم.
+            </p>
+          </div>
+
+          <div class="step">
+            <i class="fas fa-rocket"></i>
+            <h3>۶. تحویل و آموزش</h3>
+            <p>
+              سایت به شما تحویل داده می‌شود و آموزش کامل مدیریت آن ارائه می‌گردد
+              تا با خیال راحت شروع کنید.
+            </p>
+          </div>
+
+          <div class="step">
+            <i class="fas fa-life-ring"></i>
+            <h3>۷. پشتیبانی و توسعه آینده</h3>
+            <p>
+              بعد از تحویل، همچنان کنار شما هستیم. خدمات پشتیبانی، به‌روزرسانی و
+              توسعه امکانات جدید در دسترس شماست.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--قیمت ها-->
+      <section class="pricing">
+        <div class="list-gimat-up">
+          <p>لیست قیمت طراحی سایت مکس‌تیم | شروعی حرفه‌ای برای برند شما</p>
+        </div>
+
+        <div class="pricing-cards">
+          <div class="plan plan-economy">
+            <h3><i class="fas fa-coins"></i> اقتصادی</h3>
+            <p class="price">
+              <span class="old">۸,۰۰۰,۰۰۰</span>
+              <strong>۵,۰۰۰,۰۰۰ تومان</strong>
+            </p>
+            <ul>
+              <li>مالکیت همیشگی سایت</li>
+              <li>قالب‌های استاندارد و قابل تنظیم</li>
+              <li>هاست و دامنه ir رایگان</li>
+            </ul>
+          </div>
+
+          <div class="plan plan-professional popular">
+            <h3><i class="fas fa-paint-brush"></i> حرفه‌ای</h3>
+            <p class="price">
+              <span class="old">۱۰,۰۰۰,۰۰۰</span>
+              <strong>۶,۰۰۰,۰۰۰ تومان</strong>
+            </p>
+            <ul>
+              <li>طراحی اختصاصی و مدرن</li>
+              <li>برندسازی و رنگ سازمانی</li>
+              <li>امکانات فروشگاهی و مگامنو</li>
+              <li>مالکیت دائمی</li>
+              <li>طرح گرافیکی حرفه ای</li>
+              <li>هاست و دامنه com رایگان</li>
+            </ul>
+          </div>
+
+          <div class="plan plan-custom">
+            <h3><i class="fas fa-gem"></i> اختصاصی</h3>
+            <p class="price">
+              <span class="old">۳۰,۰۰۰,۰۰۰</span>
+              <strong>۱۵,۰۰۰,۰۰۰تومان</strong>
+            </p>
+            <ul>
+              <li>طراحی کاملاً سفارشی و منحصر بفرد</li>
+              <li>دامنه بین‌المللی رایگان</li>
+              <li>پشتیبانی ۲۴ ساعته و آموزش ویدیویی</li>
+            </ul>
+          </div>
+
+          <div class="plan plan-startup">
+            <h3><i class="fas fa-rocket"></i> استارتاپی</h3>
+            <p class="price">
+              <span class="old">۶,۰۰۰,۰۰۰</span>
+              <strong>۴,۰۰۰,۰۰۰ تومان</strong>
+            </p>
+            <ul>
+              <li>لندینگ‌پیج حرفه‌ای و واکنش‌گرا</li>
+              <li>ابزار جذب سرمایه‌گذار و مشتری</li>
+              <li>هویت بصری و راهنمای برند</li>
+            </ul>
+          </div>
+
+          <div class="plan plan-store">
+            <h3><i class="fas fa-shopping-cart"></i> فروشگاهی</h3>
+            <p class="price">
+              <span class="old">۲۰,۰۰۰,۰۰۰</span>
+              <strong> ۱۲,۰۰۰,۰۰۰تومان</strong>
+            </p>
+            <ul>
+              <li>اتصال درگاه پرداخت و پنل پیامکی</li>
+              <li>مدیریت کامل محصولات و سفارشات</li>
+              <li>صدور فاکتور آنلاین و گزارش‌دهی</li>
+            </ul>
+          </div>
+
+          <div class="plan plan-corporate">
+            <h3><i class="fas fa-building"></i> سازمانی</h3>
+            <p class="price">
+              <span class="old">۶,۰۰۰,۰۰۰</span>
+              <strong>۳,۰۰۰,۰۰۰ تومان</strong>
+            </p>
+            <ul>
+              <li>طراحی با رعایت استانداردهای امنیتی</li>
+              <li>اتصال به سامانه‌های سازمانی</li>
+              <li>پشتیبانی اختصاصی و SLA ویژه</li>
+            </ul>
+          </div>
+
+          <div class="plan plan-educational">
+            <h3><i class="fas fa-chalkboard-teacher"></i> آموزشی</h3>
+            <p class="price">
+              <span class="old">۲۰,۰۰۰,۰۰۰</span>
+              <strong>۱۰,۰۰۰,۰۰۰ تومان</strong>
+            </p>
+            <ul>
+              <li>سامانه آموزش آنلاین و LMS</li>
+              <li>پنل مدیریت دوره‌ها و دانشجویان</li>
+              <li>گواهی پایان دوره و گزارش‌گیری</li>
+            </ul>
+          </div>
+
+          <div class="plan plan-newsportal">
+            <h3><i class="fas fa-newspaper"></i> خبری و رسانه‌ای</h3>
+            <p class="price">
+              <span class="old">۲۸,۰۰۰,۰۰۰</span>
+              <strong>۲۰,۰۰۰,۰۰۰ تومان</strong>
+            </p>
+            <ul>
+              <li>طراحی سایت خبری با دسته‌بندی و آرشیو</li>
+              <li>پشتیبانی از چند نویسنده و ویراستار</li>
+              <li>امکانات تبلیغاتی و گزارش آمار بازدید</li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <section class="faq-section" aria-label="سوالات متداول">
         <h2 class="faq-title">❓ سوالات متداول</h2>
 
@@ -284,73 +592,6 @@
           <div class="faq-answer">
             بله، ما از پروتکل‌های امنیتی مثل HTTPS، فایروال و به‌روزرسانی‌های
             منظم برای محافظت از سایت استفاده می‌کنیم.
-          </div>
-        </div>
-      </section>
-      <section class="workflow-section" aria-label="مراحل همکاری با مکس تیم">
-        <h2 class="workflow-title">🚀 مراحل همکاری با ما</h2>
-        <div class="workflow-steps">
-          <div class="step">
-            <i class="fas fa-comment-dots"></i>
-            <h3>۱. مشاوره اولیه رایگان</h3>
-            <p>
-              در اولین قدم، شما نیازها و اهداف خود را با ما مطرح می‌کنید. تیم ما
-              با بررسی دقیق، بهترین راهکار را پیشنهاد می‌دهد.
-            </p>
-          </div>
-
-          <div class="step">
-            <i class="fas fa-file-signature"></i>
-            <h3>۲. ثبت سفارش و عقد قرارداد</h3>
-            <p>
-              پس از توافق نهایی، قرارداد رسمی تنظیم می‌شود تا همه چیز شفاف و
-              قابل پیگیری باشد.
-            </p>
-          </div>
-
-          <div class="step">
-            <i class="fas fa-palette"></i>
-            <h3>۳. طراحی رابط کاربری (UI)</h3>
-            <p>
-              طراحان ما با توجه به برند شما، ظاهر سایت را طراحی می‌کنند تا هم
-              زیبا باشد و هم کاربردی.
-            </p>
-          </div>
-
-          <div class="step">
-            <i class="fas fa-code"></i>
-            <h3>۴. برنامه‌نویسی و توسعه فنی</h3>
-            <p>
-              توسعه‌دهندگان ما سایت را با کدنویسی اصولی و امن پیاده‌سازی
-              می‌کنند، با رعایت استانداردهای سئو و سرعت.
-            </p>
-          </div>
-
-          <div class="step">
-            <i class="fas fa-vial"></i>
-            <h3>۵. تست و بررسی نهایی</h3>
-            <p>
-              قبل از تحویل، سایت روی دستگاه‌های مختلف تست می‌شود تا از عملکرد
-              صحیح و بدون نقص آن مطمئن شویم.
-            </p>
-          </div>
-
-          <div class="step">
-            <i class="fas fa-rocket"></i>
-            <h3>۶. تحویل و آموزش</h3>
-            <p>
-              سایت به شما تحویل داده می‌شود و آموزش کامل مدیریت آن ارائه می‌گردد
-              تا با خیال راحت شروع کنید.
-            </p>
-          </div>
-
-          <div class="step">
-            <i class="fas fa-life-ring"></i>
-            <h3>۷. پشتیبانی و توسعه آینده</h3>
-            <p>
-              بعد از تحویل، همچنان کنار شما هستیم. خدمات پشتیبانی، به‌روزرسانی و
-              توسعه امکانات جدید در دسترس شماست.
-            </p>
           </div>
         </div>
       </section>
