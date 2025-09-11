@@ -13,7 +13,9 @@
   font-family: "Vazirmatn-Bold";
   src: url("../font/ttf/Vazirmatn-Bold.ttf") format("truetype");
 }
-
+html {
+  scroll-behavior: smooth;
+}
 /* بدنه اصلی */
 .home-page {
   margin: 0;
@@ -53,6 +55,10 @@
   border-radius: 25px 10px 10px;
   animation: spin 1s linear infinite;
   margin-bottom: 20px;
+  -webkit-border-radius: 25px 10px 10px;
+  -moz-border-radius: 25px 10px 10px;
+  -ms-border-radius: 25px 10px 10px;
+  -o-border-radius: 25px 10px 10px;
 }
 
 /* ریسپانسیو برای موبایل */
@@ -80,9 +86,63 @@
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-  }
+    -webkit-transform:;
+    -moz-transform:;
+    -ms-transform:;
+    -o-transform:;
+}
   100% {
     transform: rotate(360deg);
+  }
+}
+.intro-text {
+    background: linear-gradient(135deg, #f1f2f6, #dcdde1);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 13px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin: 1rem auto;
+    max-width: 1350px;
+    transition: background 0.8s ease;
+    -webkit-transition: background 0.8s ease;
+    -moz-transition: background 0.8s ease;
+    -ms-transition: background 0.8s ease;
+    -o-transition: background 0.8s ease;
+}
+.intro-text h2 {
+  font-size: 2rem;
+  color: #2f3640;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+#typed-text {
+  color: #190707;
+  line-height: 2;
+  white-space: pre-wrap;
+  border-right: 1px solid #3498db;
+  animation: blink 0.9s infinite;
+
+}
+
+
+/* چشمک‌زن تایپ */
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #3498db;
+  }
+  100% {
+    border-color: transparent;
   }
 }
 
@@ -117,17 +177,21 @@
 
 
 header {
-  background: linear-gradient(135deg, #ffa801, #f0932b);
-  padding: 11px 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  position: relative;
-  z-index: 1000;
-   transition: all 0.3s ease-in-out;
+   background: linear-gradient(135deg, #ffa801, #f0932b);
+   padding: 11px 40px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   border-radius: 10px;
+   position: fixed;
+   z-index: 962;
+   transition: all 0.8s ease-in-out;
+   -webkit-transition: all 0.8s ease-in-out;
+   -moz-transition: all 0.8s ease-in-out;
+   -ms-transition: all 0.8s ease-in-out;
+   -o-transition: all 0.8s ease-in-out;
 }
 
 .header-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
     display: flex;
@@ -178,9 +242,13 @@ header {
   color: #1a1a1a;
   font-weight: 700;
   text-decoration: none;
-   padding: 8px 12px;
+  padding: 8px 12px;
   border-radius: 8px;
   transition: background 0.3s ease, transform 0.3s ease;
+  -webkit-transition: background 0.3s ease, transform 0.3s ease;
+  -moz-transition: background 0.3s ease, transform 0.3s ease;
+  -ms-transition: background 0.3s ease, transform 0.3s ease;
+  -o-transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links li a:hover {
@@ -203,7 +271,7 @@ header {
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     margin-top: 20px;
   }
 
@@ -379,15 +447,15 @@ header {
 .floating-phone {
   position: fixed;
   top: 220px;
-  left: 50px;
-  background-color: #0a4968;
-  color: white;
+  left: 40px;
+  background-color: #fff;
+  color:#000;
   padding: 12px 18px;
-  border-radius: 50px;
+  border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   font-family: "dana", sans-serif;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -395,11 +463,14 @@ header {
   cursor: pointer;
   animation: pulse 2.5s infinite, shake 3.5s infinite;
   transition: all 1.3s ease;
-
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
 .floating-phone a {
-  color: white;
+  color: rgb(6, 5, 5);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -409,18 +480,24 @@ header {
   font-size: 18px;
   margin-left: 6px;
   transition: transform 0.3s;
- 
+  -webkit-transition: transform 0.3s;
+  -moz-transition: transform 0.3s;
+  -ms-transition: transform 0.3s;
+  -o-transition: transform 0.3s;
 }
 
 .floating-phone:hover i {
-  transform: scale(1.2) rotate(10deg);
+  transform: scale(1.2) rotate(30deg);
+  -webkit-transform: scale(1.2) rotate(30deg);
+  -moz-transform: scale(1.2) rotate(30deg);
+  -ms-transform: scale(1.2) rotate(30deg);
+  -o-transform: scale(1.2) rotate(30deg);
 }
 
 .floating-phone:hover {
-  background-color: #0d6efd;
+
   transform: scale(1.05);
 }
-
 
 
 /* باکس پشتیبانی */
@@ -510,12 +587,17 @@ header {
     top: auto;
     right: 15px;
     padding: 12px;
-    border-radius: 50%;
+    border-radius: 40%;
     width: 50px;
     height: 50px;
     justify-content: center;
-    font-size: 0; /* مخفی کردن متن */
-  }
+    font-size: 0;
+    /*مخفیکردنمتن*/:;
+    -webkit-border-radius: 40%;
+    -moz-border-radius: 40%;
+    -ms-border-radius: 40%;
+    -o-border-radius: 40%;
+}
 
   .floating-phone a {
     justify-content: center;
@@ -841,7 +923,14 @@ height: 85px;
    color: #0073b1;
    transform: scale(1.5) rotate(360deg);
    transition: color 0.3s ease, transform 2.5s ease;
- 
+   -webkit-transform: scale(1.5) rotate(360deg);
+   -moz-transform: scale(1.5) rotate(360deg);
+   -ms-transform: scale(1.5) rotate(360deg);
+   -o-transform: scale(1.5) rotate(360deg);
+   -webkit-transition: color 0.3s ease, transform 2.5s ease;
+   -moz-transition: color 0.3s ease, transform 2.5s ease;
+   -ms-transition: color 0.3s ease, transform 2.5s ease;
+   -o-transition: color 0.3s ease, transform 2.5s ease;
 }
 
 #back-to-top .top {
@@ -926,7 +1015,10 @@ height: 85px;
 .switch input:checked + .slider:before {
   transform: translateX(1.8em);
   box-shadow: inset 15px -4px 0px 15px #ffcf48;
-
+  -webkit-transform: translateX(1.8em);
+  -moz-transform: translateX(1.8em);
+  -ms-transform: translateX(1.8em);
+  -o-transform: translateX(1.8em);
 }
 
 .star {
@@ -1014,7 +1106,10 @@ height: 85px;
     filter: drop-shadow(0 0 10px #4fd8cc) blur(1px);
     opacity: 0.65;
     transform: translate(0, 0) rotate(var(--rot, 0deg));
-
+    -webkit-transform: translate(0, 0) rotate(var(--rot, 0deg));
+    -moz-transform: translate(0, 0) rotate(var(--rot, 0deg));
+    -ms-transform: translate(0, 0) rotate(var(--rot, 0deg));
+    -o-transform: translate(0, 0) rotate(var(--rot, 0deg));
 }
   50% {
     filter: drop-shadow(0 0 30px #4fd8cc) blur(3px);
@@ -1103,13 +1198,13 @@ height: 85px;
   transform: translateX(-50%);
   width: 300px;
   height: 300px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.15),
-    transparent 70%
-  );
+  background: radial-gradient(    circle,    rgba(255, 255, 255, 0.15),    transparent 70%  );
   z-index: 0;
   pointer-events: none;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
 .footer-container {
@@ -1519,3 +1614,38 @@ max-width: 1300px;
     font-size: 0.85rem;
   }
 }
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  /*گرادینتنارنجی*/color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius:40%;
+ cursor: pointer;
+  display: none;
+  /*اولمخفی*/align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
+  -webkit-border-radius:40%;
+  -moz-border-radius:40%;
+  -ms-border-radius:40%;
+  -o-border-radius:40%;
+}
+
+#backToTop:hover {
+  transform: translateY(-6px) scale(1.1); /* بالا رفتن و بزرگ شدن */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, #f97316, #ea580c); /* گرادینت تیره‌تر */
+}
+
+#backToTop i {
+  pointer-events: none; /* کلیک روی آیکون، مثل خود دکمه عمل کنه */
+}
+
