@@ -44,27 +44,36 @@ body.dark-mode::after {
 /* ==================== دکمه تغییر تم ==================== */
 #theme-toggle {
   position: fixed;
-  top: 85px;
-  right: 24px;
+  top: 30px;
+  left:26px;
   z-index: 1000;
-  padding: 8px 14px;
-  font-size: 1rem;
-  font-family: "Dana", sans-serif;
-  color: #0f172a;
-  background: radial-gradient(circle at 30% 30%, #ffffff, #e2e8f0);
-  border: none;
-  border-radius: 7px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1),
-    -4px -4px 12px rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
-  overflow: hidden;
-  transition: all 0.4s ease;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-family: "Dana", sans-serif;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #fff;
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+#theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    10px 10px 24px rgba(0, 0, 0, 0.12),
+    -6px -6px 14px rgba(255, 255, 255, 0.7);
+}
+
 
 #theme-toggle:hover {
   background-color: #16a085;

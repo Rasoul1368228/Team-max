@@ -146,56 +146,21 @@ html {
   }
 }
 
-.hamburger {
-  width: 30px;
-  height: 22px;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-.hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 2px;
-  transition: all 0.4s ease;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-
-header {
-   background: linear-gradient(135deg, #ffa801, #f0932b);
+.header {
+    background: linear-gradient(135deg, #ffa801, #f0932b);
    padding: 11px 40px;
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
    border-radius: 10px;
-   position: fixed;
-   z-index: 1000;
-   transition: all 0.3s ease-in-out;
-   -webkit-transition:;
-   -moz-transition:;
-   -ms-transition:;
-   -o-transition:;
+    transition: all 0.8s ease-in-out;
 }
+
 
 .header-container {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
-    display: flex;
-
+   display: flex;
+    
 }
 .hamburger {
   width: 30px;
@@ -205,6 +170,7 @@ header {
   justify-content: space-between;
   cursor: pointer;
   z-index: 1100;
+  margin-top: 30px;
 }
 
 .hamburger span {
@@ -231,8 +197,10 @@ header {
   gap: 24px;
   list-style: none;
   margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
+  padding: 20px;
+  flex-wrap: wrap; 
+   position: relative;
+
 }
 
 .nav-links li a {
@@ -244,23 +212,41 @@ header {
   text-decoration: none;
   padding: 8px 12px;
   border-radius: 8px;
-  transition: background 0.3s ease, transform 0.3s ease;
-  -webkit-transition: background 0.3s ease, transform 0.3s ease;
-  -moz-transition: background 0.3s ease, transform 0.3s ease;
-  -ms-transition: background 0.3s ease, transform 0.3s ease;
-  -o-transition: background 0.3s ease, transform 0.3s ease;
+  transition: background 1.3s ease, transform 0.3s ease;
+  -webkit-transition: background 1.3s ease, transform 0.3s ease;
+  -moz-transition: background 1.3s ease, transform 0.3s ease;
+  -ms-transition: background 1.3s ease, transform 0.3s ease;
+  -o-transition: background 1.3s ease, transform 0.3s ease;
 }
-
 .nav-links li a:hover {
-  background-color: #ffe0b3;
-  transform: translateY(-2px);
   color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links li i {
-  font-size: 16px;
-  color: inherit;
+    font-size: 20px;
+    color: inherit;
+    transition: transform 1s ease;
+    -webkit-transition: transform 1s ease;
+    -moz-transition: transform 1s ease;
+    -ms-transition: transform 1s ease;
+    -o-transition: transform 1s ease;
 }
+
+.nav-links li a:hover i {
+  transform: rotate(-10deg) scale(2);
+  -webkit-transform: rotate(-10deg) scale(2);
+  -moz-transform: rotate(-10deg) scale(2);
+  -ms-transform: rotate(-10deg) scale(2);
+  -o-transform: rotate(-10deg) scale(2);
+}
+
+
+
+
+
+
 
 /* موبایل */
 @media (max-width: 768px) {
@@ -271,7 +257,7 @@ header {
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     margin-top: 20px;
   }
 
@@ -446,28 +432,28 @@ header {
 
 .floating-phone {
   position: fixed;
-  top: 220px;
-  left: 50px;
-  background-color: #0a4968;
-  color: white;
+  top:10px;
+  left: 120px;
+  background-color: #fff;
+  color:#000;
   padding: 12px 18px;
-  border-radius: 50px;
+  border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   font-family: "dana", sans-serif;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   gap: 8px;
   z-index: 1000;
   cursor: pointer;
-  animation: pulse 2.5s infinite, shake 3.5s infinite;
+  animation: pulse 1.5s infinite, shake 3.5s infinite;
   transition: all 1.3s ease;
 
 }
 
 .floating-phone a {
-  color: white;
+  color: rgb(6, 5, 5);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -484,14 +470,17 @@ header {
 }
 
 .floating-phone:hover i {
-  transform: scale(1.2) rotate(10deg);
+  transform: scale(1.2) rotate(30deg);
+  -webkit-transform: scale(1.2) rotate(30deg);
+  -moz-transform: scale(1.2) rotate(30deg);
+  -ms-transform: scale(1.2) rotate(30deg);
+  -o-transform: scale(1.2) rotate(30deg);
 }
 
 .floating-phone:hover {
-  background-color: #0d6efd;
+
   transform: scale(1.05);
 }
-
 
 
 /* باکس پشتیبانی */
@@ -585,8 +574,12 @@ header {
     width: 50px;
     height: 50px;
     justify-content: center;
-    font-size: 0; /* مخفی کردن متن */
-  }
+    font-size: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
 
   .floating-phone a {
     justify-content: center;
@@ -650,7 +643,6 @@ header {
   }
 
 }
-
 
 
   .box-container {
@@ -1146,7 +1138,10 @@ height: 85px;
   line-height: 1.6;
   animation: fadeIn 0.6s ease-out;
   transition: transform 0.3s ease, opacity 0.3s ease;
-
+  -webkit-transition: transform 0.3s ease, opacity 0.3s ease;
+  -moz-transition: transform 0.3s ease, opacity 0.3s ease;
+  -ms-transition: transform 0.3s ease, opacity 0.3s ease;
+  -o-transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .toast-container .toast:hover {
@@ -1637,4 +1632,5 @@ max-width: 1300px;
 #backToTop i {
   pointer-events: none; /* کلیک روی آیکون، مثل خود دکمه عمل کنه */
 }
+
 

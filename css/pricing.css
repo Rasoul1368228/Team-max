@@ -1,10 +1,10 @@
 /* ------------------ ساختار کلی صفحه ------------------ */
 .body-pricing {
   margin: 0;
-  padding: 0;
+  padding: 1rem;
   font-family: "Vazirmatn-Bold";
-  font-size: clamp(13px, 2vw, 16px);
-  line-height: 1.7;
+  font-size: clamp(12px, 1.5vw, 15px);
+  line-height: 1.6;
   background: linear-gradient(135deg, #f9faff, #ffffff);
   display: flex;
   flex-direction: column;
@@ -14,9 +14,9 @@
 
 /* ------------------ عنوان بخش ------------------ */
 .pricing h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
   color: #0a4968;
-  margin-bottom: 3rem;
   font-weight: 900;
 }
 
@@ -25,19 +25,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 /* ------------------ کارت پلن ------------------ */
 .plan {
   background: white;
-  width: 280px;
-  border-radius: 20px;
-  padding: 2rem 1.8rem;
-  box-shadow: 0 8px 20px rgba(10, 73, 104, 0.1);
+  width: 220px;
+  border-radius: 16px;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 6px 16px rgba(10, 73, 104, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -48,8 +47,8 @@
 }
 
 .plan h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
   font-weight: 900;
   display: flex;
   align-items: center;
@@ -86,14 +85,14 @@
 
 /* ------------------ قیمت ------------------ */
 .price {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  margin: 0.4rem 0 1rem;
   font-weight: 700;
-  margin: 0.6rem 0 1.4rem;
   color: #34495e;
 }
 
 .price .old {
-  font-size: 1rem;
+  font-size: 0.7rem;
   color: #999;
   margin-left: 0.6rem;
   text-decoration: line-through;
@@ -103,21 +102,21 @@
 .plan ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 1.8rem;
-  width: 90%;
+  margin-bottom: 1.2rem;
+  width: 100%;
 }
 
 .plan ul li {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  padding-right: 20px;
   color: #555;
   user-select: none;
   position: relative;
-  padding-right: 22px;
 }
 
 .plan ul li::before {
-  content: "\f00c"; /* آیکون تیک از Font Awesome */
+  content: "\f00c";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
@@ -128,10 +127,11 @@
 /* ------------------ دکمه انتخاب پلن ------------------ */
 .btn {
   background: linear-gradient(135deg, #0a4968, #2a9d8f);
-  padding: 0.85rem 1.8rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 24px;
   color: white;
   font-weight: 700;
-  border-radius: 30px;
   box-shadow: 0 8px 20px rgba(10, 73, 104, 0.3);
   text-decoration: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
@@ -146,11 +146,23 @@
   box-shadow: 0 12px 28px rgba(10, 73, 104, 0.5);
 }
 
+/* ------------------ لیست قیمت بالا ------------------ */
+.list-gimat-up {
+  margin-right: 180px;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
 /* ------------------ ریسپانسیو ------------------ */
 @media (max-width: 1024px) {
   .pricing-cards {
     justify-content: center;
     gap: 1.5rem;
+  }
+
+  .list-gimat-up {
+    margin-right: 90px;
+    font-size: 0.8rem;
   }
 }
 
@@ -160,31 +172,26 @@
     gap: 2.5rem;
     align-items: center;
   }
-}
 
-.list-gimat-up {
-  margin-right: 180px;
-  font-weight: bold;
-  font-size: 1.6rem;
-}
-
-/* برای تبلت‌ها و صفحات متوسط */
-@media (max-width: 1024px) {
-  .list-gimat-up {
-    margin-right: 90px;
-    font-size: 1rem;
+  .plan {
+    width: 90%;
+    padding: 1rem;
   }
-}
 
-/* برای موبایل‌ها و صفحات کوچک */
-@media (max-width: 768px) {
+  .pricing h2 {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+  }
+
   .list-gimat-up {
     margin-right: 40px;
     font-size: 1rem;
   }
 }
 
-/* برای صفحات خیلی کوچک */
 @media (max-width: 480px) {
   .list-gimat-up {
     margin-top: 100px;
