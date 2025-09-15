@@ -13,6 +13,10 @@
   font-family: "Vazirmatn-Bold";
   src: url("../font/ttf/Vazirmatn-Bold.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Badee";
+  src: url("../font/Badee.ttf") format("truetype");
+}
 html {
   scroll-behavior: smooth;
 }
@@ -20,8 +24,8 @@ html {
 .home-page {
   margin: 0;
   padding: 0;
-  font-family: "Dana", "Shabnam-Medium-FD", "Vazirmatn-Bold";
- font-size: clamp(13px, 2vw, 16px);
+  font-family: "Dana", "Shabnam-Medium-FD", "Vazirmatn-Bold","badee";
+  font-size: clamp(13px, 2vw, 16px);
   background: linear-gradient(135deg, #f0932b, #ffa801);
   display: flex;
   flex-direction: column;
@@ -31,7 +35,8 @@ html {
   font-feature-settings: "lnum" 0, "tnum" 0;
   direction: rtl;
   unicode-bidi: isolate;
- 
+  -webkit-font-feature-settings: "lnum" 0, "tnum" 0;
+  -moz-font-feature-settings: "lnum" 0, "tnum" 0;
 }
 #splash-screen {
   position: fixed;
@@ -846,7 +851,7 @@ height: 85px;
 
 /* برای افزودن متن بعد از لوگو */
 .p-up {
-    font-family:'dana', 'vazir';
+    font-family:'badee';
     font-size: 20px;
     font-weight: bold;
     color: #0b0101;
@@ -863,6 +868,7 @@ height: 85px;
 .p-up:hover {
   background-color: #e73f3f;
   transform: scale(1.05);
+  font-size: 20px;
 }
 
 
