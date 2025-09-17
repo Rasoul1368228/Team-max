@@ -8,13 +8,17 @@
 }
 
 body.about-page {
+  direction: rtl;
   margin: 0;
   padding: 0;
   font-family: "Shabnam-Medium-FD", "Vazirmatn-Bold";
   font-size: clamp(13px, 2vw, 16px);
-  background-color: #fcfeff;
-  color: #333;
+  background-color: #051a35;
+  color: #faf6f6;
   line-height: 1.7;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease-in-out;
 }
 header {
   background: linear-gradient(135deg, #ffa801, #f0932b);
@@ -26,9 +30,12 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: #fcfeff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05); /* شفافیت برای افکت شیشه‌ای */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* سایه عمیق‌تر و نرم‌تر */
+  backdrop-filter: blur(12px); /* افکت بلور برای شیشه‌ای شدن */
+  transition: all 0.3s ease-in-out;
   padding: 2rem;
   margin: 3rem auto;
   max-width: 1000px;
@@ -43,7 +50,7 @@ header {
 
 .box .text h3 {
   font-size: 1.8rem;
-  color: #3498db;
+  color: #edf3f8;
   margin-bottom: 1rem;
 }
 
@@ -54,14 +61,22 @@ header {
 
 /* چرا مکس تیم */
 .chera-maxteam {
-  background: #fcfeff;
   padding: 4rem 2rem;
   text-align: center;
+  background: rgba(255, 255, 255, 0.05); /* شفافیت برای افکت شیشه‌ای */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* سایه عمیق‌تر و نرم‌تر */
+  backdrop-filter: blur(12px); /* افکت بلور برای شیشه‌ای شدن */
+  -webkit-backdrop-filter: blur(12px); /* پشتیبانی از مرورگرهای WebKit */
+  transition: all 0.3s ease-in-out;
+  margin: 3rem auto;
+  max-width: 1000px;
 }
 
 .title-with-logo h2 {
   font-size: 1.6rem;
-  color: #2f3640;
+  color: #f1f2f4;
   margin-bottom: 2rem;
 }
 
@@ -71,7 +86,7 @@ header {
 }
 
 .box-item.unified {
-  background: #fcfeff;
+  background: #051a35;
   border-radius: 16px;
   padding: 2rem;
   max-width: 800px;
@@ -89,7 +104,7 @@ header {
   font-size: 1rem;
   position: relative;
   padding-right: 1.5rem;
-  color: #333;
+  color: #f9f8f8;
 }
 
 .benefits-list li::before {
@@ -102,7 +117,7 @@ header {
 
 /* اعضای تیم */
 .team-section {
-  background-color: #fcfeff;
+  background-color: #051a35;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -111,7 +126,7 @@ header {
   max-width: 800px;
   margin: 0 auto 2rem;
   font-size: 1.1rem;
-  color: #555;
+  color: #f3f0f0;
 }
 
 .box-container {
@@ -161,7 +176,7 @@ header {
 }
 
 .card-front {
-  background: #f0f8ff;
+  background: #051a35;
 }
 
 .card-front img {
@@ -210,38 +225,12 @@ header {
   background: #1c5980;
 }
 
-/* ریسپانسیو */
-@media (max-width: 768px) {
-  .box {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .box img {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .box-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .team-card {
-    max-width: 90%;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
 /* بخش آمار و دستاوردها */
 .stats-section {
   position: relative;
   padding: 100px 20px;
-  background-color: #fcfeff;
-  color: #0c0b0b;
+  background-color: #051a35;
+  color: #f2f8f7;
   text-align: center;
   font-family: "Shabnam-Medium-FD", sans-serif;
   overflow: hidden;
@@ -261,7 +250,7 @@ header {
 }
 
 .stat-item {
-  background: rgba(255, 255, 255, 0.08);
+  background: #051a35;
   border-radius: 17px;
   padding: 8px 26px;
   width: 150px;
@@ -273,15 +262,15 @@ header {
 .stat-item:hover {
   transform: translateY(-10px) scale(1.05) rotateZ(-0.5deg);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(135deg, #ffffff, #e0f7fa);
-  color: #2c3e50;
+  background: #333;
+  color: #9be010;
   transition: all 0.4s ease-in-out;
   border: 1px solid #3498db;
 }
 
 .stat-item i {
   font-size: 2.2rem;
-  color: #8092eb;
+  color: #f4f5f7;
   margin-bottom: 18px;
   display: block;
   transform: scale(1.2);
@@ -296,58 +285,44 @@ header {
 
 .stat-item p {
   font-size: 1rem;
-  color: #060505;
+  color: #f2eded;
 }
 .stat-item:hover p {
-  color: #2c3e50;
-}
-/* واکنش‌گرایی */
-@media (max-width: 992px) {
-  .stat-item {
-    width: 200px;
-    padding: 30px 20px;
-  }
+  color: #78ea0d;
 }
 
-@media (max-width: 768px) {
-  .stats-container {
-    gap: 20px;
-    justify-content: center;
-  }
-  .stat-item {
-    width: 160px;
-    padding: 25px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .stats-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-  .stat-item h3 {
-    font-size: 1.8rem;
-  }
-  .stat-item i {
-    font-size: 2.5rem;
-  }
-}
 .section-heading {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: #2f3640;
-  text-align: center;
+  width: 547px;
+  /* font-size: 2rem; */
+  font-weight: 500;
+  color: #e3e3e4;
+  /* text-align: center; */
   margin-bottom: 1.2rem;
+  margin-right: 4.5rem;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .section-subtext {
-  font-size: 1.25rem;
-  color: #555;
-  text-align: center;
-  max-width: 850px;
-  margin: 0 auto 3rem;
-  line-height: 1.9;
+  font-size: 1.1rem;
+  color: #ccc;
+  text-align: justify;
+  max-width: 700px;
+  margin: 2rem auto;
+  line-height: 1.6;
+  /* افکت شیشه‌ای */
+  background: rgba(255, 255, 255, 0.1); /* پس‌زمینه نیمه‌شفاف */
+  backdrop-filter: blur(10px); /* بلور پس‌زمینه */
+  -webkit-backdrop-filter: blur(10px); /* برای مرورگرهای WebKit */
+  border-radius: 15px; /* گوشه‌های گرد */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* خط دور ظریف */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* سایه ملایم */
+  padding: 1.5rem;
 }
 
 img {
@@ -358,7 +333,7 @@ img {
   width: 95%;
   max-width: 850px;
   border-radius: 25px;
-  background: #fff;
+  background: #051a35;
   box-shadow: 0 10px 50px rgba(252, 56, 56, 0.3);
   position: relative; /* قبلاً absolute بود */
   margin: 4rem auto;
@@ -434,7 +409,7 @@ img {
 }
 .content span {
   display: block;
-  color: #7b7992;
+  color: #efeff6;
   margin-bottom: 15px;
   font-size: 22px;
   font-weight: 500;
@@ -442,11 +417,11 @@ img {
 .content .title {
   font-size: 30px;
   font-weight: 700;
-  color: #0d0925;
+  color: #b5e90a;
   margin-bottom: 20px;
 }
 .content .text {
-  color: #4e4a67;
+  color: #b5e90a;
   font-size: 19px;
   margin-bottom: 30px;
   line-height: 1.5em;
@@ -510,33 +485,175 @@ input {
 #tap-3:checked ~ .sliders .tap-3::before {
   transform: scaleX(1);
   width: 100%;
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
 }
 #imgTap:checked ~ .inner-part .content {
   display: none;
 }
-/* Responsive */
-@media screen and (max-width: 50rem) {
+/* 📱 موبایل کوچک (حداکثر 480px) */
+@media (max-width: 480px) {
+  body.about-page {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  .box {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .box img {
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .content {
+    width: 100%;
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+
+  .content .title {
+    font-size: 20px;
+  }
+
+  .content .text {
+    font-size: 14px;
+  }
+
+  .team-card {
+    max-width: 90%;
+    margin: 1rem auto;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-item {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .blog-card {
+    width: 100%;
+    height: auto;
+  }
+
   .inner-part {
     flex-direction: column;
+    position: relative;
   }
-  .blog-card {
-    height: 560px;
+
+  .inner-part .img {
+    width: 100%;
+    height: auto;
   }
-  .sliders {
-    left: 50%;
+}
+
+/* 📲 تبلت (481px تا 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .box {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
   }
+
+  .box img {
+    width: 220px;
+    margin: 0 auto;
+  }
+
   .content {
-    margin-left: 0;
-    width: auto;
+    width: 100%;
     margin-top: 1rem;
   }
-  .text {
-    text-align: left !important;
+
+  .team-card {
+    max-width: 45%;
+    margin: 1rem auto;
   }
-  #imgTap:checked ~ .inner-part .img {
-    height: 560px;
-    width: 100%;
-    top: 95px;
-    position: relative;
+
+  .stats-container {
+    gap: 25px;
+  }
+
+  .stat-item {
+    width: 45%;
+  }
+
+  .blog-card {
+    width: 95%;
+    height: auto;
+  }
+}
+
+/* 💻 لپ‌تاپ (769px تا 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .box {
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+  }
+
+  .box img {
+    width: 240px;
+  }
+
+  .content {
+    width: 60%;
+  }
+
+  .team-card {
+    max-width: 30%;
+  }
+
+  .stats-container {
+    gap: 30px;
+  }
+
+  .stat-item {
+    width: 200px;
+  }
+
+  .blog-card {
+    max-width: 700px;
+  }
+}
+
+/* 🖥 دسکتاپ بزرگ (1201px به بالا) */
+@media (min-width: 1201px) {
+  .box img {
+    width: 200px;
+  }
+
+  .content {
+    width: 530px;
+  }
+
+  .team-card {
+    max-width: 260px;
+  }
+
+  .stats-container {
+    gap: 40px;
+  }
+
+  .stat-item {
+    width: 220px;
+  }
+
+  .blog-card {
+    max-width: 850px;
   }
 }

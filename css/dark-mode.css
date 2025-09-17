@@ -58,8 +58,8 @@ body.dark-mode::after {
   line-height: 1.4;
   color: #fff;
   background: linear-gradient(135deg, #f97316, #fb923c);
-  border: none;
-  border-radius: 999px;
+    /* border: none; */
+    border-radius: 10px;
   cursor: pointer;
 
   box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
