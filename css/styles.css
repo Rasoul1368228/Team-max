@@ -217,17 +217,38 @@ html {
   text-decoration: none;
   padding: 8px 12px;
   border-radius: 8px;
-  transition: background 1.3s ease, transform 0.3s ease;
-  -webkit-transition: background 1.3s ease, transform 0.3s ease;
-  -moz-transition: background 1.3s ease, transform 0.3s ease;
-  -ms-transition: background 1.3s ease, transform 0.3s ease;
-  -o-transition: background 1.3s ease, transform 0.3s ease;
+  position: relative; /* حتما اضافه شود */
+  overflow: hidden;   /* برای جلوگیری از بیرون زدن :after */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
+
 .nav-links li a:hover {
   color: #4086b1;
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
+
+.nav-links li a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #d0e6f9; /* رنگ دلخواه برای hover */
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover:after {
+  width: 100%;
+}
+/* رنگ مخصوص هر لینک */
+.nav-links li:nth-child(1) a:after { background: #3498db; } /* آبی */
+.nav-links li:nth-child(2) a:after { background: #ffd071; } /* زرد */
+.nav-links li:nth-child(3) a:after { background: #f0776c; } /* قرمز */
+.nav-links li:nth-child(4) a:after { background: #1abc9c; } /* سبز */
+
 
 .nav-links li i {
     font-size: 20px;

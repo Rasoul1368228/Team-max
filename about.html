@@ -96,6 +96,7 @@
       <i class="fas fa-sun"></i>
       <span class="label">روشن</span>
     </button>
+
     <!-- هدر و ناوبری -->
     <header>
       <div class="header-container">
@@ -114,20 +115,17 @@
             <span></span>
             <span></span>
           </div>
-
           <ul class="nav-links">
-            <a href="./index.html"
-              ><p title="برگشت به خانه" class="p-up">
+            <a href="./index.html">
+              <p title="برگشت به خانه" class="p-up">
                 "مکس تیم | قدرت در جزئیات"
-              </p></a
-            >
-
+              </p>
+            </a>
             <li>
               <a href="about.html"
                 ><i class="fas fa-user"></i> درباره مکس تیم</a
               >
             </li>
-
             <li>
               <a
                 href="https://eitaa.com/nevisande2000"
@@ -193,23 +191,29 @@
         </div>
       </div>
     </section>
-    <!--اعضای تیم -->
-    <section>
-      <h1 class="section-heading">اعضای اصلی تیم طراحی مدیریتی مکس</h1>
-      <h4 class="section-subtext">
-        تیم مکس از متخصصان خلاق در حوزه طراحی وب، توسعه اپلیکیشن، برندینگ و
-        تجربه کاربری تشکیل شده است.<br />
+
+    <!-- معرفی اعضای تیم -->
+    <section class="team-intro">
+      <p>
+        اعضای اصلی تیم طراحی مدیریتی <strong>مکس تیم</strong> از متخصصان خلاق در
+        حوزه طراحی وب، توسعه اپلیکیشن، برندینگ و تجربه کاربری تشکیل شده‌اند.
+      </p>
+      <p>
         هر عضو تیم با تخصص منحصربه‌فرد خود، در مسیر تحقق اهداف دیجیتال شما نقش
         کلیدی دارد.
-      </h4>
+      </p>
+    </section>
 
+    <!-- کارت اعضای تیم -->
+    <section class="team-cards-container">
       <div class="blog-card">
+        <!-- انتخاب تصاویر و محتوا -->
         <input type="radio" name="select" id="tap-1" checked />
         <input type="radio" name="select" id="tap-2" />
         <input type="radio" name="select" id="tap-3" />
+        <input type="checkbox" id="imgTap-1" />
 
-        <input type="checkbox" id="imgTap" />
-
+        <!-- اسلایدر -->
         <div class="sliders">
           <label for="tap-1" class="tap tap-1"></label>
           <label for="tap-2" class="tap tap-2"></label>
@@ -218,11 +222,11 @@
 
         <!-- عضو اول -->
         <div class="inner-part">
-          <label for="imgTap" class="img">
-            <img src="./images/avatar.jpg" alt="" class="img-1" />
+          <label for="imgTap-1" class="img">
+            <img src="./images/avatar11.jpg" alt="مهسا محمدی" class="img-1" />
           </label>
           <div class="content content-1">
-            <span> مدیر فروش تیم </span>
+            <span>مدیر فروش تیم</span>
             <h3 class="title">مهسا محمدی</h3>
             <p class="text">
               متخصص در ارتباط با مشتری، تدوین استراتژی‌های فروش و توسعه بازار
@@ -233,11 +237,11 @@
 
         <!-- عضو دوم -->
         <div class="inner-part">
-          <label for="imgTap" class="img">
-            <img src="./images/avatar.jpg" alt="" class="img-2" />
+          <label for="imgTap-1" class="img">
+            <img src="./images/avatar.jpg" alt="رسول حیدروند" class="img-2" />
           </label>
           <div class="content content-2">
-            <span> برنامه‌نویس و طراح رابط کاربری</span>
+            <span>برنامه‌نویس و طراح رابط کاربری</span>
             <h3 class="title">رسول حیدروند</h3>
             <p class="text">
               متخصص در HTML، CSS، JavaScript و React با تمرکز بر سرعت، سئو و
@@ -248,11 +252,11 @@
 
         <!-- عضو سوم -->
         <div class="inner-part">
-          <label for="imgTap" class="img">
-            <img src="./images/avatar.jpg" alt="" class="img-3" />
+          <label for="imgTap-1" class="img">
+            <img src="./images/avatar.jpg" alt="مهدی marzano74" class="img-3" />
           </label>
           <div class="content content-3">
-            <span> پشتیبانی ۲۴ ساعته و مدیریت پروژه</span>
+            <span>پشتیبانی ۲۴ ساعته و مدیریت پروژه</span>
             <h3 class="title">مهدی marzano74</h3>
             <p class="text">
               دارای تجربه گسترده در هماهنگی تیم‌های طراحی و پاسخ‌گویی سریع به
@@ -262,6 +266,7 @@
         </div>
       </div>
     </section>
+
     <!-- بخش آمار و دستاوردها -->
     <section class="stats-section">
       <h2 class="stats-title">دستاوردها و آمار تیم ما</h2>
@@ -338,6 +343,7 @@
       <div class="footer-bottom">
         <p>© کلیه حقوق محفوظ است | مکس تیم 2025</p>
       </div>
+
       <div class="footer-wave">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
           <path
@@ -347,6 +353,7 @@
         </svg>
       </div>
     </footer>
+
     <script src="./script.js"></script>
   </body>
 </html>
