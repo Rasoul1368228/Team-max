@@ -1,189 +1,162 @@
+.box,
+.chera-maxteam {
+  background: rgba(255, 255, 255, 0.05);
+  transition: 0.3s ease-in-out;
+  margin: 3rem auto;
+  max-width: 1000px;
+}
+.benefits-list li,
+.blog-card,
+.card-inner,
+.sliders .tap,
+.stats-section,
+header {
+  position: relative;
+}
 @font-face {
-  font-family: "Shabnam-Medium-FD";
+  font-family: Shabnam-Medium-FD;
   src: url("../font/Shabnam-Medium-FD.ttf") format("truetype");
+  font-display: swap;
 }
-
 @font-face {
-  font-family: "Vazirmatn-Bold";
+  font-family: Vazirmatn-Bold;
   src: url("../font/ttf/Vazirmatn-Bold.ttf") format("truetype");
+  font-display: swap;
 }
-
 body.about-page {
-  direction: rtl;
   margin: 0;
   padding: 0;
-  font-family: "Shabnam-Medium-FD", "Vazirmatn-Bold";
+  font-family: Shabnam-Medium-FD, Vazirmatn-Bold;
   font-size: clamp(13px, 2vw, 16px);
-  background-color: #051a35;
+  background: linear-gradient(to right, #4b6cb7, #182848);
   color: #faf6f6;
   line-height: 1.7;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(12px);
-  transition: all 0.3s ease-in-out;
 }
 header {
   background: linear-gradient(135deg, #ffa801, #f0932b);
-  position: relative;
 }
-
-/* معرفی مکس تیم */
 .box {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05); /* شفافیت برای افکت شیشه‌ای */
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* سایه عمیق‌تر و نرم‌تر */
-  backdrop-filter: blur(12px); /* افکت بلور برای شیشه‌ای شدن */
-  transition: all 0.3s ease-in-out;
   padding: 2rem;
-  margin: 3rem auto;
-  max-width: 1000px;
   gap: 2rem;
 }
-
+.box-container,
+.boxx-container {
+  justify-content: center;
+  display: flex;
+}
 .box img {
   width: 100%;
   max-width: 280px;
   height: auto;
 }
-
 .box .text h3 {
   font-size: 1.8rem;
   color: #edf3f8;
   margin-bottom: 1rem;
 }
-
 .box .text p {
   font-size: 1rem;
   text-align: justify;
 }
-
-/* چرا مکس تیم */
 .chera-maxteam {
   padding: 4rem 2rem;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.05); /* شفافیت برای افکت شیشه‌ای */
+  /* text-align: center; */
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* سایه عمیق‌تر و نرم‌تر */
-  backdrop-filter: blur(12px); /* افکت بلور برای شیشه‌ای شدن */
-  -webkit-backdrop-filter: blur(12px); /* پشتیبانی از مرورگرهای WebKit */
-  transition: all 0.3s ease-in-out;
-  margin: 3rem auto;
-  max-width: 1000px;
 }
-
+.stats-section,
+.team-section {
+  background-color: #051a35;
+  text-align: center;
+}
 .title-with-logo h2 {
   font-size: 1.6rem;
   color: #f1f2f4;
   margin-bottom: 2rem;
 }
-
-.boxx-container {
-  display: flex;
-  justify-content: center;
-}
-
 .box-item.unified {
-  background: #051a35;
+  /* background: #051a35; */
   border-radius: 16px;
   padding: 2rem;
   max-width: 800px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
-
 .benefits-list {
   list-style: none;
   padding: 0;
   text-align: right;
 }
-
 .benefits-list li {
   margin-bottom: 1.5rem;
   font-size: 1rem;
-  position: relative;
   padding-right: 1.5rem;
   color: #f9f8f8;
 }
-
 .benefits-list li::before {
   content: "✔";
   position: absolute;
   right: 0;
   color: #00a8ff;
-  font-weight: bold;
+  font-weight: 700;
 }
-
-/* اعضای تیم */
 .team-section {
-  background-color: #051a35;
   padding: 4rem 2rem;
-  text-align: center;
 }
-
 .team-section p {
   max-width: 800px;
   margin: 0 auto 2rem;
   font-size: 1.1rem;
   color: #f3f0f0;
 }
-
 .box-container {
-  display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
-
 .team-card {
   width: 100%;
   max-width: 260px;
   aspect-ratio: 4/5;
   perspective: 1000px;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s;
 }
-
 .team-card:hover {
   transform: translateY(-8px);
 }
-
 .card-inner {
-  position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.8s ease;
+  transition: transform 0.8s;
 }
-
 .team-card:hover .card-inner {
   transform: rotateY(180deg);
 }
-
-/* بخش آمار و دستاوردها */
 .stats-section {
-  position: relative;
   padding: 100px 20px;
-  background-color: #051a35;
   color: #f2f8f7;
-  text-align: center;
-  font-family: "Shabnam-Medium-FD", sans-serif;
+  font-family: Shabnam-Medium-FD, sans-serif;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .stats-title {
   font-size: 2rem;
   margin-bottom: 44px;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
-
+.section-subtext,
+.team-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 .stats-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
 }
-
 .stat-item {
   background: #051a35;
   border-radius: 17px;
@@ -191,37 +164,33 @@ header {
   width: 150px;
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: transform 0.5s, box-shadow 0.5s;
   text-align: center;
 }
-.stat-item:hover {
-  transform: translateY(-10px) scale(1.05) rotateZ(-0.5deg);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-  background: #333;
-  color: #9be010;
-  transition: all 0.4s ease-in-out;
-  border: 1px solid #3498db;
-  -webkit-transform: translateY(-10px) scale(1.05) rotateZ(-0.5deg);
-  -moz-transform: translateY(-10px) scale(1.05) rotateZ(-0.5deg);
-  -ms-transform: translateY(-10px) scale(1.05) rotateZ(-0.5deg);
-  -o-transform: translateY(-10px) scale(1.05) rotateZ(-0.5deg);
+.section-heading,
+.section-subtext {
+  background: rgba(255, 255, 255, 0.1);
 }
-
+.stat-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background: #222;
+  border: 1px solid #3498db;
+  color: #9be010;
+}
 .stat-item i {
   font-size: 2.2rem;
   color: #f4f5f7;
   margin-bottom: 18px;
   display: block;
   transform: scale(1.2);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
 }
-
 .stat-item h3 {
   font-size: 1.3rem;
   font-weight: 400;
   margin-bottom: 10px;
 }
-
 .stat-item p {
   font-size: 1rem;
   color: #f2eded;
@@ -229,41 +198,27 @@ header {
 .stat-item:hover p {
   color: #78ea0d;
 }
-
 .section-heading {
   width: 547px;
-  /* font-size: 2rem; */
   font-weight: 500;
   color: #e3e3e4;
-  /* text-align: center; */
   margin-bottom: 1.2rem;
   margin-right: 4.5rem;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
-
 .section-subtext {
-  font-size: 1.1rem;
   color: #ccc;
   text-align: justify;
   max-width: 700px;
   margin: 2rem auto;
-  line-height: 1.6;
-  /* افکت شیشه‌ای */
-  background: rgba(255, 255, 255, 0.1); /* پس‌زمینه نیمه‌شفاف */
-  backdrop-filter: blur(10px); /* بلور پس‌زمینه */
-  -webkit-backdrop-filter: blur(10px); /* برای مرورگرهای WebKit */
-  border-radius: 15px; /* گوشه‌های گرد */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* خط دور ظریف */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* سایه ملایم */
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1.5rem;
 }
-
 img {
   max-width: 100%;
 }
@@ -273,8 +228,6 @@ img {
   max-width: 774px;
   border-radius: 25px;
   background: #051a35;
-  box-shadow: 0 10px 50px rgba(252, 56, 56, 0.3);
-  position: relative;
   margin: 4rem auto;
 }
 .inner-part {
@@ -295,40 +248,31 @@ img {
   flex-shrink: 0;
   overflow: hidden;
 }
-
 #imgTap:checked ~ .inner-part .img {
   height: 370px;
   width: 850px;
   z-index: 99;
   margin-top: 10px;
-  transition: 0.3s 0.2s ease-in;
-  -webkit-transition: 0.3s 0.2s ease-in;
-  -moz-transition: 0.3s 0.2s ease-in;
-  -ms-transition: 0.3s 0.2s ease-in;
-  -o-transition: 0.3s 0.2s ease-in;
+  transition: 0.3s ease-in 0.2s;
+  -webkit-transition: 0.3s ease-in 0.2s;
+  -moz-transition: 0.3s ease-in 0.2s;
+  -ms-transition: 0.3s ease-in 0.2s;
+  -o-transition: 0.3s ease-in 0.2s;
 }
 .img img {
   width: 80%;
-  /*پرکردنعرضوالد*/
   height: auto;
-  /*ارتفاعخودکاربراینسبتتصویر*/
   max-height: 280px;
-  /*محدودکردنارتفاعحداکثری*/
   object-fit: cover;
-  /*حفظنسبتتصویروپرکردنباکس*/
   border-radius: 16px;
-  /*گوشه‌هایگرد*/
-  transition: transform 0.4s ease, filter 0.4s ease, opacity 0.3s ease;
+  transition: transform 0.4s, filter 0.4s, opacity 0.3s;
   cursor: pointer;
-  /*نشانگرکلیک*/
   display: block;
   -webkit-border-radius: 16px;
   -moz-border-radius: 16px;
   -ms-border-radius: 16px;
   -o-border-radius: 16px;
 }
-
-/* افکت Hover */
 .img:hover img {
   transform: scale(1);
   filter: brightness(1.1);
@@ -337,12 +281,9 @@ img {
   -ms-transform: scale(1);
   -o-transform: scale(1);
 }
-
-/* وقتی تصویر فعال شد (برای checkbox یا radio) */
 .inner-part .img.active img {
   transform: scale(1.1);
 }
-
 #tap-1:checked ~ .inner-part .img-1,
 #tap-2:checked ~ .inner-part .img-2,
 #tap-3:checked ~ .inner-part .img-3 {
@@ -356,7 +297,6 @@ img {
   opacity: 0;
   transition: 0.6s;
 }
-
 #tap-1:checked ~ .inner-part .content-1,
 #tap-2:checked ~ .inner-part .content-2,
 #tap-3:checked ~ .inner-part .content-3 {
@@ -372,7 +312,11 @@ img {
   font-size: 20px;
   font-weight: 500;
 }
-
+.content button,
+.sliders .tap {
+  display: inline-flex;
+  cursor: pointer;
+}
 .content .title {
   font-size: 30px;
   font-weight: 700;
@@ -387,18 +331,15 @@ img {
   text-align: justify;
 }
 .content button {
-  display: inline-flex;
   padding: 15px 20px;
-  border: none;
+  border: 1px solid #fd3838;
   font-size: 16px;
   text-transform: uppercase;
   color: #fff0e6;
   font-weight: 600;
   letter-spacing: 1px;
-  background: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
-  cursor: pointer;
+  background: linear-gradient(147deg, #fe8a39 0, #fd3838 74%);
   border-radius: 50px;
-  border: 1px solid #fd3838;
 }
 .sliders {
   position: absolute;
@@ -407,18 +348,17 @@ img {
   transform: translateX(-50%);
   z-index: 12;
 }
-#imgTap:checked ~ .sliders {
+#imgTap:checked ~ .inner-part .content,
+#imgTap:checked ~ .sliders,
+input {
   display: none;
 }
 .sliders .tap {
-  position: relative;
   height: 8px;
   width: 23px;
   background: #d9d9d9;
   border-radius: 3px;
-  display: inline-flex;
   margin: 0 3px;
-  cursor: pointer;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
@@ -434,14 +374,11 @@ img {
   left: 0;
   height: 100%;
   width: -100%;
-  background: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+  background: linear-gradient(147deg, #fe8a39 0, #fd3838 74%);
   border-radius: 10px;
   transform: scaleX(0);
   transition: transform 0.6s;
   transform-origin: left;
-}
-input {
-  display: none;
 }
 #tap-1:checked ~ .sliders .tap-1::before,
 #tap-2:checked ~ .sliders .tap-2::before,
@@ -453,115 +390,94 @@ input {
   -ms-transform: scaleX(1);
   -o-transform: scaleX(1);
 }
-#imgTap:checked ~ .inner-part .content {
-  display: none;
-}
 .team-intro {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto 2rem;
-  font-size: 1.1rem;
   color: #f3f0f0;
-  line-height: 1.6;
   text-align: justify;
-  background: rgba(255, 255, 255, 0.05); /* شفاف برای افکت شیشه‌ای */
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
-
 .team-intro p {
   margin-bottom: 1rem;
 }
-
 .team-intro strong {
-  color: #b5e90a; /* رنگ تاکید برای نام تیم */
+  color: #b5e90a;
 }
-@media (max-width: 768px) {
-  .team-card:hover .card-inner {
-    transform: none;
-  }
-}
-/* --- تبلت و لپ‌تاپ کوچک --- */
 @media (max-width: 1024px) {
-  .box {
+  .box,
+  .stats-container {
     flex-direction: column;
+  }
+  .box {
     padding: 1.5rem;
     margin: 2rem auto;
     gap: 1.5rem;
   }
-
   .box img {
     max-width: 100%;
     height: auto;
   }
-
+  .img-1,
+  .img-2,
+  .img-3 {
+    width: 40%;
+  }
   .box .text h3 {
     font-size: 1.6rem;
   }
-
   .box .text p {
     font-size: 1rem;
   }
-
   .chera-maxteam {
     padding: 3rem 2rem;
     max-width: 95%;
   }
-
   .team-card {
     max-width: 200px;
     margin: 0.7rem;
   }
-
   .stats-section {
     padding: 70px 20px;
   }
-
   .stats-container {
     gap: 25px;
-    flex-direction: column;
     align-items: center;
   }
-
   .stat-item {
     width: 85%;
     max-width: 300px;
     margin: 0 auto;
   }
-
   .section-heading {
     width: 90%;
     margin-right: 0;
     text-align: center;
     font-size: 1.5rem;
   }
-
   .section-subtext {
     width: 95%;
     padding: 1.2rem;
     margin: 1.5rem auto;
   }
-
   .blog-card {
     width: 95%;
     height: auto;
     margin: 2rem auto;
   }
-
   .inner-part {
     flex-direction: column;
     height: auto;
     padding: 0;
     position: relative;
   }
-
   .inner-part .img {
     width: 60%;
     height: auto;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 1rem;
   }
-
   .img-1,
   .img-2,
   .img-3 {
@@ -569,142 +485,122 @@ input {
     max-width: 100%;
     height: auto;
   }
-
   .content {
     width: 90%;
-    margin: 1rem auto 0 auto;
+    margin: 1rem auto 0;
     opacity: 1;
   }
-
   .sliders {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
   }
 }
-
-/* --- موبایل --- */
 @media (max-width: 768px) {
+  .team-card:hover .card-inner {
+    transform: none;
+  }
   .box {
     padding: 1rem;
     margin: 1.5rem auto;
     gap: 1rem;
   }
-
   .box .text h3 {
     font-size: 1.4rem;
   }
-
   .box .text p {
     font-size: 0.95rem;
   }
-
   .team-card {
     max-width: 180px;
     margin: 0.8rem;
   }
-
   .stats-container {
     gap: 15px;
   }
-
   .stat-item {
     width: 90%;
     max-width: 260px;
   }
-
   .section-heading {
     font-size: 1.3rem;
     margin-bottom: 1rem;
   }
-
   .section-subtext {
     font-size: 1rem;
     padding: 1rem;
   }
-
   .blog-card {
     height: auto;
   }
-
   .inner-part {
     flex-direction: column;
     padding: 0;
   }
-
   .inner-part .img {
     width: 80%;
     height: auto;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 1rem;
   }
-
   .img-1,
   .img-2,
   .img-3 {
     display: block;
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
   }
-
   .content {
     width: 85%;
     margin: 0 auto;
   }
 }
-
-/* --- موبایل کوچک (کمتر از 480px) --- */
 @media (max-width: 480px) {
   .box {
     padding: 0.8rem;
     margin: 1rem auto;
     gap: 0.8rem;
   }
-
   .box .text h3 {
     font-size: 1.2rem;
   }
-
   .box .text p {
     font-size: 0.9rem;
   }
-
   .team-card {
     max-width: 150px;
     margin: 0.5rem;
   }
-
   .stats-container {
     gap: 12px;
   }
-
   .stat-item {
     width: 95%;
     max-width: 240px;
   }
-
   .section-heading {
     font-size: 1.1rem;
   }
-
   .section-subtext {
     font-size: 0.95rem;
     padding: 0.8rem;
   }
-
   .inner-part .img {
     width: 95%;
     height: auto;
     margin-bottom: 0.8rem;
   }
-
   .content {
     width: 90%;
     margin: 0 auto;
   }
-
   .sliders {
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
+  }
+  .img-1,
+  .img-2,
+  .img-3 {
+    width: 40%;
   }
 }

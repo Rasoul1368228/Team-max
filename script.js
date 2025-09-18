@@ -210,3 +210,19 @@ backToTopBtn.addEventListener("click", () => {
 function toPersianDigits(num) {
   return num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
 }
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+    loader.style.transition = "opacity 0.5s";
+    setTimeout(() => (loader.style.display = "none"), 500);
+  }, 2000); // بعد 3 ثانیه
+});
+// انتخاب کارت و شماره تماس
+const orderCard = document.getElementById("order-card");
+const phoneContact = document.getElementById("phone-contact");
+
+// افزودن رویداد کلیک
+orderCard.addEventListener("click", () => {
+  phoneContact.scrollIntoView({ behavior: "smooth", block: "center" });
+});

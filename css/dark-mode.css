@@ -1,17 +1,16 @@
-/* ==================== فونت فارسی ==================== */
+.card.dark-mode,
+.hero-banner.dark-mode {
+  background: #1e293b;
+}
 @font-face {
-  font-family: "Dana";
+  font-family: Dana;
   src: url("../font/dana/dana black.ttf") format("truetype");
 }
-
-/* ==================== حالت تاریک کلی سایت ==================== */
 body.dark-mode {
   background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #f3f4f6;
 }
-
-body.dark-mode::before,
-body.dark-mode::after {
+body.dark-mode::after,
+body.dark-mode::before {
   content: "";
   position: fixed;
   top: 0;
@@ -25,10 +24,14 @@ body.dark-mode::after {
     radial-gradient(#fff 1px, transparent 1px);
   background-size: 200px 200px, 300px 300px, 400px 400px;
   background-position: 0 0, 50px 100px, 100px 200px;
-  animation: twinkle 12s linear infinite;
+  animation: 12s linear infinite twinkle;
   opacity: 0.3;
 }
-
+body.dark-mode .moon,
+body:not(.dark-mode) .sun {
+  opacity: 1;
+  transform: scale(1);
+}
 @keyframes twinkle {
   0%,
   100% {
@@ -40,12 +43,10 @@ body.dark-mode::after {
     transform: translateY(-10px);
   }
 }
-
-/* ==================== دکمه تغییر تم ==================== */
 #theme-toggle {
   position: fixed;
   top: 30px;
-  left:26px;
+  left: 26px;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -53,116 +54,75 @@ body.dark-mode::after {
   gap: 0.4rem;
   padding: 0.6rem 1rem;
   font-size: 0.95rem;
-  font-family: "Dana", sans-serif;
+  font-family: Dana, sans-serif;
   font-weight: 500;
   line-height: 1.4;
   color: #fff;
   background: linear-gradient(135deg, #f97316, #fb923c);
-    /* border: none; */
-    border-radius: 10px;
+  border-radius: 10px;
   cursor: pointer;
-
   box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
   backdrop-filter: blur(6px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
 #theme-toggle:hover {
   transform: translateY(-2px);
-  box-shadow:
-    10px 10px 24px rgba(0, 0, 0, 0.12),
+  box-shadow: 10px 10px 24px rgba(0, 0, 0, 0.12),
     -6px -6px 14px rgba(255, 255, 255, 0.7);
-}
-
-
-#theme-toggle:hover {
   background-color: #16a085;
   transform: rotate(10deg) scale(1.08);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
 }
-
-body.dark-mode #theme-toggle {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  color: #facc15;
-}
-
 .dark-mode #theme-toggle {
   background-color: #34495e;
 }
-
-/* ==================== آیکون‌های خورشید و ماه ==================== */
 .icon {
   position: absolute;
   opacity: 0;
   transform: scale(0.4) rotate(-45deg);
-  transition: all 0.5s ease;
+  transition: 0.5s;
 }
-
 .sun {
   color: #facc15;
 }
-
-.moon {
+.moon,
+nav.dark-mode a:hover {
   color: #38bdf8;
 }
-
-body:not(.dark-mode) .sun {
-  opacity: 1;
-  transform: scale(1);
-}
-
 body.dark-mode .moon {
-  opacity: 1;
-  transform: scale(1);
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
 }
-
-/* ==================== عناصر عمومی ==================== */
 .label {
-  font-weight: bold;
+  font-weight: 700;
 }
-
-/* ==================== حالت تاریک برای اجزای صفحه ==================== */
 header.dark-mode,
 nav.dark-mode {
   background: rgba(15, 23, 42, 0.8);
   border-bottom: 1px solid #334155;
 }
-
 nav.dark-mode a {
   color: #e2e8f0;
 }
-
-nav.dark-mode a:hover {
-  color: #38bdf8;
-}
-
-.hero-banner.dark-mode {
-  background: #1e293b;
-}
-
 .card.dark-mode {
-  background: #1e293b;
   color: #e2e8f0;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-
 .card.dark-mode:hover {
   background: #334155;
 }
-
 .btn-cta.dark-mode {
   background: linear-gradient(120deg, #0ea5e9, #0284c7);
   color: #fff;
   box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
 }
+.footer.dark-mode *,
 header.dark-mode * {
   position: relative;
-  z-index: 2; /* متن و لینک روی overlay */
-  color: #f3f4f6; /* رنگ متن دارک مود */
+  z-index: 2;
+  color: #f3f4f6;
 }
 .footer.dark-mode::before {
   content: "";
@@ -171,78 +131,51 @@ header.dark-mode * {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 23, 42, 0.8); /* overlay تاریک */
+  background-color: rgba(15, 23, 42, 0.8);
   z-index: 1;
 }
-
-.footer.dark-mode * {
-  position: relative;
-  z-index: 2; /* متن و لینک روی overlay */
-  color: #f3f4f6;
-}
-/* حالت دارک مود */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-mode header,
-body.dark-mode nav,
 body.dark-mode .box,
 body.dark-mode .chera-maxteam,
 body.dark-mode .team-section,
-body.dark-mode footer {
+body.dark-mode footer,
+body.dark-mode header,
+body.dark-mode nav {
   background: #1e1e1e;
   color: #f5f5f5;
 }
-
+body.dark-mode .pricing-cards .plan .price strong,
 body.dark-mode a {
   color: #f0932b;
 }
-
-body.dark-mode .box img,
-body.dark-mode .team-card img {
-  border: 2px solid #f0932b;
-}
-
-body.dark-mode .card-back a {
-  background-color: #f0932b;
-  color: #000;
-}
-
-body.dark-mode .footer-newsletter input {
-  background-color: #2a2a2a;
-  color: #fff;
-  border: 1px solid #444;
-}
-
-body.dark-mode .footer-newsletter button {
-  background-color: #f0932b;
-  color: #000;
-}
 body.dark-mode .faq-section {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(135deg, #2c3e50 0, #34495e 100%);
   color: #ecf0f1;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
-
-body.dark-mode .faq-title {
+body.dark-mode .benefits-list strong,
+body.dark-mode .box h3,
+body.dark-mode .faq-question i,
+body.dark-mode .faq-title,
+body.dark-mode .footer-container h2,
+body.dark-mode .footer-container h3,
+body.dark-mode .pricing h2,
+body.dark-mode .step h3,
+body.dark-mode .testimonials h2,
+body.dark-mode .workflow-title {
   color: #f1c40f;
 }
-
 body.dark-mode .faq-item {
   background: #3b3b3b;
   border: 1px solid #555;
 }
-
-body.dark-mode .faq-question {
+body.dark-mode .chera-maxteam h2,
+body.dark-mode .faq-question,
+body.dark-mode .pricing-cards .plan h3 i,
+body.dark-mode .step i,
+body.dark-mode .team-card h3,
+body.dark-mode .testimonial-card span {
   color: #f39c12;
 }
-
-body.dark-mode .faq-question i {
-  color: #f1c40f;
-}
-
 body.dark-mode .faq-answer {
   color: #bdc3c7;
 }
@@ -250,34 +183,30 @@ body.dark-mode .workflow-section {
   background-color: #2f3640;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
-
-body.dark-mode .workflow-title {
-  color: #f1c40f;
-}
-
 body.dark-mode .workflow-title::after {
   background-color: #f39c12;
 }
-
 body.dark-mode .workflow-steps .step {
   background-color: #353b48;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
 body.dark-mode .step:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
-
-body.dark-mode .step i {
-  color: #f39c12;
+body.dark-mode .pricing-cards .plan,
+body.dark-mode .services-cards .card {
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
 }
-
-body.dark-mode .step h3 {
-  color: #f1c40f;
-}
-
-body.dark-mode .step p {
+body.dark-mode .box p,
+body.dark-mode .footer-container a,
+body.dark-mode .footer-container p,
+body.dark-mode .step p,
+body.dark-mode .team-card p,
+body.dark-mode .testimonial-card p {
   color: #dcdde1;
 }
 body.dark-mode .services-cards {
@@ -286,235 +215,95 @@ body.dark-mode .services-cards {
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
-
 body.dark-mode .services-cards .card {
   background-color: #2c2c2c;
   color: #f5f5f5;
   border: 1px solid #444;
   border-radius: 10px;
-  padding: 24px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
-
+body.dark-mode .pricing-cards .plan:hover,
 body.dark-mode .services-cards .card:hover {
   background-color: #3a3a3a;
   transform: translateY(-5px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
 }
-
 body.dark-mode .services-cards .card i {
   font-size: 2rem;
   color: #f1c40f;
   margin-bottom: 12px;
 }
-
 body.dark-mode .services-cards .card h3 {
   color: #f39c12;
   margin-bottom: 8px;
 }
-
 body.dark-mode .services-cards .card p {
   color: #dcdde1;
   font-size: 0.95rem;
   line-height: 1.6;
 }
-
 body.dark-mode .services-cards .learn-more {
   display: inline-block;
   margin-top: 12px;
   color: #f0932b;
   text-decoration: underline;
-  font-weight: bold;
+  font-weight: 700;
 }
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-/* دکمه تغییر تم */
-body.dark-mode #theme-toggle {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  color: #facc15;
-}
-
-/* هدر و منو */
-body.dark-mode header,
-body.dark-mode nav {
-  background-color: #1e1e1e;
-  border-bottom: 1px solid #333;
-}
-
-body.dark-mode .nav-links a,
-body.dark-mode .nav-links i {
-  color: #f5f5f5;
-}
-
-body.dark-mode .nav-links a:hover {
-  color: #f0932b;
-}
-
-/* بخش قیمت‌ها */
+body.dark-mode .chera-maxteam,
 body.dark-mode .pricing {
   background-color: #1e1e1e;
   padding: 40px 20px;
   border-radius: 12px;
 }
-
-body.dark-mode .pricing h2 {
-  color: #f1c40f;
-}
-
 body.dark-mode .pricing-cards .plan {
   background-color: #2c2c2c;
   color: #f5f5f5;
   border: 1px solid #444;
   border-radius: 10px;
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
 }
-
-body.dark-mode .pricing-cards .plan:hover {
-  background-color: #3a3a3a;
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
-}
-
-body.dark-mode .pricing-cards .plan h3 i {
-  color: #f39c12;
-}
-
-body.dark-mode .pricing-cards .plan .price strong {
-  color: #f0932b;
-}
-
 body.dark-mode .pricing-cards .plan .price .old {
   color: #aaa;
   text-decoration: line-through;
 }
-
-/* فوتر */
-body.dark-mode .footer {
-  background-color: #1e1e1e;
-  color: #f5f5f5;
-  position: relative;
-}
-
-body.dark-mode .footer-container h3,
-body.dark-mode .footer-container h2 {
-  color: #f1c40f;
-}
-
-body.dark-mode .footer-container p,
-body.dark-mode .footer-container a {
-  color: #dcdde1;
-}
-
-body.dark-mode .footer-newsletter input {
-  background-color: #2a2a2a;
-  color: #fff;
-  border: 1px solid #444;
-}
-
-body.dark-mode .footer-newsletter button {
-  background-color: #f0932b;
-  color: #000;
-}
-
-body.dark-mode .footer-bottom {
-  border-top: 1px solid #333;
-  padding-top: 10px;
-  color: #aaa;
-}
-
-body.dark-mode .footer-wave path {
-  fill: #f0932b;
-}
-
-/* آیکون‌های شبکه اجتماعی */
 body.dark-mode .footer-social .icons i,
 body.dark-mode .footer-social .icons img {
   filter: brightness(1.2);
 }
-/* حالت کلی دارک مود */
 body.dark-mode {
+  transition: background-color 0.3s;
   background-color: #121212;
   color: #e0e0e0;
-  transition: background-color 0.3s ease;
 }
-
-/* دکمه تغییر تم */
 body.dark-mode #theme-toggle {
   background: linear-gradient(135deg, #1e293b, #0f172a);
-  color: #facc15;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  background-color: #00c9a7;
+  color: #000;
 }
-
-/* هدر و ناوبری */
 body.dark-mode header,
 body.dark-mode nav {
   background-color: #1e1e1e;
   border-bottom: 1px solid #333;
 }
-
 body.dark-mode .nav-links a,
 body.dark-mode .nav-links i {
   color: #f5f5f5;
 }
-
-body.dark-mode .nav-links a:hover {
-  color: #f0932b;
-}
-
-/* بخش معرفی مکس تیم */
 body.dark-mode .box {
-  background-color: #1e1e1e;
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
-
-body.dark-mode .box h3 {
-  color: #f1c40f;
-}
-
-body.dark-mode .box p {
-  color: #dcdde1;
-}
-
-body.dark-mode .box img {
+body.dark-mode .box img,
+body.dark-mode .team-card img {
   border: 2px solid #f0932b;
 }
-
-/* بخش چرا مکس تیم */
-body.dark-mode .chera-maxteam {
-  background-color: #1e1e1e;
-  padding: 40px 20px;
-  border-radius: 12px;
-}
-
-body.dark-mode .chera-maxteam h2 {
-  color: #f39c12;
-}
-
 body.dark-mode .benefits-list li {
   color: #dcdde1;
   margin-bottom: 12px;
 }
-
-body.dark-mode .benefits-list strong {
-  color: #f1c40f;
-}
-
-/* بخش اعضای تیم */
 body.dark-mode .team-section {
-  background-color: #1e1e1e;
   padding: 40px 20px;
 }
-
 body.dark-mode .team-card {
   background-color: #2c2c2c;
   color: #f5f5f5;
@@ -522,167 +311,85 @@ body.dark-mode .team-card {
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
-
 body.dark-mode .team-card:hover {
   background-color: #3a3a3a;
 }
-
-body.dark-mode .team-card h3 {
-  color: #f39c12;
-}
-
-body.dark-mode .team-card p {
-  color: #dcdde1;
-}
-
-body.dark-mode .team-card img {
-  border: 2px solid #f0932b;
-}
-
 body.dark-mode .card-back a {
-  background-color: #f0932b;
-  color: #000;
   padding: 6px 12px;
   border-radius: 6px;
   display: inline-block;
   margin-top: 8px;
 }
-
-/* فوتر */
 body.dark-mode .footer {
   background-color: #1e1e1e;
   color: #f5f5f5;
   position: relative;
 }
-
-body.dark-mode .footer-container h3,
-body.dark-mode .footer-container h2 {
-  color: #f1c40f;
-}
-
-body.dark-mode .footer-container p,
-body.dark-mode .footer-container a {
-  color: #dcdde1;
-}
-
 body.dark-mode .footer-newsletter input {
   background-color: #2a2a2a;
   color: #fff;
   border: 1px solid #444;
 }
-
 body.dark-mode .footer-newsletter button {
   background-color: #f0932b;
   color: #000;
 }
-
 body.dark-mode .footer-bottom {
   border-top: 1px solid #333;
   padding-top: 10px;
   color: #aaa;
 }
-
 body.dark-mode .footer-wave path {
   fill: #f0932b;
 }
-
-/* آیکون‌های شبکه اجتماعی */
-body.dark-mode .footer-social .icons img {
-  filter: brightness(1.2);
-}
-/* حالت دارک مود */
 body.dark-mode .testimonials {
   background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
 }
-
-body.dark-mode .testimonials h2 {
-  color: #f1c40f;
-}
-
 body.dark-mode .testimonial-card {
   background-color: #2c2c2c;
   border-left-color: #f1c40f;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
-
-body.dark-mode .testimonial-card p {
-  color: #dcdde1;
-}
-
-body.dark-mode .testimonial-card span {
-  color: #f39c12;
-}
-/* حالت دارک برای کل صفحه */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-/* هدر و ناوبری */
 body.dark-mode .header-container {
   background-color: #1e1e1e;
   box-shadow: none;
 }
-
 body.dark-mode .nav-links a {
   color: #e0e0e0;
 }
-
+body.dark-mode .benefits-list li::before,
+body.dark-mode .box .text h3,
+body.dark-mode .intro-text h2,
 body.dark-mode .nav-links a:hover {
   color: #00c9a7;
 }
-
-/* دکمه دارک مود */
-body.dark-mode #theme-toggle {
-  background-color: #00c9a7;
-  color: #000;
-}
-
-/* باکس معرفی تیم */
 body.dark-mode .box {
   background-color: #1e1e1e;
   color: #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-body.dark-mode .box .text h3 {
-  color: #00c9a7;
-}
-
-/* بخش چرا مکس تیم */
 body.dark-mode .chera-maxteam {
   background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
 }
-
 body.dark-mode .box-item.unified {
   background-color: #222;
   color: #ccc;
 }
-
-body.dark-mode .benefits-list li::before {
-  color: #00c9a7;
-}
-
-/* کارت اعضای تیم */
 body.dark-mode .team-section {
   background-color: #1a1a1a;
 }
-
 body.dark-mode .card-front {
   background-color: #2c2c2c;
   color: #e0e0e0;
 }
-
 body.dark-mode .card-back {
   background-color: #00c9a7;
   color: #000;
 }
-
 body.dark-mode .card-back a {
   background-color: #009688;
   color: #fff;
 }
-
 body.dark-mode .card-back a:hover {
   background-color: #00796b;
 }
@@ -690,19 +397,11 @@ body.dark-mode .intro-text {
   background: linear-gradient(135deg, #2f3640, #1e272e);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
-
-body.dark-mode .intro-text h2 {
-  color: #00c9a7;
-}
-
 body.dark-mode .intro-text p {
-  color: #dcdde1;
-#typed-text {
-  background-color: #1e1e1e; /* رنگ پس‌زمینه تیره */
-  color: #f1f1f1;            /* رنگ متن روشن */
-  padding: 15px;             /* فاصله داخلی برای خوانایی بهتر */
-  border-radius: 8px;        /* گوشه‌های گرد */
-  font-size: 1.1em;          /* اندازه مناسب متن */
-  line-height: 1.6;          /* فاصله خطوط برای خوانایی */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* سایه برای عمق بیشتر */
+  color: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
