@@ -32,53 +32,6 @@ function initHamburgerMenu() {
   });
 }
 
-// تب‌های ورود و عضویت
-function initAuthTabs() {
-  const signupForm = document.getElementById("signup-form");
-  const loginForm = document.getElementById("login-form");
-  const formTitle = document.getElementById("form-title");
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  if (!signupForm || !loginForm || !formTitle || tabButtons.length < 2) return;
-
-  tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const type = btn.textContent.trim() === "عضویت" ? "signup" : "login";
-      signupForm.classList.toggle("hidden", type !== "signup");
-      loginForm.classList.toggle("hidden", type !== "login");
-      formTitle.textContent = type === "signup" ? "عضویت" : "ورود";
-
-      tabButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-    });
-  });
-}
-
-// اعتبارسنجی فرم عضویت
-function initSignupValidation() {
-  const signupForm = document.getElementById("signup-form");
-  if (!signupForm) return;
-
-  signupForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const inputs = signupForm.querySelectorAll("input");
-    let isValid = true;
-
-    inputs.forEach((input) => {
-      if (input.hasAttribute("required") && !input.value.trim()) {
-        input.style.border = "1px solid red";
-        isValid = false;
-      } else {
-        input.style.border = "1px solid #1abc9c";
-      }
-    });
-
-    if (isValid) {
-      alert("ثبت‌نام با موفقیت انجام شد");
-      signupForm.reset();
-    }
-  });
-}
-
 // تبدیل اعداد به فارسی
 function toPersianDigits(num) {
   return num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
@@ -162,7 +115,7 @@ function showToast(msg, icon = "🚀") {
   const toast = document.createElement("div");
   toast.classList.add("toast");
   toast.innerHTML = `
-    <button class="toast-close">×</button>
+    <button class="toast-close"></button>
     <div class="icon">${icon}</div>
     <div class="message">${msg}</div>
   `;
@@ -218,9 +171,6 @@ window.addEventListener("load", () => {
     setTimeout(() => (loader.style.display = "none"), 500);
   }, 2000); // بعد 3 ثانیه
 });
-// انتخاب کارت و شماره تماس
-const orderCard = document.getElementById("order-card");
-const phoneContact = document.getElementById("phone-contact");
 
 // افزودن رویداد کلیک
 orderCard.addEventListener("click", () => {

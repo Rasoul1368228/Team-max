@@ -406,6 +406,11 @@ input {
 .team-intro strong {
   color: #b5e90a;
 }
+/* ===================================== */
+/* Media Queries for Responsive Design   */
+/* ===================================== */
+
+/* Large screens (≤1024px) */
 @media (max-width: 1024px) {
   .box,
   .stats-container {
@@ -496,6 +501,8 @@ input {
     transform: translateX(-50%);
   }
 }
+
+/* Medium screens (≤768px) */
 @media (max-width: 768px) {
   .team-card:hover .card-inner {
     transform: none;
@@ -546,7 +553,7 @@ input {
   .img-2,
   .img-3 {
     display: block;
-    max-width: 70%;
+    max-width: 0%;
     height: auto;
   }
   .content {
@@ -554,6 +561,8 @@ input {
     margin: 0 auto;
   }
 }
+
+/* Small screens (≤480px) */
 @media (max-width: 480px) {
   .box {
     padding: 0.8rem;
@@ -594,13 +603,14 @@ input {
     margin: 0 auto;
   }
   .sliders {
-    bottom: 15px;
+    /* bottom: 15px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
+    display: none;
   }
   .img-1,
   .img-2,
   .img-3 {
-    width: 40%;
+    width: 30%;
   }
 }
