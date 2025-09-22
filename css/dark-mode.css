@@ -230,3 +230,51 @@ body.dark-mode .footer-bottom {
 body.dark-mode .footer-wave path {
   fill: #f0932b;
 }
+body.dark-mode .intro-text {
+  background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+  color: #e0e0e0;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode .page-desc,
+body.dark-mode .page-title,
+body.dark-mode .page-title-h {
+  color: #f1c40f;
+  font-weight: 600;
+}
+body.dark-mode .services-grid {
+  background-color: #1e1e1e;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  display: grid;
+  gap: 20px;
+}
+body.dark-mode .service-card {
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  border-radius: 10px;
+  color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  padding: 20px;
+}
+body.dark-mode .service-card:hover {
+  background-color: #3a3a3a;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode .service-card h3 {
+  color: #f1c40f;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+body.dark-mode .service-card h3 i {
+  color: #facc15;
+  margin-left: 8px;
+}
+body.dark-mode .service-card p {
+  color: #dcdcdc;
+  line-height: 1.6;
+}

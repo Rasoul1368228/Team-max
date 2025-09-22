@@ -1,19 +1,26 @@
+@font-face {
+  font-family: Vazirmatn;
+  src: url("../font/Vazirmatn-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 /* ------------------ ساختار کلی صفحه ------------------ */
 .body-pricing {
   margin: 0;
   padding: 1rem;
-  font-family: "Vazirmatn-Bold";
+  font-family: "Vazirmatn";
   font-size: clamp(12px, 1.5vw, 15px);
   line-height: 1.6;
-  background: linear-gradient(135deg, #f9faff, #ffffff);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 /* ------------------ عنوان بخش ------------------ */
 .pricing h2 {
+    background: linear-gradient(135deg, #f1f2f6, #dcdde1)
   font-size: 1.3rem;
   margin-bottom: 2rem;
   color: #0a4968;

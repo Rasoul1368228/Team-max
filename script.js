@@ -1,19 +1,13 @@
-// بخش سوالات متداول
-const faqItems = document.querySelectorAll(".faq-item");
-faqItems.forEach((item) => {
-  item.querySelector(".faq-question").addEventListener("click", () => {
-    item.classList.toggle("active");
-  });
-});
-
-// اجرای اولیه بعد از لود کامل صفحه
+// ================= اجرای اولیه بعد از لود کامل صفحه =================
 document.addEventListener("DOMContentLoaded", () => {
   initHamburgerMenu();
   initAuthTabs();
   initSignupValidation();
+  initFAQToggle();
+  initSwiperCarousel();
 });
 
-// منوی همبرگری
+// ================= منوی همبرگری =================
 function initHamburgerMenu() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector("header nav ul");
@@ -32,14 +26,27 @@ function initHamburgerMenu() {
   });
 }
 
-// تبدیل اعداد به فارسی
+// ================= بخش سوالات متداول =================
+function initFAQToggle() {
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    if (question) {
+      question.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    }
+  });
+}
+
+// ================= تبدیل اعداد به فارسی =================
 function toPersianDigits(num) {
   return num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
 }
 console.log(toPersianDigits("09920552567"));
 
-// انیمیشن نمایش باکس‌ها هنگام اسکرول
-const elements = document.querySelectorAll(".hidden");
+// ================= انیمیشن نمایش باکس‌ها هنگام اسکرول =================
+const animatedElements = document.querySelectorAll(".hidden");
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -53,37 +60,39 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.2 }
 );
-elements.forEach((el) => observer.observe(el));
+animatedElements.forEach((el) => observer.observe(el));
 
-// مدیریت حالت روشن/تاریک
+// ================= مدیریت حالت روشن/تاریک =================
 const toggleBtn = document.getElementById("theme-toggle");
-const label = toggleBtn.querySelector(".label");
-const icon = toggleBtn.querySelector("i");
-const body = document.body;
-const footer = document.querySelector(".animated-footer");
+if (toggleBtn) {
+  const label = toggleBtn.querySelector(".label");
+  const icon = toggleBtn.querySelector("i");
+  const body = document.body;
+  const footer = document.querySelector(".animated-footer");
 
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "dark") {
-  body.classList.add("dark-mode");
-  footer?.classList.add("dark");
-  label.textContent = "تاریک";
-  icon.classList.replace("fa-sun", "fa-moon");
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+    footer?.classList.add("dark");
+    label.textContent = "تاریک";
+    icon.classList.replace("fa-sun", "fa-moon");
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    footer?.classList.toggle("dark");
+
+    const isDark = body.classList.contains("dark-mode");
+    label.textContent = isDark ? "تاریک" : "روشن";
+    icon.classList.replace(
+      isDark ? "fa-sun" : "fa-moon",
+      isDark ? "fa-moon" : "fa-sun"
+    );
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
 }
 
-toggleBtn.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
-  footer?.classList.toggle("dark");
-
-  const isDark = body.classList.contains("dark-mode");
-  label.textContent = isDark ? "تاریک" : "روشن";
-  icon.classList.replace(
-    isDark ? "fa-sun" : "fa-moon",
-    isDark ? "fa-moon" : "fa-sun"
-  );
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-});
-
-// پیام خوش‌آمدگویی بر اساس ساعت
+// ================= پیام خوش‌آمدگویی بر اساس ساعت =================
 function getGreetingMessage() {
   const hour = new Date().getHours();
   let message = "";
@@ -107,7 +116,7 @@ function getGreetingMessage() {
 }
 window.addEventListener("load", () => setTimeout(getGreetingMessage, 5000));
 
-// نمایش Toast
+// ================= نمایش Toast =================
 function showToast(msg, icon = "🚀") {
   const container = document.querySelector(".toast-container");
   if (!container) return;
@@ -130,13 +139,15 @@ function showToast(msg, icon = "🚀") {
   setTimeout(() => toast.remove(), 12000);
 }
 
-// تغییر استایل هدر موقع اسکرول
+// ================= تغییر استایل هدر موقع اسکرول =================
 const header = document.getElementById("main-header");
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 50);
-});
+if (header) {
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 50);
+  });
+}
 
-// افکت تایپ متن معرفی
+// ================= افکت تایپ متن معرفی =================
 const text =
   "با مکس تیم، طراحی سایت فقط یک پروژه نیست؛ یک تجربه دیجیتال تمام‌عیار است.";
 const target = document.getElementById("typed-text");
@@ -151,28 +162,32 @@ function typeWriter() {
 }
 window.addEventListener("load", typeWriter);
 
-// دکمه برگشت به بالا
+// ================= دکمه برگشت به بالا =================
 const backToTopBtn = document.getElementById("backToTop");
-window.addEventListener("scroll", () => {
-  backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-});
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-// تابع تبدیل اعداد به فارسی
-function toPersianDigits(num) {
-  return num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+if (backToTopBtn) {
+  window.addEventListener("scroll", () => {
+    backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
+
+// ================= لودر =================
 window.addEventListener("load", () => {
   setTimeout(() => {
     const loader = document.getElementById("loader");
-    loader.style.opacity = "0";
-    loader.style.transition = "opacity 0.5s";
-    setTimeout(() => (loader.style.display = "none"), 500);
-  }, 2000); // بعد 3 ثانیه
+    if (loader) {
+      loader.style.opacity = "0";
+      loader.style.transition = "opacity 0.5s";
+      setTimeout(() => (loader.style.display = "none"), 500);
+    }
+  }, 2000);
 });
 
-// افزودن رویداد کلیک
-orderCard.addEventListener("click", () => {
-  phoneContact.scrollIntoView({ behavior: "smooth", block: "center" });
-});
+// ================= اسکرول به بخش سفارش =================
+if (typeof orderCard !== "undefined" && orderCard && phoneContact) {
+  orderCard.addEventListener("click", () => {
+    phoneContact.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+}

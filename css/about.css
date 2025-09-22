@@ -65,7 +65,6 @@ header {
 }
 .chera-maxteam {
   padding: 4rem 2rem;
-  /* text-align: center; */
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
 }
@@ -80,7 +79,6 @@ header {
   margin-bottom: 2rem;
 }
 .box-item.unified {
-  /* background: #051a35; */
   border-radius: 16px;
   padding: 2rem;
   max-width: 800px;
@@ -406,11 +404,6 @@ input {
 .team-intro strong {
   color: #b5e90a;
 }
-/* ===================================== */
-/* Media Queries for Responsive Design   */
-/* ===================================== */
-
-/* Large screens (≤1024px) */
 @media (max-width: 1024px) {
   .box,
   .stats-container {
@@ -501,8 +494,6 @@ input {
     transform: translateX(-50%);
   }
 }
-
-/* Medium screens (≤768px) */
 @media (max-width: 768px) {
   .team-card:hover .card-inner {
     transform: none;
@@ -561,8 +552,6 @@ input {
     margin: 0 auto;
   }
 }
-
-/* Small screens (≤480px) */
 @media (max-width: 480px) {
   .box {
     padding: 0.8rem;
@@ -603,9 +592,6 @@ input {
     margin: 0 auto;
   }
   .sliders {
-    /* bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%); */
     display: none;
   }
   .img-1,
