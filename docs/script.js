@@ -27,17 +27,20 @@ function initHamburgerMenu() {
 }
 
 // ================= بخش سوالات متداول =================
-function initFAQToggle() {
+document.addEventListener("DOMContentLoaded", () => {
   const faqItems = document.querySelectorAll(".faq-item");
   faqItems.forEach((item) => {
     const question = item.querySelector(".faq-question");
     if (question) {
       question.addEventListener("click", () => {
-        item.classList.toggle("active");
+        // ابتدا همه faqها رو غیر فعال کن
+        faqItems.forEach((i) => i.classList.remove("active"));
+        // سپس فقط همین یکی رو فعال کن
+        item.classList.add("active");
       });
     }
   });
-}
+});
 
 // ================= تبدیل اعداد به فارسی =================
 function toPersianDigits(num) {
@@ -182,7 +185,7 @@ window.addEventListener("load", () => {
       loader.style.transition = "opacity 0.5s";
       setTimeout(() => (loader.style.display = "none"), 500);
     }
-  }, 2000);
+  }, 1500);
 });
 
 // ================= اسکرول به بخش سفارش =================
