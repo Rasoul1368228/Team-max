@@ -1260,15 +1260,15 @@ html {
     font-size: 1.2rem;
   }
   .floating-phone {
-    bottom: 20px;
-    top: auto;
-    right: 15px;
-    padding: 12px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    justify-content: center;
-    font-size: 0;
+     bottom: 20px;
+        top: auto;
+        right: 15px;
+        padding: 12px;
+        border-radius: 40%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        font-size: 0;
   }
   .floating-phone a {
     justify-content: center;
@@ -1360,6 +1360,7 @@ html {
   }
   .floating-phone {
     left: 20px;
-    top: 15px;
+    /* top: 15px; */
   }
 }
+
