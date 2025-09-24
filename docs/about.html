@@ -96,16 +96,27 @@
       <i class="fas fa-sun"></i>
       <span class="label">روشن</span>
     </button>
-
-    <!-- هدر و ناوبری -->
-    <header>
-      <div class="header-container">
-        <div class="logo">
-          <a href="index.html"> </a>
+    <!-- دکمه تماس شناور -->
+    <div title="مشاوره رایگان" class="floating-phone">
+      <img
+        src="./images/Web-Design-Company-Contact-Phone-Number.gif"
+        style="height: 54px; width: 32px"
+        alt=""
+      />
+      <a href="tel:+989920552567"> ۰۹۹۲۰۵۵۲۵۶۷ </a>
+    </div>
+    <!-- هدر و ناوبری جدید -->
+    <header class="header-max">
+      <div class="header-wrapper">
+        <div class="logo-max">
+          <a href="index.html">
+            <img src="./images/logo2.png" alt="Max Team Logo" class="my-logo" />
+          </a>
         </div>
-        <nav>
+
+        <nav class="nav-max">
           <div
-            class="hamburger"
+            class="hamburger-max"
             onclick="toggleMenu(this)"
             aria-label="باز و بسته کردن منو"
             role="button"
@@ -115,16 +126,22 @@
             <span></span>
             <span></span>
           </div>
-          <ul class="nav-links">
-            <a href="./index.html">
-              <p title="برگشت به خانه" class="p-up">
-                "مکس تیم | قدرت در جزئیات"
-              </p>
-            </a>
+          <ul class="nav-links-max">
             <li>
-              <a href="about.html"
-                ><i class="fas fa-user"></i> درباره مکس تیم</a
-              >
+              
+                </i>
+                <p title="برگشت به خانه">مکس تیم | قدرت در جزئیات</p>
+              
+            </li>
+            <li>
+              <a href="about.html">
+                <i class="fas fa-user"></i> درباره مکس تیم
+              </a>
+            </li>
+            <li>
+              <a href="./blog.html">
+                <i class="fas fa-book-open"></i> مقالات تخصصی
+              </a>
             </li>
             <li>
               <a
@@ -140,9 +157,17 @@
       </div>
     </header>
 
+    <script>
+      function toggleMenu(btn) {
+        const nav = document.querySelector(".nav-links-max");
+        nav.classList.toggle("active");
+        btn.classList.toggle("open");
+      }
+    </script>
+
     <!-- معرفی مکس تیم -->
     <section class="box">
-      <img src="./images/AboutUs1.png" alt="لوگو مکس تیم" />
+      <img loading="lazy" src="./images/AboutUs1.png" alt="لوگو مکس تیم" />
       <div class="text">
         <h3>درباره مکس تیم</h3>
         <p>
@@ -192,6 +217,27 @@
       </div>
     </section>
 
+    <!-- تخصص‌های ما -->
+    <section class="skills-bars">
+      <h2>تخصص‌های ما</h2>
+      <div class="skill">
+        <p>HTML, CSS, JavaScript, React</p>
+        <div class="progress-bar"><div class="progress html">90%</div></div>
+      </div>
+      <div class="skill">
+        <p>UI/UX Design با Figma و Adobe XD</p>
+        <div class="progress-bar"><div class="progress uiux">85%</div></div>
+      </div>
+      <div class="skill">
+        <p>SEO و بهینه‌سازی سرعت سایت</p>
+        <div class="progress-bar"><div class="progress seo">80%</div></div>
+      </div>
+      <div class="skill">
+        <p>وردپرس و فروشگاه‌سازها</p>
+        <div class="progress-bar"><div class="progress wp">75%</div></div>
+      </div>
+    </section>
+
     <!-- معرفی اعضای تیم -->
     <section class="team-intro">
       <p>
@@ -202,6 +248,7 @@
         هر عضو تیم با تخصص منحصربه‌فرد خود، در مسیر تحقق اهداف دیجیتال شما نقش
         کلیدی دارد.
       </p>
+
       <section class="team-cards-container">
         <div class="blog-card">
           <!-- انتخاب تصاویر و محتوا -->
@@ -217,10 +264,15 @@
             <label for="tap-3" class="tap tap-3"></label>
           </div>
 
-          <!-- عضو اول -->
+          <!-- اعضای تیم -->
           <div class="inner-part">
             <label for="imgTap-1" class="img">
-              <img src="./images/avatar11.jpg" alt="مهسا محمدی" class="img-1" />
+              <img
+                loading="lazy"
+                src="./images/avatar11.jpg"
+                alt="مهسا محمدی"
+                class="img-1"
+              />
             </label>
             <div class="content content-1">
               <span>مدیر فروش تیم</span>
@@ -232,10 +284,14 @@
             </div>
           </div>
 
-          <!-- عضو دوم -->
           <div class="inner-part">
             <label for="imgTap-1" class="img">
-              <img src="./images/avatar.jpg" alt="رسول حیدروند" class="img-2" />
+              <img
+                loading="lazy"
+                src="./images/avatar.jpg"
+                alt="رسول حیدروند"
+                class="img-2"
+              />
             </label>
             <div class="content content-2">
               <span>برنامه‌نویس و طراح رابط کاربری</span>
@@ -247,10 +303,10 @@
             </div>
           </div>
 
-          <!-- عضو سوم -->
           <div class="inner-part">
             <label for="imgTap-1" class="img">
               <img
+                loading="lazy"
                 src="./images/avatar.jpg"
                 alt="مهدی marzano74"
                 class="img-3"
@@ -300,7 +356,11 @@
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-brand">
-          <img src="./images/pic-dovvom-nazarat.png" alt="لوگوی مکس تیم" />
+          <img
+            loading="lazy"
+            src="./images/pic-dovvom-nazarat.png"
+            alt="لوگوی مکس تیم"
+          />
           <h2>مکس تیم</h2>
           <p>خلاقیت، طراحی و بازاریابی دیجیتال با قلب و ذهن</p>
         </div>
@@ -319,6 +379,7 @@
           <div class="icons">
             <a href="https://www.instagram.com/nevisande2000" target="_blank">
               <img
+                loading="lazy"
                 style="height: 68px"
                 src="./images/اینستا-1.png.webp"
                 alt="پیام رسان اینستاگرام"
@@ -326,6 +387,7 @@
             </a>
             <a href="https://t.me/nevisande2000">
               <img
+                loading="lazy"
                 style="height: 68px"
                 src="./images/تلگرام-1.png.webp"
                 alt="تلگــــــرام"
@@ -333,6 +395,7 @@
             </a>
             <a href="https://eitaa.com/nevisande2000" target="_blank">
               <img
+                loading="lazy"
                 style="height: 68px"
                 src="./images/ایتا-3.png.webp"
                 alt="پیام رسان ایتا"
@@ -355,20 +418,13 @@
         </svg>
       </div>
     </footer>
-    <script src="./script.js"></script>
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68d2b86de50bef1925fc3481/1j5ri0s8q';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+    <script src="./script.js">
+      const hamburger = document.querySelector(".hamburger-max");
+      const navLinks = document.querySelector(".nav-links-max");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
-

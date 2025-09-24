@@ -1,3 +1,10 @@
+.dropdown-menu li a,
+.floating-phone a,
+.footer-links a,
+.learn-more,
+.nav-links li a {
+  text-decoration: none;
+}
 #back-to-top .top,
 #splash-screen,
 .card,
@@ -50,12 +57,6 @@
 .hamburger.active span:nth-child(2),
 .switch input:checked ~ .slider .star {
   opacity: 0;
-}
-.floating-phone a,
-.footer-links a,
-.learn-more,
-.nav-links li a {
-  text-decoration: none;
 }
 #backToTop i,
 .corner,
@@ -200,9 +201,10 @@ html {
   transition: 0.8s ease-in-out;
 }
 .header-container {
+  border-bottom: 0.5px solid black;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
   display: flex;
 }
 .hamburger {
@@ -241,10 +243,10 @@ html {
   margin-left: 5px;
 }
 .nav-links {
-  gap: 24px;
+  gap: 15px;
   list-style: none;
   margin: 0;
-  padding: 20px;
+  padding: 13px;
   flex-wrap: wrap;
 }
 .nav-links li a {
@@ -273,20 +275,25 @@ html {
   z-index: -1;
   transition: width 0.3s;
 }
-.nav-links li a:hover:after {
+/* هنگام هاور، طول خط 100% می‌شود */
+.nav-links li a:hover::after {
   width: 100%;
 }
-.nav-links li:first-child a:after {
+/* رنگ‌های مختلف برای هر لینک */
+.nav-links li:first-child a::after {
   background: #3498db;
 }
-.nav-links li:nth-child(2) a:after {
+.nav-links li:nth-child(2) a::after {
   background: #ffd071;
 }
-.nav-links li:nth-child(3) a:after {
+.nav-links li:nth-child(3) a::after {
   background: #f0776c;
 }
-.nav-links li:nth-child(4) a:after {
+.nav-links li:nth-child(4) a::after {
   background: #1abc9c;
+}
+.nav-links li:nth-child(5) a::after {
+  background: #10f1c4;
 }
 .nav-links li i {
   font-size: 20px;
@@ -304,6 +311,25 @@ html {
   -ms-transform: rotate(-40deg) scale(1.2);
   -o-transform: rotate(-40deg) scale(1.2);
 }
+.faq-section,
+.footer,
+.footer-bottom,
+.footer-container,
+.footer-wave,
+.loader,
+.loader::after,
+.nav-links li.dropdown,
+.slide,
+.workflow-title {
+  position: relative;
+}
+
+.faq-item.active .faq-answer,
+.nav-links li,
+.slide.active {
+  display: block;
+}
+
 .hero-banner {
   max-width: 1200px;
   margin: 19px auto;
@@ -315,7 +341,7 @@ html {
   animation: 5s infinite gradientShift;
   color: #f0ebeb;
   -webkit-animation: 5s infinite gradientShift;
-  height: 63vh;
+  height: 60vh;
 }
 @keyframes gradientShift {
   0%,
@@ -433,17 +459,6 @@ html {
   -moz-transition: 1.3s;
   -ms-transition: 1.3s;
   -o-transition: 1.3s;
-}
-.faq-section,
-.footer,
-.footer-bottom,
-.footer-container,
-.footer-wave,
-.loader,
-.loader::after,
-.slide,
-.workflow-title {
-  position: relative;
 }
 .floating-phone a,
 .support-box {
@@ -625,10 +640,6 @@ html {
   transition: opacity 1s ease-in-out;
   display: none;
 }
-.faq-item.active .faq-answer,
-.slide.active {
-  display: block;
-}
 .slide img {
   width: 117%;
   height: 400px;
@@ -654,6 +665,32 @@ html {
   display: flex;
   align-items: center;
 }
+.my-logo {
+  width: 150px;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto 10px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.my-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(64, 134, 177, 0.7), 0 0 40px rgba(64, 134, 177, 0.5);
+}
+
 .p-up {
   font-family: badee;
   font-weight: 700;
@@ -894,33 +931,46 @@ html {
 }
 .toast-container {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 9999;
+  bottom: 32px;
+  right: 32px;
+  z-index: 10000;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 320px;
+  gap: 14px;
+  max-width: 360px;
+  pointer-events: none;
 }
-.toast-container .toast {
-  background-color: #93abef;
-  color: #050101;
-  padding: 16px 24px;
-  border-radius: 10px;
-  font-family: dana, sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  animation: 0.6s ease-out fadeIn;
-  transition: transform 0.3s, opacity 0.3s;
-  -webkit-transition: transform 0.3s, opacity 0.3s;
-  -moz-transition: transform 0.3s, opacity 0.3s;
-  -ms-transition: transform 0.3s, opacity 0.3s;
-  -o-transition: transform 0.3s, opacity 0.3s;
+
+.toast {
+  background-color: #1e1e2f;
+  color: #f4f4f4;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-family: "dana", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUpFade 0.5s ease forwards;
+  pointer-events: auto;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.toast-container .toast:hover {
+
+.toast:hover {
   transform: scale(1.02);
   opacity: 0.95;
 }
+
+/* Animation */
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .footer {
   color: #0c0202;
   font-family: Vazir, sans-serif;
@@ -1252,6 +1302,10 @@ html {
   .card {
     padding: 15px 10px;
   }
+  .card-card {
+    width: 100%;
+    padding: 8px;
+  }
   .slide img {
     width: 100%;
     height: auto;
@@ -1260,15 +1314,15 @@ html {
     font-size: 1.2rem;
   }
   .floating-phone {
-     bottom: 20px;
-        top: auto;
-        right: 15px;
-        padding: 12px;
-        border-radius: 40%;
-        width: 50px;
-        height: 50px;
-        justify-content: center;
-        font-size: 0;
+    bottom: 20px;
+    top: auto;
+    right: 15px;
+    padding: 12px;
+    border-radius: 40%;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    font-size: 0;
   }
   .floating-phone a {
     justify-content: center;
@@ -1332,6 +1386,10 @@ html {
     grid-template-columns: 1fr;
     row-gap: 20px;
   }
+  .card-card {
+    width: 140px;
+    padding: 9px;
+  }
   .slide img {
     width: 100%;
     height: auto;
@@ -1345,8 +1403,7 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
   .card-card {
-    width: 150px;
-    padding: 8px;
+    display: none;
   }
   .hero-content h1 {
     font-size: 1.5rem;
@@ -1362,5 +1419,13 @@ html {
     left: 20px;
   }
 }
-
-
+@media (max-width: 768px) {
+  .my-logo {
+    width: 120px;
+  }
+}
+@media (max-width: 480px) {
+  .my-logo {
+    width: 100px;
+  }
+}
