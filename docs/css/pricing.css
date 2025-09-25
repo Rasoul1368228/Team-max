@@ -1,212 +1,11 @@
+/* ================== فونت‌ها ================== */
 @font-face {
-  font-family: Vazirmatn;
+  font-family: "Vazirmatn";
   src: url("../font/Vazirmatn-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
-/* ------------------ ساختار کلی صفحه ------------------ */
-.body-pricing {
-  margin: 0;
-  padding: 1rem;
-  font-family: "Vazirmatn";
-  font-size: clamp(12px, 1.5vw, 15px);
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 80vh;
-}
-
-/* ------------------ عنوان بخش ------------------ */
-.pricing h2 {
-    background: linear-gradient(135deg, #f1f2f6, #dcdde1)
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  color: #0a4968;
-  font-weight: 900;
-}
-
-/* ------------------ لیست کارت‌های تعرفه ------------------ */
-.pricing-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-/* ------------------ کارت پلن ------------------ */
-.plan {
-  background: white;
-  width: 220px;
-  border-radius: 16px;
-  padding: 0.8rem 1.2rem;
-  box-shadow: 0 6px 16px rgba(10, 73, 104, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  flex-direction: column;
-  align-items: center;
-}
-
-.plan:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(10, 73, 104, 0.25);
-}
-
-.plan h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--color-primary, #0a4968);
-}
-
-/* ------------------ رنگ‌بندی اختصاصی پلن‌ها ------------------ */
-.plan-economy {
-  border-top: 4px solid #f39c12;
-}
-.plan-professional {
-  border-top: 4px solid #3498db;
-}
-.plan-custom {
-  border-top: 4px solid #8e44ad;
-}
-.plan-startup {
-  border-top: 4px solid #e67e22;
-}
-.plan-store {
-  border-top: 4px solid #27ae60;
-}
-.plan-corporate {
-  border-top: 4px solid #2c3e50;
-}
-
-/* ------------------ پلن محبوب ------------------ */
-.popular {
-  box-shadow: 0 15px 35px rgba(52, 152, 219, 0.4);
-  transform: translateY(-10px);
-  border-top-width: 6px;
-}
-
-/* ------------------ قیمت ------------------ */
-.price {
-  font-size: 1.2rem;
-  margin: 0.4rem 0 1rem;
-  font-weight: 700;
-  color: #34495e;
-}
-
-.price .old {
-  font-size: 0.7rem;
-  color: #999;
-  margin-left: 0.6rem;
-  text-decoration: line-through;
-}
-
-/* ------------------ لیست ویژگی‌ها ------------------ */
-.plan ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.2rem;
-  width: 100%;
-}
-
-.plan ul li {
-  font-size: 0.9rem;
-  margin-bottom: 0.6rem;
-  padding-right: 20px;
-  color: #555;
-  user-select: none;
-  position: relative;
-}
-
-.plan ul li::before {
-  content: "\f00c";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  right: 0;
-  color: #27ae60;
-}
-
-/* ------------------ دکمه انتخاب پلن ------------------ */
-.btn {
-  background: linear-gradient(135deg, #0a4968, #2a9d8f);
-  padding: 0.6rem 1.2rem;
-  font-size: 0.9rem;
-  border-radius: 24px;
-  color: white;
-  font-weight: 700;
-  box-shadow: 0 8px 20px rgba(10, 73, 104, 0.3);
-  text-decoration: none;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
-
-.btn:hover {
-  background: linear-gradient(135deg, #2a9d8f, #0a4968);
-  box-shadow: 0 12px 28px rgba(10, 73, 104, 0.5);
-}
-
-/* ------------------ لیست قیمت بالا ------------------ */
-.list-gimat-up {
-  margin-right: 180px;
-  font-weight: bold;
-  font-size: 1.3rem;
-}
-
-/* ------------------ ریسپانسیو ------------------ */
-@media (max-width: 1024px) {
-  .pricing-cards {
-    justify-content: center;
-    gap: 1.5rem;
-  }
-
-  .list-gimat-up {
-    margin-right: 90px;
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .pricing-cards {
-    flex-direction: column;
-    gap: 2.5rem;
-    align-items: center;
-  }
-
-  .plan {
-    width: 90%;
-    padding: 1rem;
-  }
-
-  .pricing h2 {
-    font-size: 1.2rem;
-  }
-
-  .btn {
-    font-size: 0.85rem;
-  }
-
-  .list-gimat-up {
-    margin-right: 40px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .list-gimat-up {
-    margin-top: 100px;
-    margin-right: 20px;
-    font-size: 0.9rem;
-  }
-}
-/* فونت‌ها */
 @font-face {
   font-family: "Dana";
   src: url("../font/dana/dana-black.ttf") format("truetype");
@@ -216,11 +15,11 @@
   src: url("../font/Shabnam-Medium-FD.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Vazirmatn";
+  font-family: "Vazirmatn-Bold";
   src: url("../font/ttf/Vazirmatn-Bold.ttf") format("truetype");
 }
 
-/* متغیرها */
+/* ================== متغیرها ================== */
 :root {
   --color-primary: #0a4968;
   --color-secondary: #2a9d8f;
@@ -235,60 +34,130 @@
   --transition: 0.3s ease-in-out;
 }
 
-/* پایه */
-body.body-services {
+/* ================== پایه ================== */
+body {
   margin: 0;
   padding: 0;
-  font-size: clamp(13px, 2vw, 16px);
   font-family: "Dana", "Shabnam", "Vazirmatn", sans-serif;
-  background: #40739e;
-  color: var(--color-text-main);
+  font-size: clamp(13px, 2vw, 16px);
+  line-height: 1.7;
   min-height: 100vh;
   display: flex;
-  line-height: 1.7;
   flex-direction: column;
+  background: #40739e;
+  color: var(--color-text-main);
 }
 
-/* لینک‌ها */
 a {
   text-decoration: none;
   color: inherit;
   transition: color var(--transition);
 }
-
-/* صفحه اصلی */
-.container {
-  flex: 1;
-  padding: 40px 20px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.page-title {
-  /* font-size: clamp(2rem, 5vw, 3rem); */
-  color: var(--color-primary);
+.pricing {
   text-align: center;
-  margin-bottom: 10px;
 }
 
-.page-title-h {
-  font-size: clamp(1rem, 4vw, 1.3rem);
-  color: #3e476a;
-  text-align: center;
-  margin-bottom: 10px;
-  font-family: "badee";
-}
-
-.page-desc {
-  max-width: 720px;
-  margin: 0 auto 40px;
+.pricing-intro {
   font-size: 1.1rem;
-  text-align: center;
-  color: #f5f6fa;
-  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #666;
 }
 
-/* گرید خدمات */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 6fr));
+  gap: 22.5px;
+}
+
+.pricing-card {
+  background: #fff;
+  box-shadow: inset 0 0 0 3px #ff0077;
+  border-radius: 16px;
+  padding: 25px;
+  transition: box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  box-shadow: inset 0 0 0 3px #ffcc00;
+}
+
+.pricing-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.pricing-card .price {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.pricing-card .price del {
+  color: #999;
+  margin-left: 8px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-card ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.pricing-card.popular {
+  background: linear-gradient(#fff, #ffe6f0);
+  box-shadow: inset 0 0 0 3px #ff0077;
+}
+/* ================== ریسپانسیو Pricing ================== */
+@media (max-width: 1024px) {
+  .pricing-cards {
+    gap: 1.5rem;
+  }
+  .list-gimat-up {
+    margin-right: 90px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-cards {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .plan {
+    width: 90%;
+    padding: 1rem;
+  }
+  .pricing h2 {
+    font-size: 1.2rem;
+  }
+  .btn {
+    font-size: 0.85rem;
+  }
+  .list-gimat-up {
+    margin-right: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-gimat-up {
+    margin-top: 100px;
+    margin-right: 20px;
+    font-size: 0.9rem;
+  }
+  .plan {
+    width: 95%;
+  }
+}
+
+/* ================== بخش Services ================== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -296,7 +165,6 @@ a {
   margin-bottom: 60px;
 }
 
-/* افکت نات هاور */
 .services-grid:hover .service-card:not(:hover) {
   filter: blur(2px);
   transform: scale(0.95);
@@ -304,7 +172,6 @@ a {
   transition: all var(--transition);
 }
 
-/* کارت خدمات */
 .service-card {
   background: var(--color-card-bg);
   border-radius: var(--radius);
@@ -314,12 +181,12 @@ a {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transform: scale(1);
 }
 
 .service-card:hover {
   transform: scale(1.05);
   z-index: 2;
+  box-shadow: inset 0 0 0 3px #ffcc00;
 }
 
 .service-card img {
@@ -356,7 +223,6 @@ a {
   margin-bottom: 20px;
 }
 
-/* دکمه */
 .btn-details {
   align-self: flex-start;
   background: var(--color-btn-bg);
@@ -374,22 +240,19 @@ a {
   box-shadow: 0 8px 20px rgba(13, 110, 253, 0.6);
 }
 
-/* ریسپانسیو */
+/* ================== ریسپانسیو Services ================== */
 @media (max-width: 900px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 600px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
-
   .page-desc {
     font-size: 1rem;
   }
-
   .service-card img {
     height: 160px;
   }

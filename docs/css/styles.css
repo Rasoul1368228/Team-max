@@ -100,6 +100,7 @@ html {
   font-family: Dana, Shabnam-Medium-FD, Vazirmatn-light, badee, sans-serif;
   font-size: clamp(13px, 2vw, 16px);
   background: linear-gradient(135deg, #f0932b, #ffa801);
+
   justify-content: space-between;
   min-height: 100vh;
   line-height: 1.7;
