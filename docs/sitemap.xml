@@ -9,18 +9,23 @@
 
 <url>
   <loc>https://teammax.ir/</loc>
-  <lastmod>2025-09-22T14:51:09+00:00</lastmod>
+  <lastmod>2025-09-24T19:17:10+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://teammax.ir/index.html</loc>
-  <lastmod>2025-09-22T14:51:09+00:00</lastmod>
+  <loc>https://teammax.ir/blog.html</loc>
+  <lastmod>2025-09-24T19:17:10+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://teammax.ir/about.html</loc>
-  <lastmod>2025-09-22T14:51:09+00:00</lastmod>
+  <lastmod>2025-09-24T19:17:10+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://teammax.ir/index.html</loc>
+  <lastmod>2025-09-24T19:17:10+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
