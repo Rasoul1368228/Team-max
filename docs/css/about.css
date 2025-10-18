@@ -255,8 +255,8 @@ body.about-page {
 }
 .section-subtext,
 .team-intro {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1;
 }
 .stats-container {
   display: flex;
@@ -265,13 +265,13 @@ body.about-page {
   gap: 40px;
 }
 .stat-item {
-  background: #051a35;
+  background: #070c13;
   border-radius: 17px;
   padding: 8px 26px;
-  width: 150px;
-  backdrop-filter: blur(10px);
+  width: 100px;
+  backdrop-filter: blur(18px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s, box-shadow 0.5s;
+  transition: transform 1.5s, box-shadow 0.5s;
   text-align: center;
 }
 .section-heading,
@@ -286,20 +286,20 @@ body.about-page {
   color: #9be010;
 }
 .stat-item i {
-  font-size: 2.2rem;
+  font-size: 1.1rem;
   color: #f4f5f7;
   margin-bottom: 18px;
   display: block;
-  transform: scale(1.2);
+  transform: scale(1.5);
   transition: transform 0.3s;
 }
 .stat-item h3 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 10px;
 }
 .stat-item p {
-  font-size: 1rem;
+  font-size: 0.5rem;
   color: #f2eded;
 }
 .stat-item:hover p {
@@ -403,6 +403,10 @@ img {
   margin-left: 50px;
   opacity: 0;
   transition: 0.6s;
+  -webkit-transition: ;
+  -moz-transition: ;
+  -ms-transition: ;
+  -o-transition: ;
 }
 #tap-1:checked ~ .inner-part .content-1,
 #tap-2:checked ~ .inner-part .content-2,
@@ -425,8 +429,8 @@ img {
   cursor: pointer;
 }
 .content .title {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
   color: #b5e90a;
   margin-bottom: 20px;
 }
@@ -516,12 +520,12 @@ input {
 @media (max-width: 1024px) {
   .box,
   .stats-container {
-    flex-direction: column;
+    flex-direction: row;
   }
   .box {
-    padding: 1.5rem;
+    padding: 1.3rem;
     margin: 2rem auto;
-    gap: 1.5rem;
+    gap: 1.3rem;
   }
   .box img {
     max-width: 100%;
@@ -626,7 +630,7 @@ input {
     gap: 15px;
   }
   .stat-item {
-    width: 90%;
+    width: 30%;
     max-width: 260px;
   }
   .section-heading {
@@ -671,7 +675,7 @@ input {
     gap: 0.8rem;
   }
   .box .text h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .box .text p {
     font-size: 0.9rem;
@@ -685,7 +689,7 @@ input {
   }
   .stat-item {
     width: 95%;
-    max-width: 240px;
+    max-width: 120px;
   }
   .section-heading {
     font-size: 1.1rem;
