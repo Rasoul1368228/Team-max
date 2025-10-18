@@ -1,17 +1,18 @@
+.benefits-list li,
+.blog-card,
+.card-inner,
+.header-max,
+.sliders .tap,
+.stats-section,
+header {
+  position: relative;
+}
 .box,
 .chera-maxteam {
   background: rgba(255, 255, 255, 0.05);
   transition: 0.3s ease-in-out;
   margin: 3rem auto;
   max-width: 1000px;
-}
-.benefits-list li,
-.blog-card,
-.card-inner,
-.sliders .tap,
-.stats-section,
-header {
-  position: relative;
 }
 @font-face {
   font-family: Shabnam-Medium-FD;
@@ -32,85 +33,116 @@ body.about-page {
   color: #faf6f6;
   line-height: 1.7;
 }
-/* ------------------------------ هدر و ناوبری جدید ------------------------------ */
 .header-max {
   width: 100%;
-  position: relative;
   top: 0;
   left: 0;
-  background: hsl(200, 70%, 30%);
+  background: #165e82;
   box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.15);
   z-index: 999;
   transition: background 0.3s, box-shadow 0.3s;
 }
-
 .header-max:hover {
-  background: hsl(190, 70%, 40%);
+  background: #1e95ad;
 }
-
 .header-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   padding: 15px 20px;
 }
-
 .logo-img {
   width: 140px;
   height: auto;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .logo-img:hover {
   transform: scale(1.1);
   box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.3);
 }
-
 .nav-links-max {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
   list-style: none;
+  font-family: Dana, sans-serif;
 }
-
 .nav-links-max li a {
-  color: hsl(0, 0%, 100%);
+  position: relative;
+  color: #fff;
   font-weight: 500;
   text-decoration: none;
+  padding: 5px 0;
+  transition: 0.35s;
+}
+.nav-links-max li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #f0932b;
+  transition: width 0.3s;
+}
+.nav-links-max li a:hover::after {
+  width: 100%;
+}
+.nav-links-max li a:hover {
+  color: #f0932b;
+  transform: translateY(-3px) scale(1.05);
+}
+.home-link-max p {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   transition: color 0.3s, transform 0.3s;
 }
-
-.nav-links-max li a:hover {
-  color: hsl(50, 100%, 60%);
+.home-link-max p:hover {
+  color: #f0932b;
   transform: translateY(-2px);
 }
-
-/* لینک خانه */
-.home-link-max p {
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin: 0;
+@media screen and (max-width: 992px) {
+  .nav-links-max {
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100%;
+    padding-top: 100px;
+    transition: right 0.4s;
+    z-index: 999;
+  }
+  .nav-links-max.active {
+    right: 0;
+  }
+  .nav-links-max li a {
+    font-size: 1.3rem;
+  }
+  .home-link-max p {
+    font-size: 1.2rem;
+  }
 }
-
-/* ------------------------------ منوی همبرگر ------------------------------ */
 .hamburger-max {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
 }
-
 .hamburger-max span {
   width: 25px;
   height: 3px;
-  background: hsl(0, 0%, 100%);
+  background: #fff;
   border-radius: 3px;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
-
-/* واکنش‌گرایی */
 @media (max-width: 900px) {
   .nav-links-max {
     position: fixed;
@@ -118,32 +150,26 @@ body.about-page {
     right: -100%;
     width: 250px;
     height: calc(100% - 65px);
-    background: hsl(200, 30%, 10%);
+    background: #111c21;
     flex-direction: column;
     padding: 20px;
     gap: 20px;
-    transition: right 0.3s ease;
-    border-left: 1px solid hsl(0, 0%, 20%);
+    transition: right 0.3s;
+    border-left: 1px solid #333;
   }
-
-  /* وقتی فعال شد */
   .nav-links-max.active {
-    right: 0; /* میاد داخل صفحه از سمت راست */
+    right: 0;
   }
-
   .hamburger-max {
     display: flex;
   }
-
   .nav-links-max li a {
-    color: hsl(0, 0%, 95%);
+    color: #f2f2f2;
   }
-
   .nav-links-max li a:hover {
-    color: hsl(50, 100%, 60%);
+    color: #ffdd32;
   }
 }
-
 .box {
   display: flex;
   flex-wrap: wrap;
@@ -403,10 +429,6 @@ img {
   margin-left: 50px;
   opacity: 0;
   transition: 0.6s;
-  -webkit-transition: ;
-  -moz-transition: ;
-  -ms-transition: ;
-  -o-transition: ;
 }
 #tap-1:checked ~ .inner-part .content-1,
 #tap-2:checked ~ .inner-part .content-2,
@@ -674,7 +696,8 @@ input {
     margin: 1rem auto;
     gap: 0.8rem;
   }
-  .box .text h3 {
+  .box .text h3,
+  .section-heading {
     font-size: 1.1rem;
   }
   .box .text p {
@@ -691,9 +714,6 @@ input {
     width: 95%;
     max-width: 120px;
   }
-  .section-heading {
-    font-size: 1.1rem;
-  }
   .section-subtext {
     font-size: 0.95rem;
     padding: 0.8rem;
@@ -707,6 +727,7 @@ input {
     width: 90%;
     margin: 0 auto;
   }
+  .my-logo,
   .sliders {
     display: none;
   }
@@ -715,54 +736,42 @@ input {
   .img-3 {
     width: 30%;
   }
-  .my-logo {
-    display: none;
-  }
 }
-
 .skills-bars {
   padding: 40px 20px;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   max-width: 800px;
-  margin: auto;
+  margin: auto auto 50px;
   color: #fff;
-  margin-bottom: 50px;
 }
-
 .skills-bars h2 {
   text-align: center;
   font-size: 28px;
   margin-bottom: 30px;
 }
-
 .skill {
   margin-bottom: 25px;
 }
-
 .skill p {
   margin-bottom: 8px;
   font-size: 18px;
 }
-
 .progress-bar {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   overflow: hidden;
   height: 24px;
 }
-
 .progress {
   height: 100%;
   line-height: 24px;
   padding-left: 10px;
   color: #fff;
-  font-weight: bold;
+  font-weight: 700;
   background: linear-gradient(90deg, #00acc1, #00796b);
   transition: width 1s ease-in-out;
 }
-
-/* درصدها */
 .progress.html {
   width: 90%;
 }
