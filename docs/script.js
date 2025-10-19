@@ -1,10 +1,14 @@
 // ================= اجرای اولیه بعد از لود کامل صفحه =================
 document.addEventListener("DOMContentLoaded", () => {
   initHamburgerMenu();
-  initAuthTabs();
-  initSignupValidation();
   initFAQToggle();
-  initSwiperCarousel();
+  initPersianDigits();
+  initThemeToggle();
+  initBackToTop();
+  initScrollHeader();
+  initTypeWriter();
+  initAnimatedElements();
+  initOrderCardScroll();
 });
 
 // ================= منوی همبرگری =================
@@ -27,47 +31,32 @@ function initHamburgerMenu() {
 }
 
 // ================= بخش سوالات متداول =================
-document.addEventListener("DOMContentLoaded", () => {
+function initFAQToggle() {
   const faqItems = document.querySelectorAll(".faq-item");
   faqItems.forEach((item) => {
     const question = item.querySelector(".faq-question");
     if (question) {
       question.addEventListener("click", () => {
-        // ابتدا همه faqها رو غیر فعال کن
         faqItems.forEach((i) => i.classList.remove("active"));
-        // سپس فقط همین یکی رو فعال کن
         item.classList.add("active");
       });
     }
   });
-});
+}
 
 // ================= تبدیل اعداد به فارسی =================
-function toPersianDigits(num) {
-  return num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+function initPersianDigits() {
+  function toPersianDigits(num) {
+    return num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+  }
+  console.log(toPersianDigits("09920552567"));
 }
-console.log(toPersianDigits("09920552567"));
-
-// ================= انیمیشن نمایش باکس‌ها هنگام اسکرول =================
-const animatedElements = document.querySelectorAll(".hidden");
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.dataset.delay || 0;
-        setTimeout(() => entry.target.classList.add("show"), delay);
-      } else {
-        entry.target.classList.remove("show");
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-animatedElements.forEach((el) => observer.observe(el));
 
 // ================= مدیریت حالت روشن/تاریک =================
-const toggleBtn = document.getElementById("theme-toggle");
-if (toggleBtn) {
+function initThemeToggle() {
+  const toggleBtn = document.getElementById("theme-toggle");
+  if (!toggleBtn) return;
+
   const label = toggleBtn.querySelector(".label");
   const icon = toggleBtn.querySelector("i");
   const body = document.body;
@@ -95,7 +84,84 @@ if (toggleBtn) {
   });
 }
 
+// ================= دکمه برگشت به بالا =================
+function initBackToTop() {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (!backToTopBtn) return;
+
+  window.addEventListener("scroll", () => {
+    backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+// ================= تغییر استایل هدر موقع اسکرول =================
+function initScrollHeader() {
+  const header = document.getElementById("main-header");
+  if (!header) return;
+
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 50);
+  });
+}
+
+// ================= افکت تایپ متن معرفی =================
+function initTypeWriter() {
+  const text =
+    "با مکس تیم، طراحی سایت فقط یک پروژه نیست؛ یک تجربه دیجیتال تمام‌عیار است.";
+  const target = document.getElementById("typed-text");
+  if (!target) return;
+
+  let index = 0;
+  function typeWriter() {
+    if (index < text.length) {
+      target.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 50);
+    }
+  }
+
+  window.addEventListener("load", typeWriter);
+}
+
+// ================= انیمیشن نمایش باکس‌ها هنگام اسکرول =================
+function initAnimatedElements() {
+  const animatedElements = document.querySelectorAll(".hidden");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => entry.target.classList.add("show"), delay);
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  animatedElements.forEach((el) => observer.observe(el));
+}
+
+// ================= لودر =================
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    if (loader) {
+      loader.style.opacity = "0";
+      loader.style.transition = "opacity 0.5s";
+      setTimeout(() => (loader.style.display = "none"), 500);
+    }
+  }, 1500);
+});
+
 // ================= پیام خوش‌آمدگویی بر اساس ساعت =================
+window.addEventListener("load", () => {
+  setTimeout(getGreetingMessage, 5000);
+});
 function getGreetingMessage() {
   const hour = new Date().getHours();
   let message = "";
@@ -117,7 +183,6 @@ function getGreetingMessage() {
 
   showToast(message, icon);
 }
-window.addEventListener("load", () => setTimeout(getGreetingMessage, 5000));
 
 // ================= نمایش Toast =================
 function showToast(msg, icon = "🚀") {
@@ -142,54 +207,12 @@ function showToast(msg, icon = "🚀") {
   setTimeout(() => toast.remove(), 12000);
 }
 
-// ================= تغییر استایل هدر موقع اسکرول =================
-const header = document.getElementById("main-header");
-if (header) {
-  window.addEventListener("scroll", () => {
-    header.classList.toggle("scrolled", window.scrollY > 50);
-  });
-}
-
-// ================= افکت تایپ متن معرفی =================
-const text =
-  "با مکس تیم، طراحی سایت فقط یک پروژه نیست؛ یک تجربه دیجیتال تمام‌عیار است.";
-const target = document.getElementById("typed-text");
-let index = 0;
-
-function typeWriter() {
-  if (index < text.length) {
-    target.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, 50);
-  }
-}
-window.addEventListener("load", typeWriter);
-
-// ================= دکمه برگشت به بالا =================
-const backToTopBtn = document.getElementById("backToTop");
-if (backToTopBtn) {
-  window.addEventListener("scroll", () => {
-    backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  });
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
-
-// ================= لودر =================
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const loader = document.getElementById("loader");
-    if (loader) {
-      loader.style.opacity = "0";
-      loader.style.transition = "opacity 0.5s";
-      setTimeout(() => (loader.style.display = "none"), 500);
-    }
-  }, 1500);
-});
-
 // ================= اسکرول به بخش سفارش =================
-if (typeof orderCard !== "undefined" && orderCard && phoneContact) {
+function initOrderCardScroll() {
+  const orderCard = document.getElementById("order-card");
+  const phoneContact = document.querySelector(".floating-phone");
+  if (!orderCard || !phoneContact) return;
+
   orderCard.addEventListener("click", () => {
     phoneContact.scrollIntoView({ behavior: "smooth", block: "center" });
   });
