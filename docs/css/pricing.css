@@ -1,24 +1,3 @@
-/* ================== فونت‌ها ================== */
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("../font/Vazirmatn-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Dana";
-  src: url("../font/dana/dana-black.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Shabnam";
-  src: url("../font/Shabnam-Medium-FD.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Vazirmatn-Bold";
-  src: url("../font/ttf/Vazirmatn-Bold.ttf") format("truetype");
-}
-
 /* ================== متغیرها ================== */
 :root {
   --color-primary: #0a4968;
@@ -70,6 +49,7 @@ a {
 }
 
 .pricing-card {
+  cursor: grab;
   background: #fff;
   box-shadow: inset 0 0 0 3px #ff0077;
   border-radius: 16px;
